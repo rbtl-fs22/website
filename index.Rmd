@@ -3,7 +3,7 @@ title: ""
 image: "GHE-logo-square.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/global-health-engineering"
+    url: "https://ch.linkedin.com/company/global-health-engineering"
   - label: Twitter
     url: "https://twitter.com/eth_ghe"
   - label: GitHub
@@ -14,6 +14,8 @@ site: distill::distill_website
 output:
   postcards::trestles
 ---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 
 # Research Beyond the Lab: Open Science and Research Methods for a Global Engineer
   

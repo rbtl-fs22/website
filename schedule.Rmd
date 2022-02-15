@@ -3,6 +3,9 @@ title: "Schedule"
 listing: posts
 ---
 
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
