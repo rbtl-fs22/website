@@ -19,8 +19,7 @@ knitr::include_graphics("img/roadmap.jpg")
 ```
 
 
-Elizabeth Tilley
-Lars Schöbitz
+
 
 Location: Classroom
 
