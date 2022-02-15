@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Research Beyond the Lab</title>
+    <link>https://rbtl-fs22.github.io/website/</link>
+    <atom:link href="https://rbtl-fs22.github.io/website/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Research Beyond the Lab
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Week 1 - Welcome to rbtl!</title>
+      <dc:creator>Nora Jones</dc:creator>
+      <link>https://rbtl-fs22.github.io/website/posts/week1</link>
+      <description>A short description of the post.</description>
+      <guid>https://rbtl-fs22.github.io/website/posts/week1</guid>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

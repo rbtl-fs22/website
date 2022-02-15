@@ -10,7 +10,7 @@ repository_url: https://github.com/rbtl-fs22/website
 navbar:
   search: false
   right:
-    - text: "Home"
+    - text: "Schedule"
       href: index.html
     - text: "Syllabus"
       href: syllabus.html
@@ -18,6 +18,6 @@ navbar:
       menu:
         - text: "Homework"
           href: hw-01-hallo-git.html
-output: distill::distill_article
-    - text: fab fa-github
-      href: https://github.com/rbtl-fs22/website
+output: 
+  distill::distill_article:
+    toc: true
