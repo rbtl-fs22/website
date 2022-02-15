@@ -1,0 +1,23 @@
+name: "website"
+title: "Research Beyond the Lab"
+description: |
+  Research Beyond the Lab
+output_dir: "_site"
+include: ["slides/"]
+creative_commons: CC BY-SA
+base_url: https://rbtl-fs22.github.io/website/
+repository_url: https://github.com/rbtl-fs22/website
+navbar:
+  search: false
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Syllabus"
+      href: syllabus.html
+    - text: "Hausaufgabe"
+      menu:
+        - text: "Homework"
+          href: hw-01-hallo-git.html
+output: distill::distill_article
+    - text: fab fa-github
+      href: https://github.com/rbtl-fs22/website
