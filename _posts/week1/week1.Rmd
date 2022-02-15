@@ -1,11 +1,8 @@
 ---
 title: "Week 1 - Welcome to rbtl!"
 description: |
-  A short description of the post.
-author:
-  - name: Nora Jones
-    url: https://example.com/norajones
-date: 2022-02-15
+  In our first lecture, we will discuss the objectives and intentions of the course, begin our discussion on terminology and get to know each other.
+date: 2022-02-24
 output:
   distill::distill_article:
     toc: true
@@ -13,13 +10,65 @@ output:
 preview: img/toolbox.jpg    
 ---
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, echo=FALSE}
+library(dplyr)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E)"}
+knitr::include_graphics("img/roadmap.jpg")
+```
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+Elizabeth Tilley
+Lars Schöbitz
+
+Location: Classroom
+
+# Learning Objectives
+
+## Part 1
+
+## Part 2
+
+# Slides / Resources
+
+- [Slides](https://rbtl-fs22.github.io/website/slides/pt2-d01-welcome/pt2-d01-welcome.html)
+
+# Readings / Media
+
+- O'Brien, J., & Thondhlana, G. (2019). Plastic bag use in South Africa: Perceptions, practices and potential intervention strategies. Waste Management, 84, 320-328.
+
+- Ferronato, N., Preziosi, G., Portillo, M. A. G., Lizarazu, E. G. G., & Torretta, V. (2020). Assessment of municipal solid waste selective collection scenarios with geographic information systems in Bolivia. Waste Management, 102, 919-931.
+
+- Nemathaga, F., Maringa, S., & Chimuka, L. (2008). Hospital solid waste management practices in Limpopo Province, South Africa: A case study of two hospitals. Waste Management, 28(7), 1236-1245.
+
+- Pathak, D. R., Mainali, B., Abuel-Naga, H., Angove, M., & Kong, I. (2020). Quantification and characterization of the municipal solid waste for sustainable waste management in newly formed municipalities of Nepal. Waste Management & Research, 38(9), 1007-1018.
+
+- Philippe, F., & Culot, M. (2009). Household solid waste generation and characteristics in Cape Haitian city, Republic of Haiti. Resources, Conservation and Recycling, 54(2), 73-78.
+
+# Group work
+
+- Decide, within your group, who will take each paper (groups of 5:  1 person for each paper)
+- Read your paper for next class.  Pay close attention to
+    - The research question
+    - The methods the authors use to collect their data
+    - The variables (and units) that are measured
+    - The types of analysis that is used to answer the research question
+- You will use your paper to inspire conversations within your group as you work through the subsequent exercises in the coming weeks.
+- Enjoy!
+
+# Homework
 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+googlesheets4::read_sheet("1TJqCe1Np3GkfDpqIJqlMWwlYzV_4qtI-euPE4aKTUa4") %>% 
+  mutate(title_link = paste0("[", title, "](", link, ")")) %>% 
+  filter(week == 1) %>% 
+  select(type, title_link, category, due, submission_format) %>% 
+  knitr::kable(format = "html")
+```
+
+**Submission**
+
+**Assignment Value**
