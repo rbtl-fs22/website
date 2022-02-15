@@ -15,10 +15,10 @@ navbar:
       href: schedule.html
     - text: "Syllabus"
       href: syllabus.html
-    - text: "Homework"
+    - text: "Assignments"
       menu:
-        - text: "Homework 01"
-          href: hw-01-hallo-git.html
+        - text: "Assignment 01"
+          href: am-01-hallo-git.html
 output: 
   distill::distill_article:
     toc: true
