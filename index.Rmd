@@ -1,6 +1,6 @@
 ---
 title: ""
-image: "GHE-logo-square.jpg"
+image: "img/GHE-logo-square.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/company/global-health-engineering"

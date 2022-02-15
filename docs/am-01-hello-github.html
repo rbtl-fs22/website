@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://rbtl-fs22.github.io/website/schedule.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -88,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>rbtl: Schedule</title>
+  <title>rbtl: Assignment 1 - Hello GitHub</title>
 
 
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="rbtl: Schedule"/>
+  <meta property="og:title" content="rbtl: Assignment 1 - Hello GitHub"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="rbtl"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="rbtl: Schedule"/>
+  <meta property="twitter:title" content="rbtl: Assignment 1 - Hello GitHub"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Schedule"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 1 - Hello GitHub"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2101,12 +2100,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Schedule","authors":[]}
+{"title":"Assignment 1 - Hello GitHub","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2136,166 +2135,9 @@ Assignments
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Schedule">Schedule</h1>
-<a href="posts/week1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 24, 2022</div>
-<div class="dt-authors"></div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Week 1 - Welcome to rbtl!</h2>
-<div class="dt-tags"></div>
-<p>In our first lecture, we will discuss the objectives and intentions of the course, begin our discussion on terminology and get to know each other.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Schedule</h1>
+<h1>Assignment 1 - Hello GitHub</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2303,7 +2145,53 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#terminology">Terminology</a></li>
+</ul></li>
+<li><a href="#tasks">Tasks</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</nav>
+</div>
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+<h1 id="introduction">Introduction</h1>
+<p>The goal of this assignment is to introduce you to GitHub, which you will be using throughout the course to manage your programming assignments and group project work.</p>
+<p>In this part of the course, you will be learning by doing. You are not expected to understand each step that you perform, but rather be exposed to new terminology and concept that will feel unfamiliar. You will gain familiarity over the next 14-weeks as you develop repetitive workflows.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>In this unit, you will learn to:</p>
+<ul>
+<li>Create a profile on GitHub</li>
+<li>Create a repository on GitHub</li>
+<li>Turn a repository on GitHub into a public GitHub Pages website</li>
+<li>Edit a <span class="glosario_def"><a href="https://glosario.carpentries.org/en/#csv">CSV</a></span> file in the instructor’s public class repository to add their name, GitHub user ID, and a functioning URL for GitHub Pages website they have just created</li>
+<li>Initiate a pull request to the instructor’s repository</li>
+<li>Create a GitHub Personal Access Token (PAT)</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="terminology">Terminology</h2>
+<ul>
+<li>Git: A version control system.</li>
+<li>GitHub: A web platform for hosting version controlled files and facilitating collaboration among users.</li>
+<li>Repository: A Git repository contains all of your project’s files and stores each file’s revision history. It’s common to refer to a repository as a repo.
+<ul>
+<li>In this course, each assignment you work on will be contained in a Git repo.</li>
+<li>For individual assignments, only you will have access to the repo. For team assignments, all team members will have access to a single repo where they work collaboratively.</li>
+<li>All repos associated with this course are housed in the course GitHub organization. The organization is set up such that students can only see repos they have access to, but the course staff can see all of them.</li>
+</ul></li>
+</ul>
+<h1 id="tasks">Tasks</h1>
+<ol type="1">
+<li>Following along with the instructions in the video for this assignment and complete all tasks</li>
+<li>Fill out this survey: <a href="https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923" class="uri">https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923</a></li>
+</ol>
+<h1 id="acknowledgements">Acknowledgements</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
