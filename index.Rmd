@@ -3,7 +3,7 @@ title: ""
 image: "GHE-logo-square.jpg"
 links:
   - label: LinkedIn
-    url: "https://ch.linkedin.com/company/global-health-engineering"
+    url: "https://www.linkedin.com/company/global-health-engineering"
   - label: Twitter
     url: "https://twitter.com/eth_ghe"
   - label: GitHub
