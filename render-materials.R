@@ -5,6 +5,11 @@ library(tidyverse)
 library(rmarkdown)
 library(xaringan)
 
+
+# update course data ------------------------------------------------------
+
+source(here::here("data/get_course_data.R"))
+
 # non-xaringan -----------------------------------------------------------------
 
 rmds <- dir_info(recurse = 3, glob = "_posts/*.Rmd") %>% 
