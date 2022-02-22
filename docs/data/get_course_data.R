@@ -19,6 +19,12 @@ googlesheets4::read_sheet("1BLIboILqaAHh_4fDvuOZV8kOeYtv0YSsQAnohR9CXjw") %>%
 googlesheets4::read_sheet("1HaEIV5K85p2kER8BmIsmkk6cAoEw6tZz-X6pP9B8PMY") %>%
   write_csv(here::here("data/tab-01_rbtl-learning-objectives.csv"))
 
+# tab02_rtbl-slides-resources
+
+googlesheets4::read_sheet("1P-_o2Bwd-Uf4OhjD3_HdzpSSGCx31hZ8Wi67gKegBXI") %>% 
+  mutate(slides = paste0("[", "Access Slides", "](", link, ")")) %>% 
+  write_csv(here::here("data/tab02_rtbl-slides-resources.csv"))
+
 ## tab-03_rbtl-course-assignments
 
 googlesheets4::read_sheet("1TJqCe1Np3GkfDpqIJqlMWwlYzV_4qtI-euPE4aKTUa4") %>% 
@@ -29,3 +35,4 @@ googlesheets4::read_sheet("1TJqCe1Np3GkfDpqIJqlMWwlYzV_4qtI-euPE4aKTUa4") %>%
 
 googlesheets4::read_sheet("1l4rffWN2dSv-q_avSzYCUoFeExl8ben2JenNHHE-HN8") %>% 
   write_csv(here::here("data/tab-05_rbtl-grading-structure.csv"))
+

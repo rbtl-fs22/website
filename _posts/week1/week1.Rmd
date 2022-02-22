@@ -21,7 +21,6 @@ preview: img/toolbox.jpg
 
 library(dplyr)
 library(readr)
-library(gt)
 
 ```
 
@@ -31,6 +30,8 @@ knitr::include_graphics("img/roadmap.jpg")
 
 
 # Learning Objectives
+
+This first lectures consists of two parts, each of which have specific learning objectives. 
 
 ## Part 1 
 
@@ -59,16 +60,18 @@ lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 2. `r lobj2[2]`
 3. `r lobj2[3]`
 
-# Slides / Resources
+# Slides
 
 ```{r}
 
-
+read_csv(here::here("data/tab02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
 
 ```
 
-
-- [Slides](https://rbtl-fs22.github.io/website/slides/pt2-d01-welcome/pt2-d01-welcome.html)
 
 # Group work
 
@@ -81,7 +84,7 @@ lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 3. You will use your paper to inspire conversations within your group as you work through the subsequent exercises in the coming weeks.
 4. Enjoy!
 
-# Readings 
+## Papers 
 
 - O'Brien, J., & Thondhlana, G. (2019). Plastic bag use in South Africa: Perceptions, practices and potential intervention strategies. Waste Management, 84, 320-328.
 

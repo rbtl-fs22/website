@@ -40,6 +40,8 @@ library(fontawesome)
 #htmltools
 library(htmltools)
 
+#kableExtra
+library(kableExtra)
 ```
 
 <script async defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>

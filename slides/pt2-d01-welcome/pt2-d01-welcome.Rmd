@@ -1,6 +1,6 @@
 ---
 title: "rbtl - Research Beyond the Lab"
-subtitle: "Welcome! "  
+subtitle: "Welcome to the course!"  
 author: "Lars Schöbitz"
 date: '`r Sys.Date()`'
 output:
