@@ -11,9 +11,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-The goal of this assignment is to introduce you to GitHub, which you will be using throughout the course to manage your programming assignments and group project work. 
+Welcome to the course and your first assignment. The goal of this assignment is to introduce you to GitHub, which you will be using throughout the course to manage your programming assignments and group project work. 
 
-In this part of the course, you will be learning by doing. You are not expected to understand each step that you perform, but rather be exposed to new terminology and concept that will feel unfamiliar. You will gain familiarity over the next 14-weeks as you develop repetitive workflows.
+In this part of the course, you will be learning by doing. You are not expected to understand each step that you perform, but rather be exposed to new terminology and concepts that will feel unfamiliar. You will gain familiarity over the next 14-weeks as you develop repetitive workflows and become more experienced with the tools.
+
+## Prerequisites
+
+We assume that you have:
+
+1. A laptop or a PC (a tablet device would not be sufficient)
+2. One of Mozilla Firefox, Safari, Google Chrome, Microsoft Edge (just not the Internet Explorer)
+3. Read the Syllabus for this course
+
+We do not expect any prior knowledge of git, GitHub, R, or RStudio.
 
 ## Learning Objectives
 
@@ -22,25 +32,31 @@ In this unit, you will learn to:
 - Create a profile on GitHub
 - Create a repository on GitHub
 - Turn a repository on GitHub into a public GitHub Pages website
-- Edit a `r glosario::gdef('csv', 'CSV')` file in the instructor’s public class repository to add their name, GitHub user ID, and a functioning URL for GitHub Pages website they have just created
+- Edit a CSV file in the instructor’s public class repository to add their name, GitHub user ID, and a functioning URL for GitHub Pages website they have just created
 - Initiate a pull request to the instructor’s repository
 - Create a GitHub Personal Access Token (PAT)
 
-## Prerequisites
-
 ## Terminology
 
-- Git: A version control system.
-- GitHub: A web platform for hosting version controlled files and facilitating collaboration among users.
-- Repository: A Git repository contains all of your project’s files and stores each file’s revision history. It’s common to refer to a repository as a repo.
+- **Version control software**: Version control software allows you to effectively “save” your work at important points in time and come back to any of the save points. It is also an easy way to share code with others so they can download, re-use, contribute.
+- **Git**: A version control system.
+- **GitHub**: A web platform for hosting version controlled files and facilitating collaboration among users.
+- **Repository**: A Git repository contains all of your project’s files and stores each file’s revision history. It’s common to refer to a repository as a repo.
   - In this course, each assignment you work on will be contained in a Git repo.
   - For individual assignments, only you will have access to the repo. For team assignments, all team members will have access to a single repo where they work collaboratively.
   - All repos associated with this course are housed in the course GitHub organization. The organization is set up such that students can only see repos they have access to, but the course staff can see all of them.
 
 # Tasks 
 
-1. Following along with the instructions in the video for this assignment and complete all tasks 
+1. Following along with the instructions in the video for this assignment and complete all steps on your own 
 2. Fill out this survey: https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923
 
+# Video
+
+<iframe width="560" height="315" src="XXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Acknowledgements
+
+The material on this page is influenced by and partly taken from: [datasciencebox.org](https://datasciencebox.org/index.html) licensed under a [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
 
