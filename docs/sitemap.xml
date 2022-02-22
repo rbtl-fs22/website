@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-01-hello-github.html</loc>
-    <lastmod>2022-02-22T11:43:47+01:00</lastmod>
+    <lastmod>2022-02-22T11:44:41+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/LICENSE.html</loc>
-    <lastmod>2022-02-22T11:25:12+01:00</lastmod>
+    <lastmod>2022-02-22T13:00:26+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/schedule.html</loc>
@@ -22,6 +22,6 @@
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week1/</loc>
-    <lastmod>2022-02-22T11:25:12+01:00</lastmod>
+    <lastmod>2022-02-22T12:58:19+01:00</lastmod>
   </url>
 </urlset>
