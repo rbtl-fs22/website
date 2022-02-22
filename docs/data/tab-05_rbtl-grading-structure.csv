@@ -10,10 +10,9 @@ project,technical,This part of the project grades the technical parts of the fin
 project,technical,This part of the project grades the technical parts of the final report.,The report contains at least three locations where inline code is used to show single number results,1
 project,technical,This part of the project grades the technical parts of the final report.,The GitHub repo for the research project contains the raw data and derived data that is shown in tables and figures,2
 project,technical,This part of the project grades the technical parts of the final report.,"The GitHub repo for the research project contains the following four files: README, License, Code of Conduct and Citation",1
-NA,NA,NA,Project has at least three commits by each team member with an informative written commit message,5
+project,technical,This part of the project grades the technical parts of the final report.,Project has at least three commits by each team member with an informative written commit message,5
 project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Introduction with minimum 5 references clearly frames the research question and provides justification for the work,2.5
 project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Methods are clearly documented and replicable,2.5
 project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Meaning of results are interpreted; how each Figure/Table contributes to answering the main Research Question is explained; Limitations of the data are honest and discussed,2.5
 project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Conclusions concisely summarize findings; Recommendations for future work are provided,2.5
 exam,technical,This is a two hour programming exam for which any course or online material can be used,All technical parts that are taught during the course,50
-NA,NA,NA,NA,100
