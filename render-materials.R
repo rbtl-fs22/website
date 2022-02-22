@@ -26,3 +26,6 @@ xaringans <- dir_info(recurse = 3, glob = "slides/*.Rmd") %>%
 walk(xaringans, render)
 #walk(xaringans, pagedown::chrome_print)
 
+# render slides in viewer pane --------------------------------------------
+
+# xaringan::inf_mr(cast_from = "..")
