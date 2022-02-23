@@ -10,4 +10,36 @@ toc: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# 
+# Research Project
+
+The research project is at the heart of this course. After you have learned how to design your research, you go out to the city of Zurich and collect your own data. We will then teach you a set of computational tools to analyse the data and write a report.
+
+## Research Question
+
+We have selected a main research question for this course. It will be your task to develop meaningful sub-questions. 
+
+**Main Research Question:** What are the predictors of waste composition in public spaces in Zurich?
+
+## Group Work
+
+Groups of five will work to answer this question using a variety of methods. They will work together to develop each of the data collection tools, but will practically, have to collect each type of data alone although it is not mandatory. If two people want to do interviews and waste characterisation together, then that is also okay. The group is responsible to submit a final report that is graded [(see Grading Structure for details)](#grading). You may all collected data or focus on parts of the collected data that are most promising. 
+
+**Important:** Statistical significance is not the goal and will not teach you statistical methods in this course that go beyond basic summary statistics. The practice and experience is important. 
+
+## Data
+
+In this course, we will teach you how to collect and analyse two main data types: 
+
+### Type 1: Laboratory / Observational / Sensore data 
+
+This is quantitative data. For example from:
+
+    Laboratory analysis (organics, solids, nutrients, microbiology, etc.)
+    Observational (counting, weighing and categorizing)
+    Sensor data (air quality)
+
+
+# Grading Structure {#grading}
+
+
+
