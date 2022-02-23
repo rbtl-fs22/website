@@ -3,43 +3,155 @@ title: "Syllabus"
 toc: true
 ---
 
+```{=html}
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
-
-
+```
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Research Project
+# Course Components
 
-The research project is at the heart of this course. After you have learned how to design your research, you go out to the city of Zurich and collect your own data. We will then teach you a set of computational tools to analyse the data and write a report.
+## Weekly Structure
 
-## Research Question
+-   Lectures: Thursday at 15:00 - 18:00 IFW A 32.1
+-   Assignment submission: Tuesdays, latest by 23:59 (late submission 24 hours later, Wednesdays, by 23:59)
 
-We have selected a main research question for this course. It will be your task to develop meaningful sub-questions. 
+## Students hours
 
-**Main Research Question:** What are the predictors of waste composition in public spaces in Zurich?
+-   E. Tilley: Friday, 9:00 - 11:00, or by appointment
+-   L. Schöbitz: Monday, 12:30 - 14:30 or by appointment
+
+## Schedule
+
+| **date**       | **week** | **title**                                          | **lecturer**              |
+|----------------|----------|----------------------------------------------------|---------------------------|
+| 2022-02-24     | 1        | Welcome!                                           | E. Tilley and L. Schöbitz |
+| 2022-03-03     | 2        | Waste Research                                     | E. Tilley                 |
+| 2022-03-10     | 3        | Research Design                                    | E. Tilley                 |
+| 2022-03-17     | 4        | Survey Design                                      | E. Tilley                 |
+| 2022-03-24     | 5        | Tools for Data Collection and Data Management      | L. Schöbitz               |
+| 2022-03-31     | 6        | Pre-test and logistics                             | E. Tilley and L. Schöbitz |
+| 2022-04-07     | 7        | Data collection                                    | E. Tilley and L. Schöbitz |
+| 2022-04-14     | 8        | Data Import and Data Types                         | L. Schöbitz               |
+| **2022-04-21** | **9**    | **Easter Break**                                   |                           |
+| 2022-04-28     | 10       | Exploratory Data Analysis using Data Visualisation | L. Schöbitz               |
+| 2022-05-05     | 11       | Data transformation with dplyr                     | L. Schöbitz               |
+| 2022-05-12     | 12       | Data transformation with tidyr                     | L. Schöbitz               |
+| 2022-05-19     | 13       | Communicate your findings                          | L. Schöbitz               |
+| 2022-06-02     | 14       | Workshop/Feedback/Exam                             | E. Tilley and L. Schöbitz |
+| 2022-06-09     | 15       | Project Submission Deadline                        | All                       |
+| 2022-06-16     | 16       | Exam                                               | All                       |
+
+## Lectures
+
+The lectures and learning objects are split into two parts:
+
+-   Part 1: In this part you will learn how to design your research and develop research questions. It will teach you how to conduct an applied research project.
+-   Part 2: In this part you will learn how analyse your data with R and how to use git version control and GitHub for collaboration. It will teach you to apply Open Science principles to your research with a focus on computational resproducibility of your research.
+
+In the beginning, the lectures overlap. You will receive in person lectures and assignments with videos as homework. Later on, once you have your data, there will be a set of lectures that solely focuses on Part 2.
+
+## Homework
+
+You will receive 10 homework assignments, each of which need to be submitted to progress in the course. All homework assignments are submitted through GitHub and you will receive instructions on how do that for each individual homework assignment. Each homework assignment is worth 2%, and if it's submitted on time you will receive 2%. For late submission, we will deduct 1% for the assignment. 
+
+## Research Project
+
+You may have heard the term "evidence-based policy-making". It's a very obvious concept that policies and decisions should be made based on data---not on feelings, politics or history (which is unfortunately, more commono than you think).
+
+However, the data required to provide evidence of a problem, a trend, or changing need is often costly, time-consuming, and usually beyond the scope of what most government officials or departments can do. Decision-makers rely on researchers to help them with the data and evidence that they need to make informed choices.
+
+That's where you come in.
+
+In this course, you will work on a project that broadly addresses the theme of "Trash in the Public Spaces of Zurich" and will submit your findings to the ERZ Entsorgung + Recycling Department at Stadt Zürich.
+
+We want you to address a real problem in the real city and send your findings to a real decision-maker.
+
+Specifically, Stadt Zürich is interested to know more about:
+
+-   The composition of waste in public spaces;
+-   The producers of trash in publish spaces;
+-   The influence of the location on trash in public spaces;
+-   The appearance and nuisance of public trash (bins) in public spaces;
+-   Perceptions of public space users towards trash in public spaces;
+
+but you will design your own study with your own research questions and collect the data that you need to answer your question.
+
+We will work with ERZ to access public bins (you can collect, weigh, and characterise real trash!). So, while you are free to design your own study, you cannot access other sources of trash (for ethical reasons).
+
+The goal of this hands-on approach is three-fold:
+
+1.  To give you the experience of working through a "field study" as is common when investigating a question in another country (typically a poor one);
+2.  To provide much-needed evidence to ERZ who does not have the time or resources to do their own data collection; and
+3.  To generate your own data that can be used as you work through the R-based exercises that will build your skills as researcher who contributes to open-science.
+
+Now let's talk trash!
+
+**Important:** Statistical significance is not the goal and will not teach you statistical methods in this course that go beyond basic summary statistics. The practice and experience of conducting an applied research project is important.
 
 ## Group Work
 
-Groups of five will work to answer this question using a variety of methods. They will work together to develop each of the data collection tools, but will practically, have to collect each type of data alone although it is not mandatory. If two people want to do interviews and waste characterisation together, then that is also okay. The group is responsible to submit a final report that is graded [(see Grading Structure for details)](#grading). You may all collected data or focus on parts of the collected data that are most promising. 
+Groups of five will work to answer the a research question using a variety of methods. You will work together as a group and submit one final report, but each of you will develop their own data collection tools and collect your own data. The group is responsible to submit a final report that is graded [(see Grading Structure for details)](#grading). Details for the report structure and the technical details on how to submit the report will be shared throughout the course.
 
-**Important:** Statistical significance is not the goal and will not teach you statistical methods in this course that go beyond basic summary statistics. The practice and experience is important. 
+### Data
 
-## Data
+We will teach you how to collect and analyse three main data types:
 
-In this course, we will teach you how to collect and analyse two main data types: 
-
-### Type 1: Laboratory / Observational / Sensore data 
+#### Type 1: Laboratory / Observational / Sensor data
 
 This is quantitative data. For example from:
 
-    Laboratory analysis (organics, solids, nutrients, microbiology, etc.)
-    Observational (counting, weighing and categorizing)
-    Sensor data (air quality)
+-   Laboratory analysis (organics, solids, nutrients, microbiology, etc.)
+-   Observational (counting, weighing and categorizing)
+-   Sensor data (air quality)
+
+#### Type 2: Survey questionnaire (e.g. demographics and behaviour)
+
+This is quantitative data. For example from:
+
+-   Household survey questionnaire (family size, income, hours in a park per day, etc.)
+
+#### Type 3: Secondary data
+
+This is open data, which is publicly available. For example from:
+
+-   Open Data Stadt Zurich: <https://data.stadt-zuerich.ch/>
+-   Open Data Canton Zurich: <https://www.zh.ch/de/politik-staat/opendata.html?keyword=ogd#/home>
+-   Open Data Switzerland: <https://opendata.swiss/de>
+-   GIS Browser Canton Zurich: <https://maps.zh.ch/> (**Note:** We do not teach how to work with spatial data in this course)
+
+It can be any of the data from the categories above or any other data that you feel comfortable analysing with R.
+
+## End-of-semester exam
+
+There is a practical 2-hour end-of-semester exam, which assesses the technical skills (using R, git, and GitHub) taught during the course. It contains programming exercises using the R programming language and you can use any material that you want. The success of the exam depends on the effort put into the compulsory continuous performance assessment.
+
+## Grading scheme {#grading}
+
+Grading scheme in summary:
+
+-   End-of-semester exam: 50%
+-   Compulsory continuous performance assessment: 50%, of which
+    -   Homework: 20% (n = 10)
+    -   Research project report: 30%, of which 
+        - Technical parts of submitted report: 20% (we will communicate what we expect) 
+        - Intellectual framing of results: 10% (we will communicate what we expect)
+
+# Policies
+
+## Class attendance
+
+We hope that you can attend class in person. If you do not feel comfortable to attend class in person, we expect you to contact us and inform us about it. There will be a live streaming recording that you can watch from home, however we will not accomodate for two way communication. 
+
+If you miss a class, we expect you to work through the material of the class using the recording of the live streaming.
+
+## Code of Conduct
+
+This course follows the [ETH Respect Code of Conduct](https://respekt.ethz.ch/en/code-of-conduct.html). If you have not yet read this Code of Conduct, please familiarize yourself with it. If you experience inappropriate behaviour from us or any of your classmates, you will find contact and advice services here: https://respekt.ethz.ch/en/contact-and-advice-services.html
 
 
-# Grading Structure {#grading}
+
 
 
 
