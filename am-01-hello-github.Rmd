@@ -4,7 +4,6 @@ title: "Assignment 1 - Hello GitHub"
 
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -48,7 +47,7 @@ In this unit, you will learn to:
 
 # Tasks 
 
-1. Following along with the instructions in the video for this assignment and complete all steps on your own 
+1. Following along with the instructions in the video below (posted on Thursday, 24th February) for this assignment and complete all steps on your own 
 2. Fill out this survey: https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923
 
 # Video

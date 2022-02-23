@@ -10,6 +10,8 @@ links:
     url: "https://github.com/rbtl-fs22"
   - label: Email
     url: "mailto:ghe@mavt.ethz.ch"
+  - label: Homepage
+    url: "https://ghe.ethz.ch/"
 site: distill::distill_website
 output:
   postcards::trestles

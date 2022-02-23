@@ -102,8 +102,9 @@ read_csv(here::here("data/tab02_rtbl-slides-resources.csv")) %>%
 
 read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
   filter(week == params$week) %>% 
-  select(title_link, type,  category, effort_estimate_min, submission_format, due_date) %>%
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
   knitr::kable() %>% 
-  kableExtra::column_spec(6, width = "10em", background = "#E8ADAA")
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
 
 ```
