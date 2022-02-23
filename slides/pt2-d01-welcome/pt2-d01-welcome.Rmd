@@ -1,357 +1,187 @@
 ---
-title: "Presentation Ninja"
-subtitle: "&#x2694;&#xFE0F; xaringan +<br/>&#x1F60E; xaringanthemer"  
-author: 
-  - "Yihui Xie"
-  - "Garrick Aden-Buie"
+title: "rbtl - Research Beyond the Lab"
+subtitle: "Welcome to the course!"  
+author: "Lars Schöbitz"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../xaringan-themer.css", "../slides.css"]
+    lib_dir: libs
     nature:
-      slideNumberFormat: "%current%"
-      highlightStyle: github
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
       highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
+      countIncrementalSlides: false
+      ratio: "16:9"
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(
-  fig.width=9, fig.height=3.5, fig.retina=3,
-  out.width = "100%",
-  cache = FALSE,
-  echo = TRUE,
-  message = FALSE, 
-  warning = FALSE,
-  hiline = TRUE
-)
+```{r child = "../setup.Rmd"}
 ```
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#1381B0",
-  secondary_color = "#FF961C",
-  inverse_header_color = "#FFFFFF"
-)
-```
-
-## Typography
-
-Text can be **bold**, _italic_, ~~strikethrough~~, or `inline code`.
-
-[Link to another slide](#colors).
-
-### Lorem Ipsum
-
-Dolor imperdiet nostra sapien scelerisque praesent curae metus facilisis dignissim tortor. 
-Lacinia neque mollis nascetur neque urna velit bibendum. 
-Himenaeos suspendisse leo varius mus risus sagittis aliquet venenatis duis nec.
-
-- Dolor cubilia nostra nunc sodales
-
-- Consectetur aliquet mauris blandit
-
-- Ipsum dis nec porttitor urna sed
 
 ---
-name: colors
+class: middle
 
-## Colors
+# .big[Welcome! `r emo::ji("wave")`]
 
-.left-column[
-Text color
+---
+# Goals for today
 
-[Link Color](#3)
+You...
 
-**Bold Color**
+...know a bit about me and I know a bit about you. 
 
-_Italic Color_
+...know the learning outcomes and competencies you gain in this course.  
 
-`Inline Code`
+...are aware of the tools that we use for this course.
+
+...know where to find the link to the course website.  
+
+...understand the grading scheme for this course.  
+
+...are motivated to do your homework and come back next week.  
+
+---
+.pull-left[
+.large[**Lars Schöbitz**]
+
+- Environmental Engineer  
+- Open Science Specialist  
+- Instructor for Data Science with R  
+- Online: [@larnsce](https://twitter.com/larnsce)
 ]
 
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
+.pull-right[
+```{r, echo = FALSE, out.width="70%"}
+knitr::include_graphics("img/lars_schoebitz_profile_photo.jpg")
+```
 ]
 
 ---
+# You
 
-# Big Topic or Inverse Slides `#`
+Hands-up:
 
-## Slide Headings `##`
-
-### Sub-slide Headings `###`
-
-#### Bold Call-Out `####`
-
-This is a normal paragraph text. Only use header levels 1-4.
-
-##### Possible, but not recommended `#####`
-
-###### Definitely don't use h6 `######`
+- Who has used **R** before?
+- Who think they know what **version control software** is?
+- Who has an account for **Slack**?
+- Who has an account for **GitHub**?
 
 ---
+class: inverse, middle
 
-# Left-Column Headings
+# .big[Learning outcomes]
 
-.left-column[
-## First
+---
+# Learning outcomes of this course
 
-## Second
+At the end of this course, students will be able to:
 
-## Third
+- practice Open Science and publish data projects reproducibly 
+- work collaboratively with Git and GitHub
+- understand the concept of Tidy Data
+- conduct Exploratory Data Analysis
+- help themselves and others in learning more about data science with R
+
+---
+class: inverse, middle
+
+# .big[Toolbox `r emo::ji("toolbox")`]
+
+---
+# Toolbox
+
+.pull-left[
+
+# **Course work**
+
+- Classroom
+- Field work 
+- Zoom 
+- Slack (not yet decided)
 ]
 
-.right-column[
-Dolor quis aptent mus a dictum ultricies egestas.
+.pull-right[
 
-Amet egestas neque tempor fermentum proin massa!
+# Data Science
 
-Dolor elementum fermentum pharetra lectus arcu pulvinar.
+**Programming**
+
+- R
+- RStudio (Cloud)
+- tidyverse R Packages
+- R Markdown
+
+**Version control and Collaboration**
+
+- Git
+- GitHub
+
 ]
 
 ---
-class: inverse center middle
+class: center, middle
 
-# Topic Changing Interstitial
-
---
-
-```
-class: inverse center middle
-```
+.big[https://rbtl-fs22.github.io/website/]
 
 ---
-layout: true
-
-## Blocks
-
----
-
-### Blockquote
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
----
-
-### Code Blocks
-
-#### R Code
-
-```{r eval=FALSE}
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
-```
-
-#### JavaScript
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
----
-
-### More R Code
-
-```{r eval=FALSE}
-dplyr::starwars %>% dplyr::slice_sample(n = 4)
-```
-
----
-
-```{r message=TRUE, eval=requireNamespace("cli", quietly = TRUE)}
-cli::cli_alert_success("It worked!")
-```
-
---
-
-```{r message=TRUE}
-message("Just a friendly message")
-```
-
---
-
-```{r warning=TRUE}
-warning("This could be bad...")
-```
-
---
-
-```{r error=TRUE}
-stop("I hope you're sitting down for this")
-```
-
-
----
-layout: true
-
-## Tables
-
----
-exclude: `r if (requireNamespace("tibble", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("tibble", quietly=TRUE)}
-tibble::as_tibble(mtcars)
-```
-
----
+# Grading scheme - Summary
 
 ```{r}
-knitr::kable(head(mtcars), format = 'html')
+
+read_csv(here::here("data/tab-05_rbtl-grading-structure.csv")) %>% 
+  mutate(type = factor(type,levels = c("homework", "project", "exam"))) %>% 
+  group_by(type) %>% 
+  summarise(
+    percent = sum(percent)
+  ) %>% 
+  kbl() %>% 
+  kable_styling(font_size = 45) 
+
 ```
 
----
-exclude: `r if (requireNamespace("DT", quietly=TRUE)) "false" else "true"`
 
-```{r eval=requireNamespace("DT", quietly=TRUE)}
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
 
 ---
-layout: true
+# Grading scheme - Homework
 
-## Lists
-
----
-
-.pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-]
-
-.pull-right[
-
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-]
+- 10 assignments, submitted weekly
+- Assignment submitted in time: 2%
+- Assignment submitted late: 1%
+- Assignment not submitted: no progress
 
 ---
+# Grading scheme - Group project
 
-### And a nested list:
+- 30% for final group project report, submitted in Week 15
+    - 20% for technical parts of final report 
+    - 10% for intellectual framing of the results
+- All items that we grade will be communicated on the website
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+---
+# Grading scheme - Exam
+
+- 50% for end-of-semester Exam in Week 16
+- Two hour programming exam
+- Free use of course material and online material
+- Tests for technical aspects taught during the course
+
+---
+class: inverse, center, middle
+
+# .large[Why take this course?] 
+
 
 ---
 
-### Nesting an ol in ul in an ol
 
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
 
----
-layout: true
 
-## Plots
-
----
-
-```{r plot-example, eval=requireNamespace("ggplot2", quietly=TRUE)}
-library(ggplot2)
-(g <- ggplot(mpg) + aes(hwy, cty, color = class) + geom_point())
-```
-
----
-
-```{r plot-example-themed, eval=requireNamespace("ggplot2", quietly=TRUE)}
-#g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
-#  ggtitle("A Plot About Cars")
-```
-
----
-layout: false
-
-## Square image
-
-<center><img src="https://octodex.github.com/images/labtocat.png" height="400px" /></center>
-
-.footnote[GitHub Octocat]
-
----
-
-### Wide image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
-
-.footnote[Wide images scale to 100% slide width]
-
----
-
-## Two images
-
-.pull-left[
-![](https://octodex.github.com/images/motherhubbertocat.png)
-]
-
-.pull-right[
-![](https://octodex.github.com/images/dinotocat.png)
-]
-
----
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
 ---
 class: center, middle

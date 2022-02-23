@@ -3,6 +3,8 @@ title: "Week 1 - Welcome to rbtl!"
 description: |
   In our first lecture, we will discuss the objectives and intentions of the course, begin our discussion on terminology and get to know each other.
 date: 2022-02-24
+params:
+    week: 1
 output:
   distill::distill_article:
     toc: true
@@ -10,8 +12,16 @@ output:
 preview: img/toolbox.jpg    
 ---
 
-```{r setup, echo=FALSE}
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
 library(dplyr)
+library(readr)
+
 ```
 
 ```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E)"}
@@ -19,21 +29,62 @@ knitr::include_graphics("img/roadmap.jpg")
 ```
 
 
-
-
-Location: Classroom
-
 # Learning Objectives
 
-## Part 1
+This first lectures consists of two parts, each of which have specific learning objectives. 
+
+## Part 1 
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+2. `r lobj1[2]`
 
 ## Part 2
 
-# Slides / Resources
+```{r}
 
-- [Slides](https://rbtl-fs22.github.io/website/slides/pt2-d01-welcome/pt2-d01-welcome.html)
+lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
 
-# Readings / Media
+```
+
+1. `r lobj2[1]`
+2. `r lobj2[2]`
+3. `r lobj2[3]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+
+# Group work
+
+1. Decide, within your group, who will take each of the five papers in  (groups of 5:  1 person for each paper)
+2. Read your paper for next class. Pay close attention to:
+    - The research question
+    - The methods the authors use to collect their data
+    - The variables (and units) that are measured
+    - The types of analysis that is used to answer the research question
+3. You will use your paper to inspire conversations within your group as you work through the subsequent exercises in the coming weeks.
+4. Enjoy!
+
+## Papers 
 
 - O'Brien, J., & Thondhlana, G. (2019). Plastic bag use in South Africa: Perceptions, practices and potential intervention strategies. Waste Management, 84, 320-328.
 
@@ -45,29 +96,14 @@ Location: Classroom
 
 - Philippe, F., & Culot, M. (2009). Household solid waste generation and characteristics in Cape Haitian city, Republic of Haiti. Resources, Conservation and Recycling, 54(2), 73-78.
 
-# Group work
-
-- Decide, within your group, who will take each paper (groups of 5:  1 person for each paper)
-- Read your paper for next class.  Pay close attention to
-    - The research question
-    - The methods the authors use to collect their data
-    - The variables (and units) that are measured
-    - The types of analysis that is used to answer the research question
-- You will use your paper to inspire conversations within your group as you work through the subsequent exercises in the coming weeks.
-- Enjoy!
-
 # Homework
 
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title_link, type,  category, effort_estimate_min, submission_format, due_date) %>%
+  knitr::kable() %>% 
+  kableExtra::column_spec(6, width = "10em", background = "#E8ADAA")
 
-googlesheets4::read_sheet("1TJqCe1Np3GkfDpqIJqlMWwlYzV_4qtI-euPE4aKTUa4") %>% 
-  mutate(title_link = paste0("[", title, "](", link, ")")) %>% 
-  filter(week == 1) %>% 
-  select(type, title_link, category, due, submission_format) %>% 
-  knitr::kable(format = "html")
 ```
-
-**Submission**
-
-**Assignment Value**

@@ -5,6 +5,10 @@ library(tidyverse)
 library(rmarkdown)
 library(xaringan)
 
+# update course data ------------------------------------------------------
+
+source(here::here("data/get_course_data.R"))
+
 # non-xaringan -----------------------------------------------------------------
 
 rmds <- dir_info(recurse = 3, glob = "_posts/*.Rmd") %>% 
@@ -20,4 +24,8 @@ xaringans <- dir_info(recurse = 3, glob = "slides/*.Rmd") %>%
   pull(path)
 
 walk(xaringans, render)
-walk(xaringans, pagedown::chrome_print)
+#walk(xaringans, pagedown::chrome_print)
+
+# render slides in viewer pane --------------------------------------------
+
+# xaringan::inf_mr(cast_from = "..")
