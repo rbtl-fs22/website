@@ -97,6 +97,16 @@ class: middle
 
 .big[Who has an account for **GitHub**? `r emo::ji("raised_back_of_hand")`]
 
+---
+class: middle
+
+.big[Who uses **macOS** as an operating system? `r emo::ji("raised_back_of_hand")`]
+
+---
+class: middle
+
+.big[Who uses **Microsoft Windows** as an operating system? `r emo::ji("raised_back_of_hand")`]
+
 
 ---
 class: inverse, middle
