@@ -318,7 +318,20 @@ background-size: contain
 
 .footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
 
+---
+background-image: url(img/inclusion.jpg)
+background-size: contain
+background-position: right
 
+# Code of Conduct
+
+- ETH - The Respect Code of Conduct: respekt.ethz.ch/
+- Diversity and inclusion
+- Names and pronouns
+- Inappropriate behaviour
+- Learning process
+
+.footnote[Photo by: [Sharon McCutcheon](https://unsplash.com/@sharonmccutcheon)
 
 ---
 class: center, middle

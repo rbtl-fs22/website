@@ -47,12 +47,13 @@ In this unit, you will learn to:
 
 # Tasks 
 
-1. Following along with the instructions in the video below (posted on Thursday, 24th February) for this assignment and complete all steps on your own 
+1. Follow along with the instructions in the video below for this assignment and complete all steps on your own. Part of the steps is to create a username for GitHub. You can find guidance for a good username here: https://happygitwithr.com/github-acct.html  
+
 2. Fill out this survey: https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923
 
 # Video
 
-<iframe width="560" height="315" src="XXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="400" src="https://www.youtube.com/embed/GMQJlnLlr1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Acknowledgements
 
