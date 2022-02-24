@@ -245,7 +245,6 @@ These slides are made with R. They can include:
 - Code
 - Its output
 - Interactive output
-- Maps
 
 ]
 
@@ -331,7 +330,7 @@ background-position: right
 - Inappropriate behaviour
 - Learning process
 
-.footnote[Photo by: [Sharon McCutcheon](https://unsplash.com/@sharonmccutcheon)
+.footnote[Photo by: [Sharon McCutcheon](https://unsplash.com/@sharonmccutcheon)]
 
 ---
 class: center, middle
