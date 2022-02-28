@@ -1,0 +1,52 @@
+---
+title: "Assignment 2 - Hello RStudio"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Well done, you now have a GitHub Account and a home for your future projects. In this next assignment, you will setup your RStudio Cloud infrastructure which we will you to work with R and the RStudio IDE. You will follow through another set of tasks that will expose you to the workflow we will use in this course. Once again, we do not expect you to understand exactly what you are doing at each step. The main purpose is to set you up and expose you to the tools before we get going with your own data in Week 8. 
+
+## Prerequisites
+
+We assume that you have:
+
+1. Completed Assignment 1 of this course. If you have not, follow the instructions here: https://rbtl-fs22.github.io/website/am-01-hello-github.html
+2. Stored your GitHub Personal Access Token in a secure and accessible place.
+
+## Learning Objectives
+
+In this unit, you will learn to:
+
+- Clone a repository from GitHub into the RStudio Cloud
+- Render an R Markdown file using the RStudio IDE
+- Commit changes to files in a repository using the RStudio IDE
+- Push tracked changes to GitHub
+
+## Terminology
+
+- **R Markdown**
+- **RStudio IDE**
+- **RStudio Cloud**
+- **git commit**
+- **git push**
+
+# Tasks 
+
+1. You have received an email invitation from GitHub to join the GitHub Organisation (rbtl-fs22) for this course. If you have not, please make sure that you completed Assignment 1 first and contact Lars.
+2. Join the RStudio Cloud Workspace for the course (Login with your GitHub details) by clicking on the following link:
+https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE
+3. Follow through with the instructions in the video below to complete the remaining tasks
+
+# Video
+
+<iframe width="560" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Acknowledgements
+
+The material on this page is influenced by and partly taken from: [datasciencebox.org](https://datasciencebox.org/index.html) licensed under a [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
