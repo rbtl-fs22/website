@@ -33,7 +33,7 @@ library(xaringanExtra)
 # Outline
 
 - Goals
-- Assignment due dates
+- Assignments
 - GitHub
 - RStudio Cloud
 - RStudio IDE
@@ -46,9 +46,14 @@ library(xaringanExtra)
 You...
 
 ---
-# Assignments 1, 2, and 3
+# Due dates: Assignments 1, 2, and 3
 
 Full points for assignment 1, 2, and 3 if submitted by 15th March
+
+---
+# Submission complete? Full points?
+
+- If you haven't heard from me by Wednesday, then you have successfully submitted your assignment.
 
 ---
 class: center, middle
