@@ -6,6 +6,7 @@ toc: true
 ```{=html}
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 ```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -131,12 +132,29 @@ There is a practical 2-hour end-of-semester exam, which assesses the technical s
 
 Grading scheme in summary:
 
--   End-of-semester exam: 50%
--   Compulsory continuous performance assessment: 50%, of which
-    -   Homework: 20% (n = 10)
-    -   Research project report: 30%, of which 
-        - Technical parts of submitted report: 20% (we will communicate what we expect) 
-        - Intellectual framing of results: 10% (we will communicate what we expect)
+-   End-of-semester exam: 50 points
+-   Compulsory continuous performance assessment: 50 points, of which
+    -   Homework: 20 points (n = 10)
+    -   Research project report: 30 points, of which 
+        - Technical parts of submitted report: 20 points (we will communicate what we expect) 
+        - Intellectual framing of results: 10 points (we will communicate what we expect)
+  
+Table \@ref(tab:tab-grading-conversion) shows the conversion from points to grades. Grades follow the [ETHZ's Grading System](https://ethz.ch/content/dam/ethz/main/education/rechtliches-abschluesse/grading.pdf). Points are rounded to the nearest grade, for example:
+
+- 97 points = 5.75
+- 65 points = 4.50
+- 64 points = 4.25
+- 45 points = 4.00
+- 44 points = 3.50
+
+```{r tab-grading-conversion, echo=FALSE}
+
+readr::read_csv(here::here("data/tab-09_rbtl-grading-conversion.csv")) |> 
+  knitr::kable(caption = "Conversion from points to grades.") |> 
+  kableExtra::kable_styling(full_width = F)
+
+```
+
 
 # Policies
 
