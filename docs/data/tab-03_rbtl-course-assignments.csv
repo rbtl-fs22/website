@@ -1,11 +1,11 @@
 week,title,type,submission_format,category,effort_estimate_min,due_date,link,title_link
-1,Week 1 - Hello GitHub,assignment,GitHub,required,45,2022-03-01,https://rbtl-fs22.github.io/website/am-01-hello-github.html,[Week 1 - Hello GitHub](https://rbtl-fs22.github.io/website/am-01-hello-github.html)
+1,Week 1 - Hello GitHub,assignment,GitHub,required,45,2022-03-15,https://rbtl-fs22.github.io/website/am-01-hello-github.html,[Week 1 - Hello GitHub](https://rbtl-fs22.github.io/website/am-01-hello-github.html)
 1,Read the Syllabus carefully,reading,no submission,required,15,NA,https://rbtl-fs22.github.io/website/syllabus.html,[Read the Syllabus carefully](https://rbtl-fs22.github.io/website/syllabus.html)
 1,What is open source?,reading,no submission,required,15,NA,https://open-source-for-researchers.github.io/open-source-workshop/01-what-is-open-source,[What is open source?](https://open-source-for-researchers.github.io/open-source-workshop/01-what-is-open-source)
 1,"Excuse Me, Do You Have a Moment to Talk About Version Control?",reading,no submission,recommended,30,NA,https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1399928,"[Excuse Me, Do You Have a Moment to Talk About Version Control?](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1399928)"
 1,Reproducible? Replicable? Robust? Generalisable?,reading,no submission,recommended,10,NA,https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html#rr-overview-definitions,[Reproducible? Replicable? Robust? Generalisable?](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html#rr-overview-definitions)
 1,Six arguments why you benefit from reproducible workflows to your research,reading,no submission,recommended,10,NA,https://the-turing-way.netlify.app/reproducible-research/overview/overview-benefit.html,[Six arguments why you benefit from reproducible workflows to your research](https://the-turing-way.netlify.app/reproducible-research/overview/overview-benefit.html)
-2,Week 2 - Meet RStudio,assignment,GitHub,required,NA,2022-03-08,NA,[Week 2 - Meet RStudio](NA)
+2,Week 2 - Meet RStudio,assignment,GitHub,required,NA,2022-03-15,NA,[Week 2 - Meet RStudio](NA)
 3,Week 3 - Magic of Zotero,assignment,GitHub,required,NA,2022-03-15,NA,[Week 3 - Magic of Zotero](NA)
 4,Week 4 - Practice Open Science,assignment,GitHub,required,NA,2022-03-22,NA,[Week 4 - Practice Open Science](NA)
 5,The Leek group guide to data sharing,reading,no submission,optional,NA,NA,https://github.com/jtleek/datasharing,[The Leek group guide to data sharing](https://github.com/jtleek/datasharing)

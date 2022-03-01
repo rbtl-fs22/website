@@ -6,6 +6,8 @@
 # library -------------------------------------------------------------------
 
 library(googlesheets4)
+library(readr)
+library(dplyr)
 
 # script ------------------------------------------------------------------
 
@@ -26,7 +28,7 @@ googlesheets4::read_sheet("1P-_o2Bwd-Uf4OhjD3_HdzpSSGCx31hZ8Wi67gKegBXI") %>%
     lecturer == "E. Tilley" ~ paste0("[", "Access slides on Moodle", "](", link, ")"),
     lecturer == "L. Schöbitz" ~ paste0("[", "Access slides in browser", "](", link, ")")
     )) %>% 
-  write_csv(here::here("data/tab02_rtbl-slides-resources.csv"))
+  write_csv(here::here("data/tab-02_rtbl-slides-resources.csv"))
 
 ## tab-03_rbtl-course-assignments
 
@@ -39,3 +41,7 @@ googlesheets4::read_sheet("1TJqCe1Np3GkfDpqIJqlMWwlYzV_4qtI-euPE4aKTUa4") %>%
 googlesheets4::read_sheet("1l4rffWN2dSv-q_avSzYCUoFeExl8ben2JenNHHE-HN8") %>% 
   write_csv(here::here("data/tab-05_rbtl-grading-structure.csv"))
 
+## tab-09_rbtl-grading-conversion
+
+googlesheets4::read_sheet("15BSoUBkNOCi_IflsEwJpCojBiSQzZjUsppUxUkg1eHc") %>%
+  write_csv(here::here("data/tab-09_rbtl-grading-conversion.csv"))
