@@ -45,15 +45,85 @@ library(xaringanExtra)
 
 You...
 
+--- 
+class: inverse, middle
+
+.big[Assignments & Grades]
+
 ---
 # Due dates: Assignments 1, 2, and 3
 
-Full points for assignment 1, 2, and 3 if submitted by 15th March
+Full points for assignment 1, 2, and 3 if submitted by **15th March**
 
 ---
 # Submission complete? Full points?
 
 - If you haven't heard from me by Wednesday, then you have successfully submitted your assignment.
+
+---
+# Grade conversion
+
+```{r}
+read_csv(here::here("data/tab-09_rbtl-grading-conversion.csv")) %>% 
+  kbl() %>% 
+  kable_styling(font_size = 16, position = "left") 
+```
+
+.footnote[[Grading scheme and conversion details in syllabus on course website](https://rbtl-fs22.github.io/website/syllabus.html#grading)]
+
+--- 
+class: inverse, middle
+
+# .big[What is Version Control?]
+
+
+---
+# Version Control
+
+A way to share files with others, so they can:
+
+- download
+- re-use
+- contribute
+
+You view the history of files, and jump back in time to any point. 
+
+---
+# Why is it useful?`
+
+```{r echo=FALSE, fig.align = "center", out.width="35%"}
+knitr::include_graphics("img/phd_comics_vc.gif")
+```
+
+---
+# Git and GitHub
+
+.pull-left[
+```{r echo=FALSE, out.width="25%"}
+knitr::include_graphics("img/git-logo.png")
+```
+- Git is a software for version control
+- Released in 2005
+- Popular among programmers collaboratively developing code 
+- Tracks changes in a set of files (directory/folder/repository)
+]
+.pull-right[
+```{r echo=FALSE, out.width="25%"}
+knitr::include_graphics("img/github-logo.png")
+```
+- GitHub is a hosting platform for version control using Git
+- Launched in 2008, aquired by Microsoft in in 2018, Microsoft for US$ 7.5 billion
+- 73 million Users ([February, 2022](https://github.com/about))
+- Facebook for Software Developers
+]
+
+---
+
+
+
+
+
+
 
 ---
 class: center, middle
