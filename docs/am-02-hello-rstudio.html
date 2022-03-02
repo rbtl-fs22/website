@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://rbtl-fs22.github.io/website/schedule.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -88,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>rbtl: Schedule</title>
+  <title>rbtl: Assignment 2 - Hello RStudio</title>
 
 
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="rbtl: Schedule"/>
+  <meta property="og:title" content="rbtl: Assignment 2 - Hello RStudio"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="rbtl"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="rbtl: Schedule"/>
+  <meta property="twitter:title" content="rbtl: Assignment 2 - Hello RStudio"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Schedule"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 2 - Hello RStudio"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2101,12 +2100,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Schedule","authors":[]}
+{"title":"Assignment 2 - Hello RStudio","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2137,166 +2136,9 @@ Assignments
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Schedule">Schedule</h1>
-<a href="posts/week1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 24, 2022</div>
-<div class="dt-authors"></div>
-</div>
-<div class="thumbnail">
-<img src="posts/week1/img/roadmap.jpg"/>
-</div>
-<div class="description">
-<h2>Week 1 - Welcome to rbtl!</h2>
-<div class="dt-tags"></div>
-<p>In our first lecture, we will discuss the objectives and intentions of the course, begin our discussion on terminology and get to know each other.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Schedule</h1>
+<h1>Assignment 2 - Hello RStudio</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2304,7 +2146,56 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#terminology">Terminology</a></li>
+</ul></li>
+<li><a href="#tasks">Tasks</a></li>
+<li><a href="#video">Video</a></li>
+</ul>
+</nav>
+</div>
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+<h1 id="introduction">Introduction</h1>
+<p>Well done, you now have a GitHub Account and a home for your future projects. In this next assignment, you will setup your RStudio Cloud infrastructure which we will you to work with R and the RStudio IDE. You will follow through another set of tasks that will expose you to the workflow we will use in this course. Once again, we do not expect you to understand exactly what you are doing at each step. The main purpose is to set you up and expose you to the tools before we get going with your own data in Week 8.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>We assume that you have:</p>
+<ol type="1">
+<li>Completed Assignment 1 of this course. If you have not, follow the instructions here: <a href="https://rbtl-fs22.github.io/website/am-01-hello-github.html" class="uri">https://rbtl-fs22.github.io/website/am-01-hello-github.html</a></li>
+<li>Stored your GitHub Personal Access Token in a secure and accessible place.</li>
+</ol>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>In this unit, you will learn to:</p>
+<ul>
+<li>Clone a repository from GitHub into the RStudio Cloud</li>
+<li>Render an R Markdown file using the RStudio IDE</li>
+<li>Commit changes to files in a repository using the RStudio IDE</li>
+<li>Push tracked changes to GitHub</li>
+</ul>
+<h2 id="terminology">Terminology</h2>
+<ul>
+<li><strong>R Markdown:</strong> A dialect of Markdown that allows authors to mix prose and code (usually written in R) in a single document. <a href="https://glosario.carpentries.org/en/#r_markdown">[glosario reference]</a></li>
+<li><strong>git commit:</strong> As a verb, the act of saving a set of changes to a database or version control repository. As a noun, the changes saved. <a href="https://glosario.carpentries.org/en/#commit">[glosario reference]</a></li>
+<li><strong>git clone:</strong> Copies (and usually downloads) of a Git remote repository on a local computer. <a href="https://glosario.carpentries.org/en/#git_clone">[glosario reference]</a></li>
+<li><strong>git push:</strong> Uploads and synchronizes changes between a local repository and a remote repository. <a href="https://glosario.carpentries.org/en/#git_push">[glosario reference]</a></li>
+<li><strong>remote repository:</strong> A repository located on another computer (e.g. GitHub). Tools such as Git are designed to synchronize changes between local and remote repositories in order to share work. <a href="https://glosario.carpentries.org/en/#remote_repository">[glosario reference]</a></li>
+<li><strong>local repository:</strong> A copy of a repository that we use as our primary workspace where we create, edit, and delete files. This copy is commonly referred to as the local repository. The local repository most commonly exists on our computer or laptop, but can also exist within a workspace on a server (e.g. RStudio Cloud, JupyterHub). <a href="https://datasciencebook.ca/Getting-started-with-version-control.html#version-control-repositories">[text reference]</a></li>
+</ul>
+<h1 id="tasks">Tasks</h1>
+<ol type="1">
+<li>You have received an email invitation from GitHub to join the GitHub Organisation (rbtl-fs22) for this course. If you have not, please make sure that you completed Assignment 1 first and then contact Lars by email.</li>
+<li>Join the RStudio Cloud Workspace for the course (Login with your GitHub details) by clicking on the following link: <a href="https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE" class="uri">https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE</a></li>
+<li>Follow through with the instructions in the video below to complete the remaining tasks</li>
+</ol>
+<h1 id="video">Video</h1>
+<iframe width="560" height="400" src="https://www.youtube.com/embed/kLcL71bHrF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

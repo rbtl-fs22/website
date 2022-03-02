@@ -19,6 +19,8 @@ navbar:
       menu:
         - text: "Assignment 01"
           href: am-01-hello-github.html
+        - text: "Assignment 02"
+          href: am-02-hello-rstudio.html
 output: 
   distill::distill_article:
     toc: true
