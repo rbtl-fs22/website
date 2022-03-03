@@ -1,0 +1,90 @@
+---
+title: "Assignment 3 - Reference Management with Zotero"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+We are using the Zotero reference manager to organize and collaborate on our reference libraries.
+
+## Prerequisites
+
+We assume that you have:
+
+
+
+## Learning Objectives
+
+In this unit, you will learn to:
+
+1. Create a Zotero Account
+2. Add references to Zotero using the Zotero Connector browser add-on
+3. Setup a common citekey
+4. Use the autopin functionality to update citekeys
+
+## Terminology
+
+
+# Tasks 
+
+## 1. Setup Zotero Account
+
+Open https://www.zotero.org/user/login/
+Click on "Register for a free account"
+Chose username, email, and password
+Click "Register"
+Open your email and verify your account
+
+## 2. Join GHE Group Library
+
+Login into Zotero: https://www.zotero.org/user/login/
+Open GHE Group Library: https://www.zotero.org/groups/4445072/global_health_engineering
+Click on "Join" button
+Wait for group admin to confirm your membership or contact Schöbitz Lars if you require immediate access
+
+## 3. Install Zotero Desktop Client
+
+Open https://www.zotero.org/download/
+Download Zotero for your operating system
+Install Zotero
+
+## 4. Watch the Video and setup Zotero Preferences
+
+The following video provides instruction to:
+
+Install Zotero Connector
+Install Better BibTeX for Zotero Add-on
+Make a few important settings
+
+The following three links are used in the video:
+
+https://www.zotero.org/
+https://retorque.re/zotero-better-bibtex/installation/
+https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+
+The CiteKey to use in the Zotero preferences (minute 04:40) is:
+
+[auth:lower][year][veryshorttitle1_0:lower]
+
+## 5. Change setting for citykey autopin delay
+
+Open Zotero
+Open Zotero Preferences
+Click "Advanced" tab
+At the bottom of the window under "Advanced Configuration", click: "Config Editor"
+Click "I accept the risk!"
+In the search bar, search for "autopin"
+Double click into the field under "Value"
+In the new windows with the title "Enter integer value" change value from 0 to 2
+Click "OK"
+
+
+# Video
+
+<iframe width="560" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
