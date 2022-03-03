@@ -1,6 +1,6 @@
 ---
 title: "rbtl - Research Beyond the Lab"
-subtitle: "Tools for the course"  
+subtitle: "Version control and more tools"  
 author: "Lars Schöbitz"
 date: '`r Sys.Date()`'
 output:
@@ -29,23 +29,14 @@ library(palmerpenguins)
 library(xaringanExtra)
 ```
 
----
-# Outline
+# Today
 
-- Goals
-- Assignments
-- GitHub
-- RStudio Cloud
-- RStudio IDE
-- R
-- Version control system
+1. Assignment grading and conversion
+2.-Assignment 2 - Objectives
+3. What is Version Control
+4. RStudio Cloud & RStudio IDE
 
 ---
-# Goals for today
-
-You...
-
---- 
 class: inverse, middle
 
 .big[Assignments & Grades]
@@ -53,7 +44,9 @@ class: inverse, middle
 ---
 # Due dates: Assignments 1, 2, and 3
 
-Full points for assignment 1, 2, and 3 if submitted by **15th March**
+Full points for assignment 1, 2, and 3 if submitted by:
+
+.large[**15th March**]
 
 ---
 # Submission complete? Full points?
@@ -71,7 +64,7 @@ read_csv(here::here("data/tab-09_rbtl-grading-conversion.csv")) %>%
 
 .footnote[[Grading scheme and conversion details in syllabus on course website](https://rbtl-fs22.github.io/website/syllabus.html#grading)]
 
---- 
+---
 class: inverse, middle
 
 # .big[What is Version Control?]
@@ -86,17 +79,17 @@ A way to share files with others, so they can:
 - re-use
 - contribute
 
-You view the history of files, and jump back in time to any point. 
+You can view the history of files, and jump back in time to any point. 
 
 ---
-# Why is it useful?`
+# Why is it useful?
 
-```{r echo=FALSE, fig.align = "center", out.width="35%"}
+```{r echo=FALSE, fig.align = "center", out.width="40%"}
 knitr::include_graphics("img/phd_comics_vc.gif")
 ```
 
 ---
-# Git and GitHub
+# Git and GitHub 
 
 .pull-left[
 ```{r echo=FALSE, out.width="25%"}
@@ -118,12 +111,122 @@ knitr::include_graphics("img/github-logo.png")
 ]
 
 ---
+class: inverse, middle
+
+# .large[Homework Assignment 2]
+***
+## Version Control - Terminology
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.001.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.002.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.003.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.004.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.005.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.006.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.007.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.008.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.009.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.010.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.011.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.012.png)
+background-size: contain
 
 
+---
+class: inverse, middle
+
+# .large[RStudio]
+***
+# RStudio Cloud & RStudio IDE
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.013.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.014.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.015.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.016.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.017.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.018.png)
+background-size: contain
+
+---
+class: left
+background-image: url(../illustration-slides/illustration-slides.019.png)
+background-size: contain
 
 
+---
+background-image: url(img/questions.jpg)
+background-size: contain
+background-position: right
 
-
+.footnote[Photo by: [Matt Walsh](https://unsplash.com/photos/tVkdGtEe2C4)]
 
 ---
 class: center, middle
