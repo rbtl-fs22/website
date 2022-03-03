@@ -1,0 +1,50 @@
+---
+title: "Assignment 2 - Hello RStudio"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Well done, you now have a GitHub Account and a home for your future projects. In this next assignment, you will setup your RStudio Cloud infrastructure which we will you to work with R and the RStudio IDE. You will follow through another set of tasks that will expose you to the workflow we will use in this course. Once again, we do not expect you to understand exactly what you are doing at each step. The main purpose is to set you up and expose you to the tools before we get going with your own data in Week 8. 
+
+## Prerequisites
+
+We assume that you have:
+
+1. Completed Assignment 1 of this course. If you have not, follow the instructions here: https://rbtl-fs22.github.io/website/am-01-hello-github.html
+2. Stored your GitHub Personal Access Token in a secure and accessible place.
+
+## Learning Objectives
+
+In this unit, you will learn to:
+
+- Clone a repository from GitHub into the RStudio Cloud
+- Render an R Markdown file using the RStudio IDE
+- Commit changes to files in a repository using the RStudio IDE
+- Push tracked changes to GitHub
+
+## Terminology
+
+- **R Markdown:** A dialect of Markdown that allows authors to mix prose and code (usually written in R) in a single document. [[glosario reference]](https://glosario.carpentries.org/en/#r_markdown)
+- **git commit:** As a verb, the act of saving a set of changes to a database or version control repository. As a noun, the changes saved. [[glosario reference]](https://glosario.carpentries.org/en/#commit)
+- **git clone:** Copies (and usually downloads) of a Git remote repository on a local computer. [[glosario reference]](https://glosario.carpentries.org/en/#git_clone) 
+- **git push:** Uploads and synchronizes changes between a local repository and a remote repository. [[glosario reference]](https://glosario.carpentries.org/en/#git_push) 
+- **remote repository:** A repository located on another computer (e.g. GitHub). Tools such as Git are designed to synchronize changes between local and remote repositories in order to share work. [[glosario reference]](https://glosario.carpentries.org/en/#remote_repository) 
+- **local repository:** A copy of a repository that we use as our primary workspace where we create, edit, and delete files. This copy is commonly referred to as the local repository. The local repository most commonly exists on our computer or laptop, but can also exist within a workspace on a server (e.g. RStudio Cloud, JupyterHub). [[text reference]](https://datasciencebook.ca/Getting-started-with-version-control.html#version-control-repositories)
+
+# Tasks 
+
+1. You have received an email invitation from GitHub to join the GitHub Organisation (rbtl-fs22) for this course. If you have not, please make sure that you completed Assignment 1 first and then contact Lars by email.
+2. Join the RStudio Cloud Workspace for the course (Login with your GitHub details) by clicking on the following link:
+https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE
+3. Follow through with the instructions in the video below to complete the remaining tasks
+
+# Video
+
+<iframe width="560" height="400" src="https://www.youtube.com/embed/kLcL71bHrF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

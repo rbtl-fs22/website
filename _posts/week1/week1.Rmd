@@ -31,7 +31,7 @@ knitr::include_graphics("img/roadmap.jpg")
 
 # Learning Objectives
 
-This first lectures consists of two parts, each of which have specific learning objectives. 
+This first lecture consists of two parts, each of which have specific learning objectives. 
 
 ## Part 1 
 
@@ -64,7 +64,7 @@ lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 
 ```{r}
 
-read_csv(here::here("data/tab02_rtbl-slides-resources.csv")) %>% 
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
   filter(week == params$week) %>% 
   select(title, lecturer, part, slides) %>% 
   kableExtra::kbl() %>% 
