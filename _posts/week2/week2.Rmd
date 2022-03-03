@@ -1,5 +1,5 @@
 ---
-title: "Week 1 - Welcome to rbtl!"
+title: "Week 2 - Waste Research!"
 description: |
   What is waste and why do we care about it? We discuss the solid waste service change in both majority countries and in Switzerland and compare the challenges. We discuss how to properly formulate a research question which will then form the basis of the group project.
 date: 2022-03-03
@@ -32,7 +32,7 @@ knitr::include_graphics("img/toolbox.jpg")
 
 # Learning Objectives
 
-This first lecture consists of two parts, each of which have specific learning objectives. 
+This lecture consists of two parts, each of which have specific learning objectives. 
 
 ## Part 1 
 
@@ -50,6 +50,8 @@ lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 1. `r lobj1[4]`
 
 ## Part 2
+
+These learning objectives are related to the assignment for this week.
 
 ```{r}
 
