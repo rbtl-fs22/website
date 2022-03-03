@@ -1,0 +1,99 @@
+---
+title: "Week 1 - Welcome to rbtl!"
+description: |
+  What is waste and why do we care about it? We discuss the solid waste service change in both majority countries and in Switzerland and compare the challenges. We discuss how to properly formulate a research question which will then form the basis of the group project.
+date: 2022-03-03
+params:
+    week: 2
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/toolbox.jpg    
+---
+
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Barn Images](https://unsplash.com/@barnimages)"}
+
+knitr::include_graphics("img/toolbox.jpg")
+
+```
+
+# Learning Objectives
+
+This first lecture consists of two parts, each of which have specific learning objectives. 
+
+## Part 1 
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+1. `r lobj1[3]`
+1. `r lobj1[4]`
+
+## Part 2
+
+```{r}
+
+lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj2[1]`
+2. `r lobj2[2]`
+3. `r lobj2[3]`
+3. `r lobj2[4]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+
+# Group work
+
+- Groups will decide on a main research question and up to 3 (MAX) sub-questions. The group will present their work in the following class verbally without any required submission. 
+
+## Papers 
+
+- Fandino, W. (2019). Formulating a good research question: Pearls and pitfalls. Indian Journal of Anaesthesia, 63(8), 611..
+
+# Homework
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
