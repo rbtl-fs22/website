@@ -1,15 +1,27 @@
 [
   {
+    "path": "posts/week3/",
+    "title": "Week 3 - Research Design",
+    "description": "Having a good research design will ensure that you are not “comparing apples to oranges”. We discuss the sample population, the concept of randomization, and classic study designs.",
+    "author": [],
+    "date": "2022-03-10",
+    "categories": [],
+    "contents": "\n\nContents\nLearning Objectives\nPart 1\nPart 2\n\nSlides\nGroup work\nPapers\n\nHomework\n\n\n\n\n\n\n\n\nFigure 1: Photo by Hans-Peter Gauster\n\n\n\nLearning Objectives\nThis lecture consists of two parts, each of which have specific learning objectives.\nPart 1\n\n\n\nLearners are able to identify and select the most appropriate research design for the given research question\nLearners are able to articulate the relative pros and cons of cross-sectional, longitudinal, and experimental designs\nLearners are able to identify their target population and how it will be reached\nPart 2\nThese learning objectives are related to the assignment for this week.\n\n\n\nLearners are able to import references to a Zotero group library\nLearners can use an exported library from Zotero in Better BibTex Format to generate an automated reference list in an R Markdown file\nSlides\n\n\ntitle\n\n\nlecturer\n\n\npart\n\n\nslides\n\n\nGroup work\nGroups will decide on a research design, a sample population, and revise the research questions if necessary. Each group will present their new design next week.\nPapers\nChapter 1: Bickman, L., Rog, D. J., & Hedrick, T. E. (2009). Applied research design: A practical approach. Handbook of Applied Social Research Methods. Sage: London.\nHomework\n\n\nid\n\n\ntitle_link\n\n\ntype\n\n\ncategory\n\n\neffort_estimate_min\n\n\nsubmission_format\n\n\ndue_date\n\n\n1\n\n\nWeek 3 - Magic of Zotero\n\n\nassignment\n\n\nrequired\n\n\n\n\nGitHub\n\n\n2022-03-15\n\n\n\n\n\n",
+    "preview": "posts/week3/img/hans-peter-gauster-3y1zF4hIPCg-unsplash.jpg",
+    "last_modified": "2022-03-07T16:50:52+01:00",
+    "input_file": "week3.knit.md"
+  },
+  {
     "path": "posts/week2/",
-    "title": "Week 2 - Waste Research!",
+    "title": "Week 2 - Waste Research",
     "description": "What is waste and why do we care about it? We discuss the solid waste service change in both majority countries and in Switzerland and compare the challenges. We discuss how to properly formulate a research question which will then form the basis of the group project.",
     "author": [],
     "date": "2022-03-03",
     "categories": [],
     "contents": "\n\nContents\nLearning Objectives\nPart 1\nPart 2\n\nSlides\nGroup work\nPapers\n\nHomework\n\n\n\n\n\n\n\n\nFigure 1: Photo by Barn Images\n\n\n\nLearning Objectives\nThis lecture consists of two parts, each of which have specific learning objectives.\nPart 1\n\n\n\nLearners are able to change a non-FINER/PICOT research question into one\nLearners are able to create a FINER/PICOT research question\nLearners can compare the solid waste management challenges between the minority and majority world\nLearners are able to define Main and Sub-research questions\nPart 2\nThese learning objectives are related to the assignment for this week.\n\n\n\nLearners can clone a repository from GitHub into the RStudio Cloud\nLearners can render an R Markdown file using the RStudio IDE\nLearners can commit changes to files in a git repository using the RStudio IDE\nLearners can push changes to a files tracked in a git repository to GitHub\nSlides\n\n\ntitle\n\n\nlecturer\n\n\npart\n\n\nslides\n\n\nWaste Research\n\n\nE. Tilley\n\n\nPart 1\n\n\nAccess slides on Moodle\n\n\nVersion control and more tools\n\n\nL. Schöbitz\n\n\nPart 2\n\n\nAccess slides in browser\n\n\nGroup work\nGroups will decide on a main research question and up to 3 (MAX) sub-questions. The group will present their work in the following class verbally without any required submission.\nPapers\nFandino, W. (2019). Formulating a good research question: Pearls and pitfalls. Indian Journal of Anaesthesia, 63(8), 611..\nHomework\n\n\nid\n\n\ntitle_link\n\n\ntype\n\n\ncategory\n\n\neffort_estimate_min\n\n\nsubmission_format\n\n\ndue_date\n\n\n1\n\n\nWeek 2 - Meet RStudio\n\n\nassignment\n\n\nrequired\n\n\n45\n\n\nGitHub\n\n\n2022-03-15\n\n\n2\n\n\nCollaboration with version control (Chapters 12.1 to 12.5)\n\n\nreading\n\n\nrequired\n\n\n30\n\n\nno submission\n\n\n\n\n\n\n\n",
     "preview": "posts/week2/img/toolbox.jpg",
-    "last_modified": "2022-03-03T12:21:22+01:00",
-    "input_file": {}
+    "last_modified": "2022-03-07T16:50:51+01:00",
+    "input_file": "week2.knit.md"
   },
   {
     "path": "posts/week1/",
@@ -20,7 +32,7 @@
     "categories": [],
     "contents": "\n\nContents\nLearning Objectives\nPart 1\nPart 2\n\nSlides\nGroup work\nPapers\n\nHomework\n\n\n\n\n\n\n\n\nFigure 1: Photo by Jaromír Kavan\n\n\n\nLearning Objectives\nThis first lecture consists of two parts, each of which have specific learning objectives.\nPart 1\n\n\n\nLearners understand the structure of the course, including expectations and outputs\nLearners will be able to articulate the assumptions and histories associated with “field work”\nPart 2\n\n\n\nLearners can navigate the platforms that are used to distribute course information\nLearners can create a repository on GitHub\nLearners can edit a file on GitHub\nSlides\n\n\ntitle\n\n\nlecturer\n\n\npart\n\n\nslides\n\n\nIntroduction to rbtl\n\n\nE. Tilley\n\n\nPart 1\n\n\nAccess slides on Moodle\n\n\nWelcome to the course!\n\n\nL. Schöbitz\n\n\nPart 2\n\n\nAccess slides in browser\n\n\nGroup work\nDecide, within your group, who will take each of the five papers in (groups of 5: 1 person for each paper)\nRead your paper for next class. Pay close attention to:\nThe research question\nThe methods the authors use to collect their data\nThe variables (and units) that are measured\nThe types of analysis that is used to answer the research question\n\nYou will use your paper to inspire conversations within your group as you work through the subsequent exercises in the coming weeks.\nEnjoy!\nPapers\nO’Brien, J., & Thondhlana, G. (2019). Plastic bag use in South Africa: Perceptions, practices and potential intervention strategies. Waste Management, 84, 320-328.\nFerronato, N., Preziosi, G., Portillo, M. A. G., Lizarazu, E. G. G., & Torretta, V. (2020). Assessment of municipal solid waste selective collection scenarios with geographic information systems in Bolivia. Waste Management, 102, 919-931.\nNemathaga, F., Maringa, S., & Chimuka, L. (2008). Hospital solid waste management practices in Limpopo Province, South Africa: A case study of two hospitals. Waste Management, 28(7), 1236-1245.\nPathak, D. R., Mainali, B., Abuel-Naga, H., Angove, M., & Kong, I. (2020). Quantification and characterization of the municipal solid waste for sustainable waste management in newly formed municipalities of Nepal. Waste Management & Research, 38(9), 1007-1018.\nPhilippe, F., & Culot, M. (2009). Household solid waste generation and characteristics in Cape Haitian city, Republic of Haiti. Resources, Conservation and Recycling, 54(2), 73-78.\nHomework\n\n\nid\n\n\ntitle_link\n\n\ntype\n\n\ncategory\n\n\neffort_estimate_min\n\n\nsubmission_format\n\n\ndue_date\n\n\n1\n\n\nWeek 1 - Hello GitHub\n\n\nassignment\n\n\nrequired\n\n\n45\n\n\nGitHub\n\n\n2022-03-15\n\n\n2\n\n\nRead the Syllabus carefully\n\n\nreading\n\n\nrequired\n\n\n15\n\n\nno submission\n\n\n\n\n3\n\n\nWhat is open source?\n\n\nreading\n\n\nrequired\n\n\n15\n\n\nno submission\n\n\n\n\n4\n\n\nExcuse Me, Do You Have a Moment to Talk About Version Control?\n\n\nreading\n\n\nrecommended\n\n\n30\n\n\nno submission\n\n\n\n\n5\n\n\nReproducible? Replicable? Robust? Generalisable?\n\n\nreading\n\n\nrecommended\n\n\n10\n\n\nno submission\n\n\n\n\n6\n\n\nSix arguments why you benefit from reproducible workflows to your research\n\n\nreading\n\n\nrecommended\n\n\n10\n\n\nno submission\n\n\n\n\n\n\n\n",
     "preview": "posts/week1/img/roadmap.jpg",
-    "last_modified": "2022-03-03T12:21:21+01:00",
-    "input_file": {}
+    "last_modified": "2022-03-07T16:50:50+01:00",
+    "input_file": "week1.knit.md"
   }
 ]
