@@ -2,7 +2,8 @@
 title: "rbtl - Research Beyond the Lab"
 subtitle: "Reference management with Zotero"  
 author: "Lars Schöbitz"
-date: '`r Sys.Date()`'
+date: '
+  `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     css: ["default", "../xaringan-themer.css", "../slides.css"]
@@ -75,6 +76,7 @@ class: inverse, middle
 - Mendeley 
 - EndNote
 - **Zotero**
+- many, many more
 
 ???
 
@@ -175,6 +177,12 @@ background-size: contain
 
 .footnote[The Turing Way Community, & Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
 
+---
+# Homework
+
+- Assignment 3, due on 15th March
+- Readings
+
 
 ---
 class: center, middle
@@ -187,6 +195,8 @@ Slides created via the R packages:
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
 
 The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d03-reference-management/pt2-d03-reference-management.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
 

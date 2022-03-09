@@ -26,8 +26,10 @@ googlesheets4::read_sheet("1HaEIV5K85p2kER8BmIsmkk6cAoEw6tZz-X6pP9B8PMY") %>%
 googlesheets4::read_sheet("1P-_o2Bwd-Uf4OhjD3_HdzpSSGCx31hZ8Wi67gKegBXI") %>% 
   mutate(slides = case_when(
     lecturer == "E. Tilley" ~ paste0("[", "Access slides on Moodle", "](", link, ")"),
-    lecturer == "L. Schöbitz" ~ paste0("[", "Access slides in browser", "](", link, ")")
+    lecturer == "L. Schöbitz" & format == "html" ~ paste0("[", "Access slides in browser", "](", link, ")"),
+    lecturer == "L. Schöbitz" & format == "pdf" ~ paste0("[", "Access slides as PDF", "](", link, ")")
     )) %>% 
+  select(-format) %>% 
   write_csv(here::here("data/tab-02_rtbl-slides-resources.csv"))
 
 ## tab-03_rbtl-course-assignments
