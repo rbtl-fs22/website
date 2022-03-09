@@ -31,9 +31,9 @@ library(xaringanExtra)
 
 # Today
 
-1. Assignment grading and conversion
-1. What is Version Control?
-1. RStudio Cloud & RStudio IDE
+1. Reference Management - Zotero
+1. Open Source - Licenses
+1. Reproducible Research
 
 ---
 class: inverse, middle
@@ -99,16 +99,81 @@ knitr::include_graphics("img/zotero-open-source.png")
 .footnote[[Screenshot taken from zotero.org on 2022-03-03](https://www.zotero.org/)]
 
 ---
-# Open Source - Why is that good?
+# Zotero is Open Source - Why is that good?
 
-- Free
+- Free Software
 - Transparent about access to your own data
 - The source code that Zotero is developed in is public
 - Commitment to support open software and open standards
-- Zotero developers helped create the [Citation Style Langauge (CSL)](https://citationstyles.org/)
+- Zotero developers helped create the open [Citation Style Langauge (CSL)](https://citationstyles.org/)
+
+---
+# Open Source - Licenses
+
+- [Open Source isn't just code on the internet](https://open-source-for-researchers.github.io/open-source-workshop/01-what-is-open-source)
+
+- Use permissive licenses to allow others to reuse, remix and build upon (also for commercial purposes)
+- Recommended licenses 
+    - **Text, slides, images**: [Creative Commons](https://creativecommons.org/about/cclicenses/) (CC0, CC-BY, CC-BY-SA) 
+    - **Software**: [MIT License](https://en.wikipedia.org/wiki/MIT_License), [Hippocratic License](https://firstdonoharm.dev/), [Unlicense](https://unlicense.org/) for software
+
+- https://tldrlegal.com/ - plain english explanations of licences in bullet form.
+- https://kbroman.org/steps2rr/pages/licenses.html - Read Karl Broman
+???
+
+- CCO: a public dedication tool, which allows creators to give up their copyright and put their works into the worldwide public domain
+- CC-BY: attribution to the creator. The license allows for commercial use.
+- CC-BY-SA: attribution. you must license the modified material under identical terms
+
+- MIT License: As a permissive license, it puts only very limited restriction on reuse
+- Hippocratic license: Ethical Source license that specifically prohibits the use of software to violate universal standards of human rights, and embodying the [Ethical Source Principles](https://ethicalsource.dev/principles/).
+- Unlicense: A template for dedicating your software to the public domain
+
+---
+class: inverse, middle
+
+.big[Open Source != Open Access]
+
+???
+
+- Papers and journal articles that are not paywalled
+- Paywall removed from either publishers or research institutions/libraries
+
+From: https://open-source-for-researchers.github.io/open-source-workshop/01-what-is-open-source
 
 
+---
+class: inverse, middle
 
+.big[Open Source != Open Data]
+
+
+???
+
+- Refers to the practice of sharing the data that produces your results
+- This is especially important if you write code that depends in the data - 
+- the code can’t usually be re-run without it.
+
+From: https://open-source-for-researchers.github.io/open-source-workshop/01-what-is-open-source
+
+
+---
+
+https://the-turing-way.netlify.app/_images/reproducibility.jpg
+class: inverse, middle
+
+.large[Open Source (Code) + Open Data =   
+Reproducible Research]
+
+---
+class: left
+background-image: url(https://the-turing-way.netlify.app/_images/reproducibility.jpg)
+background-position: right
+background-size: contain
+
+# Reproducible Research
+
+.footnote[The Turing Way Community, & Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
 
 
 ---
