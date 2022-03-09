@@ -24,9 +24,21 @@ xaringans <- dir_info(recurse = 3, glob = "slides/*.Rmd") %>%
   filter(!str_detect(path, "setup")) %>%
   pull(path)
 
-walk(xaringans, render)
+# walk(xaringans, render)
 
-#walk(xaringans, pagedown::chrome_print)
+# generate PDFs -----------------------------------------------------------
+
+for (i in seq_along(slide_paths)) {
+  fs::file_copy(path = "slides/slides.css", new_path = slide_paths[i])
+  fs::file_copy(path = "slides/xaringan-themer.css", new_path = slide_paths[i])
+}
+
+walk(xaringans, pagedown::chrome_print)
+
+for (i in seq_along(slide_paths)) {
+  fs::file_delete(path = paste0(slide_paths[i], "/slides.css"))
+  fs::file_delete(path = paste0(slide_paths[i], "/xaringan-themer.css"))
+}
 
 # render slides in viewer pane --------------------------------------------
 

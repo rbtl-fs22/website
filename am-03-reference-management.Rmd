@@ -1,0 +1,95 @@
+---
+title: "Assignment 3 - Reference Management with Zotero"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+We are using the Zotero reference manager to organize and collaborate on our reference libraries.
+
+## Prerequisites
+
+We assume that you have:
+
+1. Completed Assignment 1 & 2 of this course. If you have not, follow the instructions here: 
+
+  - Assignment 1: https://rbtl-fs22.github.io/website/am-01-hello-github.html
+  - Assignment 2: https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html
+
+## Learning Objectives
+
+In this unit, you will learn to:
+
+1. Create a Zotero Account
+2. Add references to Zotero using the Zotero Connector browser add-on
+3. Setup a common citekey
+4. Use the autopin functionality to update citekeys
+
+## Terminology
+
+- **Open Source**
+  - Open Data Handbook Glossary http://opendatahandbook.org/glossary/en/terms/open-source/
+  - FORRT (Framework for Open and Reproducible Research Training) Glossary: https://forrt.org/glossary/open-source-software/
+
+# Tasks 
+
+## 1. Setup Zotero Account
+
+1. Open https://www.zotero.org/user/login/
+2. Click on "Register for a free account"
+3. Chose username, email, and password
+4. Click "Register"
+5. Open your email and verify your account
+
+## 2. Join GHE Group Library
+
+1. Login into Zotero: https://www.zotero.org/user/login/
+2. Open GHE Group Library: https://www.zotero.org/groups/4609540/rbtl
+3. Click on "Join" button
+4. Wait for group admin to confirm your membership or contact Lars if you require immediate access
+
+## 3. Install Zotero Desktop Client
+
+1. Open https://www.zotero.org/download/
+2. Download Zotero for your operating system
+3. Install Zotero
+
+## 4. Watch the Video and setup Zotero Preferences
+
+The following video provides instruction to:
+
+1. Install Zotero Connector for the Firefox browser
+2. Install Better BibTeX for Zotero Add-on
+3. Edit the Zotero CiteKey preferences to the following (Minute **XX:XX**):
+
+`[auth:lower][year][veryshorttitle1_0:lower]`
+
+4. Change setting for CityKey autoping delay, also listed here:
+    - Open Zotero
+    - Open Zotero Preferences
+    - Click "Advanced" tab
+    - At the bottom of the window under "Advanced Configuration", click: "Config Editor"
+    - Click "I accept the risk!"
+    - In the search bar, search for "autopin"
+    - Double click into the field under "Value"
+    - In the new windows with the title "Enter integer value" change value from 0 to 2
+    - Click "OK"
+
+The following links are used in the video:
+
+- https://www.zotero.org/  
+- https://retorque.re/zotero-better-bibtex/installation/  
+- https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989  
+
+# Video (posted on 2022-03-10)
+
+<iframe width="560" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Acknowledgements
+
+The settings that are used in these instructions are inspired by [Cortex Futura: How to install Zotero, BetterBibTex and Zotfile](https://www.youtube.com/watch?v=Nm5BsfMfO9M). 

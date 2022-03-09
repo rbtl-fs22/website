@@ -1,0 +1,99 @@
+---
+title: "Week 3 - Research Design"
+description: |
+  Having a good research design will ensure that you are not “comparing apples to oranges”. We discuss the sample population, the concept of randomization, and classic study designs.
+date: 2022-03-10
+params:
+    week: 3
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/hans-peter-gauster-3y1zF4hIPCg-unsplash.jpg  
+---
+
+
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Hans-Peter Gauster](https://unsplash.com/@sloppyperfectionist)"}
+
+knitr::include_graphics("img/hans-peter-gauster-3y1zF4hIPCg-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+This lecture consists of two parts, each of which have specific learning objectives. 
+
+## Part 1 
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+1. `r lobj1[3]`
+
+## Part 2
+
+These learning objectives are related to the assignment for this week.
+
+```{r}
+
+lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj2[1]`
+1. `r lobj2[2]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+
+# Group work
+
+- Groups will decide on a research design, a sample population, and revise the research questions if necessary. Each group will present their new design next week. 
+
+## Papers 
+
+- Chapter 1: Bickman, L., Rog, D. J., & Hedrick, T. E. (2009). Applied research design: A practical approach. Handbook of Applied Social Research Methods. Sage: London.
+
+# Homework
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
