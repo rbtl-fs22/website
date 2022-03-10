@@ -4,7 +4,7 @@
     <title>rbtl - Research Beyond the Lab</title>
     <meta charset="utf-8" />
     <meta name="author" content="Lars Schöbitz" />
-    <meta name="date" content="2022-03-09" />
+    <meta name="date" content="2022-03-10" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 # rbtl - Research Beyond the Lab
 ## Reference management with Zotero
 ### Lars Schöbitz
-### 2022-03-09
+### 2022-03-10
 
 ---
 
@@ -34,11 +34,150 @@ class: center, middle, inverse, title-slide
 
 
 
+
+
+
 # Today
 
+1. Homework Assignment 2
 1. Reference Management - Zotero
 1. Open Source - Licenses
 1. Reproducible Research
+1. Homework Assignment 3
+
+
+
+
+---
+# Homework Assignment 2
+
+
+```r
+dat_in_sum_day &lt;- dat_in %&gt;% 
+  filter(value &lt;= 1000) %&gt;% 
+  mutate(date = as_date(date_time)) %&gt;% 
+  group_by(date, location, indicator) %&gt;% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+---
+# Homework Assignment 2
+
+
+```r
+*dat_in_sum_day &lt;- dat_in %&gt;%
+  filter(value &lt;= 1000) %&gt;% 
+  mutate(date = as_date(date_time)) %&gt;% 
+  group_by(date, location, indicator) %&gt;% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+---
+# Homework Assignment 2
+
+
+```r
+dat_in_sum_day &lt;- dat_in %&gt;% 
+* filter(value &lt;= 1000) %&gt;%
+* mutate(date = as_date(date_time)) %&gt;%
+* group_by(date, location, indicator) %&gt;%
+* summarise(min = min(value),
+*           median = median(value),
+*           mean = mean(value),
+*           sd = sd(value),
+*           max = max(value))
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+
+---
+# Homework Assignment 2
+
+
+```r
+dat_in_sum_day `&lt;-` dat_in %&gt;% 
+  filter(value &lt;= 1000) %&gt;% 
+  mutate(date = as_date(date_time)) %&gt;% 
+  group_by(date, location, indicator) %&gt;% 
+  summarise(min = min(value), 
+            median = median(value), 
+            mean = mean(value), 
+            sd = sd(value), 
+            max = max(value))  
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+- Assignment operator: `&lt;-`
+
+---
+# Homework Assignment 2
+
+
+```r
+dat_in_sum_day &lt;- dat_in `%&gt;%`  
+  filter(value &lt;= 1000) `%&gt;%`
+  mutate(date = as_date(date_time)) `%&gt;%` 
+  group_by(date, location, indicator) `%&gt;%` 
+  summarise(min = min(value), 
+            median = median(value), 
+            mean = mean(value), 
+            sd = sd(value),  
+            max = max(value))  
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+- Assignment operator: `&lt;-`
+- Pipe operators: `%&gt;%`
+
+---
+# Homework Assignment 2 - Imported raw data 
+
+
+```r
+dat_link &lt;- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
+
+dat_in &lt;- read_csv(dat_link)
+
+dat_in
+```
+
+---
+# Summarised derived data 
+
+.pull-left[
+
+```r
+dat_in_sum_day &lt;- dat_in %&gt;% 
+  filter(value &lt;= 1000) %&gt;% 
+  mutate(date = as_date(date_time)) %&gt;% 
+  group_by(date, location, indicator) %&gt;% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+]
+
+.pull-right[
+
+
+
+]
+
 
 ---
 class: inverse, middle
@@ -65,7 +204,7 @@ class: inverse, middle
 
 **Mendeley**
 
-1. Mendeley belongs to Elsevier. 
+1. Mendeley is owned by Elsevier. 
 2. It encrypts your database and makes money with your data
 3. You can only collaborate with 3 people on one project.
 
@@ -86,7 +225,7 @@ class: inverse, middle
 
 **Mendeley**
 
-1. Mendeley belongs to Elsevier. 
+1. Mendeley is owned by Elsevier. 
 2. It encrypts your database and makes money with your data
 3. You can only collaborate with 3 people on one project.
 
@@ -179,12 +318,28 @@ background-size: contain
 
 .footnote[The Turing Way Community, &amp; Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
 
+
 ---
-# Homework
+class: inverse, middle
 
+.big[Homework Assignment]
+
+---
+# Homework Assignment 3 - Learning Objectives
+
+
+These learning objectives are related to the assignment for this week.
+
+- Learners are able to import references to a Zotero group library
+- Learners can use an exported library from Zotero in Better BibTex Format to generate an automated reference list in an R Markdown file
+- Learners can edit a file in the Citation File Format (.cff) to add their name to the author list
+
+---
+# Homework Assignment 3 - Due Date
+
+- Complete Assignment 2 before you complete Assignment 3
 - Assignment 3, due on 15th March
-- Readings
-
+- Readings on Reproducible Research
 
 ---
 class: center, middle
@@ -208,6 +363,7 @@ All material is licensed under [Creative Commons Attribution Share Alike 4.0 Int
 <script>var slideshow = remark.create({
 "slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
 "highlightStyle": "solarized-light",
+"highlightSpans": true,
 "highlightLanguage": ["r", "css", "yaml"],
 "highlightLines": true,
 "countIncrementalSlides": false,

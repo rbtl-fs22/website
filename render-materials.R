@@ -28,6 +28,11 @@ xaringans <- dir_info(recurse = 3, glob = "slides/*.Rmd") %>%
 
 # generate PDFs -----------------------------------------------------------
 
+slide_paths <- dir_info(recurse = 1, glob = "slides/pt2-*") %>% 
+  filter(str_detect(path, "slides")) %>%
+  filter(!str_detect(path, "setup")) %>%
+  pull(path)
+
 for (i in seq_along(slide_paths)) {
   fs::file_copy(path = "slides/slides.css", new_path = slide_paths[i])
   fs::file_copy(path = "slides/xaringan-themer.css", new_path = slide_paths[i])
