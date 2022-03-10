@@ -14,9 +14,11 @@ library(xaringanthemer)
 style_mono_accent(
   base_color = "#0F4C81", # Pantone Classic Blue
   header_font_google = google_font("Montserrat"),
-  code_font_google = google_font("Fira Mono"), 
+  code_font_google = google_font("Fira Mono"),
+  code_inline_color = "#ED6D37", 
   code_font_size = "1.1rem",
-  text_font_size = "1.4rem", 
+  code_inline_background_color = "#F5F5F5", 
+  text_font_size = "1.4rem",
   header_h1_font_size = "2.0rem",
   header_h2_font_size = "1.75rem", 
   header_h3_font_size = "1.5rem",
