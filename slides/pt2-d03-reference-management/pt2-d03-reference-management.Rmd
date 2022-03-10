@@ -157,7 +157,7 @@ dat_in_sum_day <- dat_in `%>%`
 ---
 # Homework Assignment 2 - Imported raw data 
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, eval=TRUE}
 
 dat_link <- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
 
@@ -171,7 +171,7 @@ dat_in
 # Summarised derived data 
 
 .pull-left[
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 dat_in_sum_day <- dat_in %>% 
   filter(value <= 1000) %>% 
   mutate(date = as_date(date_time)) %>% 

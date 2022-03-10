@@ -153,6 +153,19 @@ dat_in &lt;- read_csv(dat_link)
 dat_in
 ```
 
+```
+# A tibble: 203,806 × 6
+  date_time           id    location indicator value unit 
+  &lt;dttm&gt;              &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;
+1 2019-10-08 13:59:01 hos1  guardian pm2.5      19.4 uq_m3
+2 2019-10-08 13:59:01 hos1  guardian pm10       27   uq_m3
+3 2019-10-08 14:04:41 hos1  guardian pm2.5      44.9 uq_m3
+4 2019-10-08 14:04:41 hos1  guardian pm10       56.7 uq_m3
+5 2019-10-08 14:10:21 hos1  guardian pm2.5     202.  uq_m3
+6 2019-10-08 14:10:21 hos1  guardian pm10      240.  uq_m3
+# … with 203,800 more rows
+```
+
 ---
 # Summarised derived data 
 
@@ -174,6 +187,19 @@ dat_in_sum_day &lt;- dat_in %&gt;%
 
 .pull-right[
 
+```
+# A tibble: 890 × 8
+# Groups:   date, location [445]
+  date       location indicator   min median   mean     sd   max
+  &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 2019-10-01 Lhouse   pm10       22.8  121.  143.   107.   447. 
+2 2019-10-01 Lhouse   pm2.5      12.2   46.6  54.8   41.1  194  
+3 2019-10-02 Lhouse   pm10       24.9  205.  231.   153.   772. 
+4 2019-10-02 Lhouse   pm2.5      12.8   72.6  88.0   65.2  375. 
+5 2019-10-02 Lions    pm10        7.5   15.2  16.1    5.23  30.2
+6 2019-10-02 Lions    pm2.5       4.6    6     6.62   1.85  12.4
+# … with 884 more rows
+```
 
 
 ]
