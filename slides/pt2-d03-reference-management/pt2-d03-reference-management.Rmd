@@ -15,6 +15,7 @@ output:
           </div>
         </div>
       highlightStyle: solarized-light
+      highlightSpans: true
       highlightLanguage: ["r", "css", "yaml"]
       highlightLines: true
       countIncrementalSlides: false
@@ -26,15 +27,173 @@ output:
 
 ```{r}
 library(tidyverse)
-library(palmerpenguins)
-library(xaringanExtra)
+library(lubridate)
 ```
+
+```{r data}
+
+dat_link <- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
+
+# The following codee uses a function calles 'read_csv()' to read the data from 
+# the link that is stored in the Object dat_link. The data is then stored in a 
+# new object named 'dat_in'. After running the code, the name shows up in the 
+# Environment pane in the top right of window 
+
+dat_in <- read_csv(dat_link)
+
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = lubridate::as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) %>% 
+  ungroup()
+
+```
+
 
 # Today
 
+1. Homework Assignment 2
 1. Reference Management - Zotero
 1. Open Source - Licenses
 1. Reproducible Research
+1. Homework Assignment 3
+
+
+
+
+---
+# Homework Assignment 2
+
+```{r transform-summary-1, eval=FALSE, echo=TRUE}
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+---
+# Homework Assignment 2
+
+```{r transform-summary-2, eval=FALSE, echo=TRUE}
+dat_in_sum_day <- dat_in %>% #<<
+  filter(value <= 1000) %>% 
+  mutate(date = as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+---
+# Homework Assignment 2
+
+```{r transform-summary-3, eval=FALSE, echo=TRUE}
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% #<<
+  mutate(date = as_date(date_time)) %>% #<<
+  group_by(date, location, indicator) %>% #<<
+  summarise(min = min(value), #<<
+            median = median(value), #<<
+            mean = mean(value), #<<
+            sd = sd(value), #<<
+            max = max(value))  #<<
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+
+---
+# Homework Assignment 2
+
+```{r transform-summary-4, eval=FALSE, echo=TRUE}
+dat_in_sum_day `<-` dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value), 
+            median = median(value), 
+            mean = mean(value), 
+            sd = sd(value), 
+            max = max(value))  
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+- Assignment operator: `<-`
+
+---
+# Homework Assignment 2
+
+```{r transform-summary-5, eval=FALSE, echo=TRUE}
+dat_in_sum_day <- dat_in `%>%`  
+  filter(value <= 1000) `%>%`
+  mutate(date = as_date(date_time)) `%>%` 
+  group_by(date, location, indicator) `%>%` 
+  summarise(min = min(value), 
+            median = median(value), 
+            mean = mean(value), 
+            sd = sd(value),  
+            max = max(value))  
+```
+
+- Objects that store dataframes: `dat_in` and `dat_in_sum_day`
+- Functions: `filter()`, `mutate()`,`as_date()`, `group_by()`, `summarise()`, etc.
+- Assignment operator: `<-`
+- Pipe operators: `%>%`
+
+---
+# Homework Assignment 2 - Imported raw data 
+
+```{r, echo=TRUE}
+
+dat_link <- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
+
+dat_in <- read_csv(dat_link)
+
+dat_in
+
+```
+
+---
+# Summarised derived data 
+
+.pull-left[
+```{r, echo=TRUE, eval=FALSE}
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+
+```
+
+]
+
+.pull-right[
+```{r}
+dat_in_sum_day 
+```
+
+
+]
+
 
 ---
 class: inverse, middle
@@ -61,7 +220,7 @@ class: inverse, middle
 
 **Mendeley**
 
-1. Mendeley belongs to Elsevier. 
+1. Mendeley is owned by Elsevier. 
 2. It encrypts your database and makes money with your data
 3. You can only collaborate with 3 people on one project.
 
@@ -82,7 +241,7 @@ class: inverse, middle
 
 **Mendeley**
 
-1. Mendeley belongs to Elsevier. 
+1. Mendeley is owned by Elsevier. 
 2. It encrypts your database and makes money with your data
 3. You can only collaborate with 3 people on one project.
 
@@ -177,12 +336,28 @@ background-size: contain
 
 .footnote[The Turing Way Community, & Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
 
+
 ---
-# Homework
+class: inverse, middle
 
+.big[Homework Assignment]
+
+---
+# Homework Assignment 3 - Learning Objectives
+
+
+These learning objectives are related to the assignment for this week.
+
+- Learners are able to import references to a Zotero group library
+- Learners can use an exported library from Zotero in Better BibTex Format to generate an automated reference list in an R Markdown file
+- Learners can edit a file in the Citation File Format (.cff) to add their name to the author list
+
+---
+# Homework Assignment 3 - Due Date
+
+- Complete Assignment 2 before you complete Assignment 3
 - Assignment 3, due on 15th March
-- Readings
-
+- Readings on Reproducible Research
 
 ---
 class: center, middle
