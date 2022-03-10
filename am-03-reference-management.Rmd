@@ -63,8 +63,11 @@ In this unit, you will learn to:
 
 The following video provides instruction to:
 
-1. Install Zotero Connector for the Firefox browser
-2. Install Better BibTeX for Zotero Add-on
+1. Install Zotero Connector for the Firefox browser: https://www.zotero.org/
+2. Add references:
+  - https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989
+  - https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
+2. Install Better BibTeX for Zotero Add-on: https://retorque.re/zotero-better-bibtex/installation/
 3. Edit the Zotero CiteKey preferences to the following (Minute **XX:XX**):
 
 `[auth:lower][year][veryshorttitle1_0:lower]`
@@ -79,12 +82,6 @@ The following video provides instruction to:
     - Double click into the field under "Value"
     - In the new windows with the title "Enter integer value" change value from 0 to 2
     - Click "OK"
-
-The following links are used in the video:
-
-- https://www.zotero.org/  
-- https://retorque.re/zotero-better-bibtex/installation/  
-- https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989  
 
 # Video (posted on 2022-03-10)
 
