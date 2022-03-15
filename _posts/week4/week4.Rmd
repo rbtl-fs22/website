@@ -63,6 +63,7 @@ lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 
 1. `r lobj2[1]`
 1. `r lobj2[2]`
+1. `r lobj2[3]`
 
 # Slides
 
