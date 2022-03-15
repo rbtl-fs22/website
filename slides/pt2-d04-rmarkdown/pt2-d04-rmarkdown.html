@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rbtl - Research Beyond the Lab</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lars Schöbitz" />
+    <meta name="date" content="2022-03-15" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="../xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="../slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# rbtl - Research Beyond the Lab
+## R Markdown
+### Lars Schöbitz
+### 2022-03-15
+
+---
+
+
+
+
+
+&lt;script async defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"&gt;&lt;/script&gt;
+
+
+
+
+# Today
+
+1. Homework Assignment 3
+1. R Markdown 
+1. Homework Assignment 4
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 3]
+
+---
+class: middle, inverse
+
+.big[R Markdown]
+
+---
+## R markdown
+
+.pull-left[
+
+### On the input side...
+
+- Write text in markdown
+- Insert code using R
+- Write "metadata" with YAML
+- Insert equation with LaTeX
+]
+
+--
+
+.pull-right[
+
+### On the output side...
+
+- Output to HTML
+- Output to PDF
+- Output to Word
+- Many other variations too
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: middle, inverse
+
+.large[Lots of little things to learn!&lt;br&gt;We'll start with markdown...]
+
+---
+
+class: middle
+
+&lt;img src="img/word_document_surface.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+&lt;img src="img/word_document_inside.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+# Word documents are complicated
+
+- A .docx file is a compressed folder with lots of files
+- A .docx file is proprietary file format 
+- Your text is buried in with a lot of formatting information
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+&lt;img src="img/html_document_surface.png" width="100%" height="80%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+&lt;img src="img/html_document_inside.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+# HTML documents are complicated
+
+- Looks simple because I removed most formatting
+- Still unpleasant to look at
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+# What do we want?
+
+- Something that... you can write in **plain text**
+- Something that... is **human readable** 
+- Something that... allows **formatting**
+- Something that... can **build** to something pretty 
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: middle, inverse
+
+
+.big[markdown to the rescue!] 
+
+
+---
+# markdown file format
+
+&gt; A markup language with a simple syntax intended as a replacement for HTML - [Definition](https://glosario.carpentries.org/en/#markdown)
+
+- Is a **markup language** - [Definition](https://glosario.carpentries.org/en/#markup_language)
+- Is an **open format** - [Defintion](http://opendatahandbook.org/glossary/en/terms/open-format/)
+- Is **non proprietary** - [Definition](http://opendatahandbook.org/glossary/en/terms/proprietary/)
+
+
+???
+
+#### markup language
+
+- A set of rules for annotating text to define its meaning or how it should be displayed
+
+#### open format
+
+- file format with no restrictions, monetary or otherwise
+- can be fully processed with at least one free/libre/open-source software tool. 
+- the structure of an open format is set out in agreed standards, overseen and published by a non-commercial expert body
+- Patents are a common source of restrictions that make a format proprietary
+
+#### proprietary
+
+- A proprietary file format is one that a company owns and controls. 
+- Data in this format may need proprietary software to be read reliably
+- Proprietary software usually reads and saves data in its own proprietary format
+
+---
+class: middle, inverse
+
+.large[Here's an example of a markdown document...]
+
+
+---
+
+
+.pull-left-wide[
+```
+# Introduction
+
+Welcome to my **awesome** class. You will learn 
+all kinds of useful things about R markdown. 
+
+## Why should you care?
+
+- Markdown is simple and reproducible
+- You can make it pretty if you want to
+- The R Markdown variant lets you add R code
+
+## Where can you find these slides?
+
+https://rbtl-fs22.github.io/website/posts/week4/
+
+```
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+
+class: middle, inverse
+
+.large[Here's what the output looks like...]
+
+
+---
+
+# Introduction
+
+Welcome to my **awesome** class. You will learn 
+all kinds of useful things about R markdown. 
+
+## Why should you care?
+
+- Markdown is simple and reproducible
+- You can make it pretty if you want to
+- The R Markdown variant lets you add R code
+
+## Where can you find these slides?
+
+https://rbtl-fs22.github.io/website/posts/week3/
+
+
+---
+class: middle, inverse
+
+.large[Let's dive into the details...]
+
+
+---
+## Emphasising text
+
+--
+.pull-left[
+
+### What you type...
+
+```
+this is *italics*
+
+this is **bold**
+
+this is ***bold italics***
+```
+]
+--
+.pull-right[
+
+### What you get...
+
+this is *italics*
+
+this is **bold**
+
+this is ***bold italics***
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+## Creating lists
+
+--
+.pull-left[
+### What you type...
+```
+- unnumbered lists
+- look like this
+
+1. numbered lists
+2. look like this
+```
+]
+--
+.pull-right[
+### What you get...
+
+- unnumbered lists
+- look like this
+
+1. numbered lists
+2. look like this
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+## Creating headings
+
+--
+.pull-left[
+
+### What you type...
+
+```
+# Level 1 heading
+## Level 2 heading
+### Level 3 heading
+
+```
+]
+--
+.pull-right[
+
+### What you get...
+
+
+# Level 1 heading
+## Level 2 heading
+### Level 3 heading
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+class: inverse, middle
+
+.big[And R markdown?]
+
+---
+# R markdown
+
+- Something that... lets you write text in **markdown**
+- Something that... lets you include **R code** (e.g. for data vis)
+- Something that... can **build** to HTML, PDF, Word, etc
+ 
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: left
+background-image: url(img/rmarkdown_wizards.png)
+background-size: contain
+
+.footnote[[Artwork by @allison_horst](https://github.com/allisonhorst/stats-illustrations)]
+
+---
+class: left
+background-image: url(https://bookdown.org/yihui/rmarkdown-cookbook/images/workflow.png)
+background-size: contain
+
+.footnote[Image from: [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html)]
+
+
+---
+# File formats - Use in course
+
+
+
+
+---
+class: left
+background-image: url(https://raw.githubusercontent.com/rstudio/concept-maps/master/en/rmarkdown.svg)
+background-size: contain
+
+
+.footnote[Concept map: [Copyright (c) RStudio](https://github.com/rstudio/concept-maps#r-markdown)]
+
+
+---
+# Homework Assignment 4 - Learning Objectives
+
+
+These learning objectives are related to the assignment for this week.
+
+- Learners can explain the difference between the markdown (.md) and R Markdown (.Rmd) file format
+- Learners can paraphrase how a file written in a markup language like markdown (.md) differs from a file written in a proprietary file format like DOCX
+- Learners can identify four components of an R markdown file (YAML, code chunk, R code, markdown) 
+
+---
+# Homework Assignment 4 - Group submission
+
+- Assignment 4 - due on **22nd March**
+
+## Each group will
+
+1. Identify the variables that are needed
+2. Develop the necessary questions and response values
+3. Submit the compiled questions as a markdown file (1 submission per group) on GitHub before 2022-03-22 23:59
+
+---
+class: center, middle
+
+# Thanks! 🌻 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d04-rmarkdown/pt2-d04-rmarkdown.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
+"highlightStyle": "solarized-light",
+"highlightSpans": true,
+"highlightLanguage": ["r", "css", "yaml"],
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
