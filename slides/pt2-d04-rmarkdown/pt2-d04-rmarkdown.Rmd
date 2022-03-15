@@ -1,0 +1,86 @@
+---
+title: "rbtl - Research Beyond the Lab"
+subtitle: "R Markdown"  
+author: "Lars Schöbitz"
+date: '
+  `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "../xaringan-themer.css", "../slides.css"]
+    lib_dir: libs
+    nature:
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightSpans: true
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+
+
+
+# Today
+
+1. Homework Assignment 3
+1. File formats
+1. R Markdown 
+1. Homework Assignment 4
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 3]
+
+---
+# Homework Assignment 3
+
+
+---
+class: inverse, middle
+
+.big[File formats]
+
+
+---
+class: inverse, middle
+
+.big[R Markdown]
+
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 4]
+
+
+
+---
+class: center, middle
+
+# Thanks! `r emo::ji("sunflower")` 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d03-reference-management/pt2-d03-reference-management.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
