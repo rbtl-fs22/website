@@ -1,0 +1,49 @@
+---
+title: "Assignment 4 - Literate Programming with R Markdown"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+## Prerequisites
+
+We assume that you have:
+
+1. Completed Assignment 1 & 2 & 3 of this course. If you have not, follow the instructions here: 
+
+- Assignment 1: https://rbtl-fs22.github.io/website/am-01-hello-github.html
+- Assignment 2: https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html
+- Assignment 3: https://rbtl-fs22.github.io/website/am-03-reference-management.html
+
+## Learning Objectives
+
+In this unit, you will learn to:
+
+
+
+## Terminology
+
+- http://opendatahandbook.org/glossary/en/terms/open-format/
+- http://opendatahandbook.org/glossary/en/terms/proprietary/
+- http://opendatahandbook.org/glossary/en/terms/machine-readable/
+- https://glosario.carpentries.org/en/#markup_language
+- https://glosario.carpentries.org/en/#markdown
+
+# Tasks 
+
+1. Work through this Markdown Tutorial: https://commonmark.org/help/tutorial/
+2. Read all the definitions under Section Terminology
+3. Watch the video to clone the repo for this assignment to the RStudio Cloud and work through the exercises
+
+# Video
+
+<iframe width="560" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Acknowledgements
+
+The settings that are used in these instructions are inspired by [Cortex Futura: How to install Zotero, BetterBibTex and Zotfile](https://www.youtube.com/watch?v=Nm5BsfMfO9M). 

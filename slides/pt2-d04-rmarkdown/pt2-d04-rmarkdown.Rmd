@@ -1,6 +1,6 @@
 ---
 title: "rbtl - Research Beyond the Lab"
-subtitle: "R Markdown"  
+subtitle: "Literate Programming with R Markdown"  
 author: "Lars Schöbitz"
 date: '
   `r Sys.Date()`'

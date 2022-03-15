@@ -1,15 +1,15 @@
 ---
-title: "Week 3 - Research Design"
+title: "Week 4 - Survey Design"
 description: |
-  Having a good research design will ensure that you are not “comparing apples to oranges”. We discuss the sample population, the concept of randomization, and classic study designs.
-date: 2022-03-10
+  The key to good data is asking the right question. We discuss the different types of questions and variables that constitute a good questionnaire.
+date: 2022-03-17
 params:
-    week: 3
+    week: 4
 output:
   distill::distill_article:
     toc: true
     self_contained: false
-preview: img/hans-peter-gauster-3y1zF4hIPCg-unsplash.jpg  
+preview: img/evan-dennis-i--IN3cvEjg-unsplash.jpg  
 ---
 
 
@@ -25,9 +25,9 @@ library(readr)
 
 ```
 
-```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Hans-Peter Gauster](https://unsplash.com/@sloppyperfectionist)"}
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Evan Denis](https://unsplash.com/photos/i--IN3cvEjg)"}
 
-knitr::include_graphics("img/hans-peter-gauster-3y1zF4hIPCg-unsplash.jpg")
+knitr::include_graphics("img/evan-dennis-i--IN3cvEjg-unsplash.jpg")
 
 ```
 
@@ -63,7 +63,6 @@ lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 
 1. `r lobj2[1]`
 1. `r lobj2[2]`
-1. `r lobj2[3]`
 
 # Slides
 
@@ -80,11 +79,15 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 # Group work
 
-- Groups will decide on a research design, a sample population, and revise the research questions if necessary. Each group will present their new design next week. 
+**Each group will**
+
+1. Identify the variables that are needed
+2. Develop the necessary questions and response values
+3. Submit the compiled questions as a markdown file (1 submission per group) on GitHub before 2022-03-22 23:59
 
 ## Papers 
 
-- Chapter 1: Bickman, L., Rog, D. J., & Hedrick, T. E. (2009). Applied research design: A practical approach. Handbook of Applied Social Research Methods. Sage: London.
+- Chapter 12: Bickman, L., Rog, D. J., & Hedrick, T. E. (2009). Applied research design: A practical approach. Handbook of Applied Social Research Methods. Sage: London.
 
 # Homework
 
