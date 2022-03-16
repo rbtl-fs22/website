@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-01-hello-github.html</loc>
-    <lastmod>2022-03-01T13:57:04+01:00</lastmod>
+    <lastmod>2022-02-24T11:12:04+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html</loc>
-    <lastmod>2022-03-15T13:26:47+01:00</lastmod>
+    <lastmod>2022-03-03T12:21:22+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-03-reference-management.html</loc>
-    <lastmod>2022-03-15T13:26:47+01:00</lastmod>
+    <lastmod>2022-03-10T12:54:23+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-04-rmarkdown.html</loc>
-    <lastmod>2022-03-15T16:37:48+01:00</lastmod>
+    <lastmod>2022-03-16T09:14:32+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/</loc>
-    <lastmod>2022-03-01T13:57:04+01:00</lastmod>
+    <lastmod>2022-02-23T15:15:05+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/LICENSE.html</loc>
-    <lastmod>2022-03-15T16:41:02+01:00</lastmod>
+    <lastmod>2022-03-16T09:19:25+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/schedule.html</loc>
-    <lastmod>2022-02-22T11:25:12+01:00</lastmod>
+    <lastmod>2022-02-15T13:10:08+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/syllabus.html</loc>
-    <lastmod>2022-03-01T14:42:48+01:00</lastmod>
+    <lastmod>2022-03-03T12:21:22+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week4/</loc>
-    <lastmod>2022-03-15T16:39:55+01:00</lastmod>
+    <lastmod>2022-03-16T08:05:50+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week3/</loc>
-    <lastmod>2022-03-15T16:39:44+01:00</lastmod>
+    <lastmod>2022-03-16T08:05:50+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week2/</loc>
-    <lastmod>2022-03-15T16:39:43+01:00</lastmod>
+    <lastmod>2022-03-16T08:05:50+01:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week1/</loc>
-    <lastmod>2022-03-15T16:39:41+01:00</lastmod>
+    <lastmod>2022-03-16T08:05:50+01:00</lastmod>
   </url>
 </urlset>

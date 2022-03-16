@@ -82,9 +82,9 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 **Each group will**
 
-1. Identify the variables that are needed
-2. Develop the necessary questions and response values
-3. Submit the compiled questions as a markdown file (1 submission per group) on GitHub before 2022-03-22 23:59
+1. Identify the variables that are needed 
+2. Develop respective questions and response values
+3. Submit the compiled questions as part of markdown file (1 submission per group) on GitHub before 2022-03-22 23:59
 
 ## Papers 
 

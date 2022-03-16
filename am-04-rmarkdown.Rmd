@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
+All homework exercises and also live coding exercises will be written in the R Markdown file format. This unit will help you get more comfortable using this file format for writing. You will submit your research questions and design as part of this assignment.
+
 ## Prerequisites
 
 We assume that you have:
@@ -24,9 +26,11 @@ We assume that you have:
 
 In this unit, you will learn to:
 
+- explain the difference between the markdown (.md) and R Markdown (.Rmd) file format
+- paraphrase how a file written in a markup language like markdown (.md) differs from a file written in a proprietary file format like .docx
+- identify four components of an R markdown file (YAML, code chunk, R code, markdown) 
 
-
-## Terminology
+## Terminology {#terminology}
 
 - http://opendatahandbook.org/glossary/en/terms/open-format/
 - http://opendatahandbook.org/glossary/en/terms/proprietary/
@@ -37,7 +41,7 @@ In this unit, you will learn to:
 # Tasks 
 
 1. Work through this Markdown Tutorial: https://commonmark.org/help/tutorial/
-2. Read all the definitions under Section Terminology
+2. Read all definitions under Section Terminology
 3. Watch the video to clone the repo for this assignment to the RStudio Cloud and work through the exercises
 
 # Video
