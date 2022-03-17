@@ -23,6 +23,8 @@ navbar:
           href: am-02-hello-rstudio.html
         - text: "Assignment 03"
           href: am-03-reference-management.html
+        - text: "Assignment 04"
+          href: am-04-rmarkdown.html
 output: 
   distill::distill_article:
     toc: true

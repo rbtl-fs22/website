@@ -1,0 +1,106 @@
+---
+title: "Week 4 - Survey Design"
+description: |
+  The key to good data is asking the right question. We discuss the different types of questions and variables that constitute a good questionnaire.
+date: 2022-03-17
+params:
+    week: 4
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/evan-dennis-i--IN3cvEjg-unsplash.jpg  
+---
+
+
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Evan Denis](https://unsplash.com/photos/i--IN3cvEjg)"}
+
+knitr::include_graphics("img/evan-dennis-i--IN3cvEjg-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+This lecture consists of two parts, each of which have specific learning objectives. 
+
+## Part 1 
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+1. `r lobj1[3]`
+
+## Part 2
+
+These learning objectives are related to the assignment for this week.
+
+```{r}
+
+lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj2[1]`
+1. `r lobj2[2]`
+1. `r lobj2[3]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+The submission is part of Assignment 4. Each ~~group~~ person will:
+
+1. Add the research questions that you and/or your group have worked on.
+2. Write up the research design you are planning to use for your data collection.
+3. Submit their sample population:
+  - Bins: (1) Number; (2) Location, (3) Frequency of sampling
+  - Human population, for example random, over 60, family, cyclist, etc.
+4. Write up the variables that are needed, together with the respective questions and possible response values.
+
+## Papers 
+
+- Chapter 12: Bickman, L., Rog, D. J., & Hedrick, T. E. (2009). Applied research design: A practical approach. Handbook of Applied Social Research Methods. Sage: London.
+
+# Homework
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```

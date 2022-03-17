@@ -1,0 +1,522 @@
+---
+title: "rbtl - Research Beyond the Lab"
+subtitle: "Literate Programming with R Markdown"  
+author: "Lars Schöbitz"
+date: '
+  `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "../xaringan-themer.css", "../slides.css"]
+    lib_dir: libs
+    nature:
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightSpans: true
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+# Today
+
+1. Homework Assignment 3 - How to get solutions?
+1. R Markdown 
+1. Homework Assignment 4
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 3 - Solutions]
+
+---
+class: middle
+
+.big[A new git command]
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.001.png)
+background-size: contain
+
+# Remember?
+
+## `git clone`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.002.png)
+background-size: contain
+
+# Remember?
+
+## `git commit`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.003.png)
+background-size: contain
+
+# Remember?
+
+## `git push`
+ 
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.004.png)
+background-size: contain
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.005.png)
+background-size: contain
+
+# Collaborate!
+
+## `git clone`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.006.png)
+background-size: contain
+
+# Track work
+
+## `git commit`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.007.png)
+background-size: contain
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.008.png)
+background-size: contain
+
+# Update
+
+## `git push`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.009.png)
+background-size: contain
+
+# New!
+
+## `git ???`
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.010.png)
+background-size: contain
+
+# Get changes
+
+## `git pull`
+
+
+---
+class: left
+background-image: url(illustration-slides-week4/illustration-slides-week4.011.png)
+background-size: contain 
+
+# Commit history
+
+---
+class: middle, inverse
+
+.big[R Markdown]
+
+---
+## R markdown
+
+.pull-left[
+
+### On the input side...
+
+- Write text in markdown
+- Insert code using R
+- Write "metadata" with YAML
+- Insert equation with LaTeX
+]
+
+--
+
+.pull-right[
+
+### On the output side...
+
+- Output to HTML
+- Output to PDF
+- Output to Word
+- Many other variations too
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: middle, inverse
+
+.large[Lots of little things to learn!<br>We'll start with markdown...]
+
+---
+
+class: middle
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/word_document_surface.png", dpi = 300)
+```
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/word_document_inside.png", dpi = 150)
+```
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+# Word documents are complicated
+
+- A .docx file is a compressed folder with lots of files
+- A .docx file is proprietary file format 
+- Your text is buried in with a lot of formatting information
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+```{r, echo=FALSE, out.height="80%"}
+knitr::include_graphics("img/html_document_surface.png")
+```
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+class: middle
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/html_document_inside.png", dpi = 150)
+```
+
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+# HTML documents are complicated
+
+- Looks simple because I removed most formatting
+- Still unpleasant to look at
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+# What do we want?
+
+- Something that... you can write in **plain text**
+- Something that... is **human readable** 
+- Something that... allows **formatting**
+- Something that... can **build** to something pretty 
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: middle, inverse
+
+
+.big[markdown to the rescue!] 
+
+
+---
+# markdown file format
+
+> A markup language with a simple syntax intended as a replacement for HTML - [Definition](https://glosario.carpentries.org/en/#markdown)
+
+- Is a **markup language** - [Definition](https://glosario.carpentries.org/en/#markup_language)
+- Is an **open format** - [Defintion](http://opendatahandbook.org/glossary/en/terms/open-format/)
+- Is **non proprietary** - [Definition](http://opendatahandbook.org/glossary/en/terms/proprietary/)
+
+
+???
+
+#### markup language
+
+- A set of rules for annotating text to define its meaning or how it should be displayed
+
+#### open format
+
+- file format with no restrictions, monetary or otherwise
+- can be fully processed with at least one free/libre/open-source software tool. 
+- the structure of an open format is set out in agreed standards, overseen and published by a non-commercial expert body
+- Patents are a common source of restrictions that make a format proprietary
+
+#### proprietary
+
+- A proprietary file format is one that a company owns and controls. 
+- Data in this format may need proprietary software to be read reliably
+- Proprietary software usually reads and saves data in its own proprietary format
+
+---
+class: middle, inverse
+
+.large[Here's an example of a markdown document...]
+
+
+---
+
+
+.pull-left-wide[
+```
+# Introduction
+
+Welcome to my **awesome** class. You will learn 
+all kinds of useful things about R markdown. 
+
+## Why should you care?
+
+- Markdown is simple and reproducible
+- You can make it pretty if you want to
+- The R Markdown variant lets you add R code
+
+## Where can you find these slides?
+
+https://rbtl-fs22.github.io/website/posts/week4/
+
+```
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+
+class: middle, inverse
+
+.large[Here's what the output looks like...]
+
+
+---
+
+# Introduction
+
+Welcome to my **awesome** class. You will learn 
+all kinds of useful things about R markdown. 
+
+## Why should you care?
+
+- Markdown is simple and reproducible
+- You can make it pretty if you want to
+- The R Markdown variant lets you add R code
+
+## Where can you find these slides?
+
+https://rbtl-fs22.github.io/website/posts/week3/
+
+
+---
+class: middle, inverse
+
+.large[Let's dive into the details...]
+
+
+---
+## Emphasising text
+
+--
+.pull-left[
+
+### What you type...
+
+```
+this is *italics*
+
+this is **bold**
+
+this is ***bold italics***
+```
+]
+--
+.pull-right[
+
+### What you get...
+
+this is *italics*
+
+this is **bold**
+
+this is ***bold italics***
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+## Creating lists
+
+--
+.pull-left[
+### What you type...
+```
+- unnumbered lists
+- look like this
+
+1. numbered lists
+2. look like this
+```
+]
+--
+.pull-right[
+### What you get...
+
+- unnumbered lists
+- look like this
+
+1. numbered lists
+2. look like this
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+
+## Creating headings
+
+--
+.pull-left[
+
+### What you type...
+
+```
+# Level 1 heading
+## Level 2 heading
+### Level 3 heading
+
+```
+]
+--
+.pull-right[
+
+### What you get...
+
+
+# Level 1 heading
+## Level 2 heading
+### Level 3 heading
+]
+
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+---
+class: inverse, middle
+
+.big[And R markdown?]
+
+---
+# R markdown
+
+- Something that... lets you write text in **markdown**
+- Something that... lets you include **R code** (e.g. for data vis)
+- Something that... can **build** to HTML, PDF, Word, etc
+ 
+.footnote[Slide taken from: [Danielle Navarro - R markdown](https://slides.djnavarro.net/starting-rmarkdown/#1)]
+
+
+---
+class: left
+background-image: url(img/rmarkdown_wizards.png)
+background-size: contain
+
+.footnote[[Artwork by @allison_horst](https://github.com/allisonhorst/stats-illustrations)]
+
+---
+class: left
+background-image: url(https://bookdown.org/yihui/rmarkdown-cookbook/images/workflow.png)
+background-size: contain
+
+.footnote[Image from: [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html)]
+
+---
+class: left
+background-image: url(https://raw.githubusercontent.com/rstudio/concept-maps/master/en/rmarkdown.svg)
+background-size: contain
+
+
+.footnote[Concept map: [Copyright (c) RStudio](https://github.com/rstudio/concept-maps#r-markdown)]
+
+
+---
+# Homework Assignment 4 - Learning Objectives
+
+
+These learning objectives are related to the assignment for this week.
+
+- Learners can explain the difference between the markdown (.md) and R Markdown (.Rmd) file format
+- Learners can paraphrase how a file written in a markup language like markdown (.md) differs from a file written in a proprietary file format like DOCX
+- Learners can identify four components of an R markdown file (YAML, code chunk, R code, markdown) 
+
+---
+# Homework Assignment 4 - Group work submission
+
+- Due on **22nd March**
+
+## Exercise 2: Each ~~group~~ person will
+
+1. Add the research questions that you and/or your group have worked on.
+
+2. Write up the research design you are planning to use for your data collection.
+
+3. Submit their sample population:
+
+  - Bins: (1) Number; (2) Location, (3) Frequency of sampling
+  - Human population, for example random, over 60, family, cyclist, etc.
+
+4. Write up the variables that are needed, together with the respective questions and possible response values.
+
+---
+# Bin location?
+
+You can download a CSV with data on all bins from:
+
+- https://www.ogd.stadt-zuerich.ch/geoportal_download/71dc10de-a5e2-11ec-94cb-005056b0ce82.zip (**valid until 22nd March**)
+- https://www.stadt-zuerich.ch/geodaten/download/Abfallgefaesse (**Stadt Zürich Open Data, in German**) 
+
+---
+class: center, middle
+
+# Thanks! `r emo::ji("sunflower")` 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d04-rmarkdown/pt2-d04-rmarkdown.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
