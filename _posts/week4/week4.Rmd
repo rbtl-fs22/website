@@ -77,14 +77,16 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 ```
 
-
 # Group work
 
-**Each group will**
+The submission is part of Assignment 4. Each ~~group~~ person will:
 
-1. Identify the variables that are needed 
-2. Develop respective questions and response values
-3. Submit the compiled questions as part of markdown file (1 submission per group) on GitHub before 2022-03-22 23:59
+1. Add the research questions that you and/or your group have worked on.
+2. Write up the research design you are planning to use for your data collection.
+3. Submit their sample population:
+  - Bins: (1) Number; (2) Location, (3) Frequency of sampling
+  - Human population, for example random, over 60, family, cyclist, etc.
+4. Write up the variables that are needed, together with the respective questions and possible response values.
 
 ## Papers 
 

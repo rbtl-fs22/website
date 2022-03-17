@@ -41,12 +41,13 @@ In this unit, you will learn to:
 # Tasks 
 
 1. Work through this Markdown Tutorial: https://commonmark.org/help/tutorial/
-2. Read all definitions under Section Terminology
-3. Watch the video to clone the repo for this assignment to the RStudio Cloud and work through the exercises
+2. Read all definitions under Section Terminology.
+3. Watch the video to clone the repo for this assignment to the RStudio Cloud and work through the exercises.
+4. Open an issue on your repo on GitHub to inform us you have completed the homework.
 
 # Video
 
-<iframe width="560" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="400" src="https://www.youtube.com/embed/hrArrrFyu_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Acknowledgements
 
