@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rbtl - Research Beyond the Lab</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lars Schöbitz" />
+    <meta name="date" content="2022-03-22" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="../xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="../slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# rbtl - Research Beyond the Lab
+## Data Management
+### Lars Schöbitz
+### 2022-03-22
+
+---
+
+
+
+
+
+&lt;script async defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"&gt;&lt;/script&gt;
+
+
+
+
+# Today
+
+1. Homework Assignment 4 - Solutions
+2. Research Data Management
+3. Data Organisation in Spreadsheets
+4. Metadata and Codebooks
+5. Using ETH SelectSurvey
+6. Homework Assignment 5
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 4]
+
+---
+# Think, Pair, Share
+
+.question[
+1. What is the difference between markdown and R Markdown?
+2. How does a file written in markdown differ from a file in a proprietary file fornat (e.g. .docx)? 
+]
+
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 5 minutes
+- **Share** your answer with the class
+]
+
+---
+class: left
+background-image: url(img/assignment-solutions.png)
+background-size: contain
+
+# Homework Assignment 4 - Solutions
+
+---
+class: left
+background-image: url(img/illustration-slides-week4.010.png)
+background-size: contain
+
+
+---
+class: inverse, middle
+
+.big[Research Data Management]
+
+---
+# Research Data Management
+
+&gt; Acronym: RDM. Refers to the organisation, storage and preservation of data created during a research project. It covers initial planning, day-to-day processes and long-term archiving and sharing. Shortened to RDM. - [Reference](https://the-turing-way.netlify.app/afterword/glossary.html#term-Research-Data-Management)
+
+---
+# Research Data Management
+
+- ensures efficiency in research workflows
+- enables greater reach and impact ([FAIR principles](https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-fair.html?highlight=fair))
+- prevents loss and data corruption
+- documentation and metadata ensures access and enables reuse for others
+
+???
+1. You will always find your data
+2. You get recognition for all research outputs
+3. You stimulate collaboration who find it easier to understand and reuse your data
+
+
+---
+class: middle
+
+## .large[The FAIR principles]
+
+
+---
+class: left
+background-image: url(https://the-turing-way.netlify.app/_images/fair-principles.jpg)
+background-size: contain
+
+.footnote[The Turing Way Community, &amp; Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
+
+???
+
+The FAIR guiding principles for scientific data management and stewardship were developed as guidelines to improve the:
+
+- Findability, 
+- Accessibility, 
+- Interoperability and 
+- Reusability of digital assets; 
+
+all of which support research reproducibility. The FAIR principles play an important role in making your data available to others for reuse.
+
+Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-fair.html?highlight=fair#
+
+---
+class: middle
+
+## .large[Research Data Lifecycle]
+
+
+---
+##  Research Data Lifecycle 
+
+&lt;iframe width="1000" height="515" src="https://www.youtube.com/embed/-wjFMMQD3UA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+.footnote[Reference: https://www.youtube.com/watch?v=-wjFMMQD3UA]
+
+???
+
+### Point out
+
+1. Planning research
+
+- data management plans right in the beginning when you design your research
+
+2. Collecting data
+
+- We will get into capturing data with metadata
+
+3. Processing and analysing data
+
+- That's what will start from week 8
+
+4. Publishing and sharing data
+
+- That's what most of today is about
+- We have already talked about licenses
+
+5. Preserving data
+
+- Store and backup: You are continously doing that by the use of a remote repository (GitHub)
+
+6. Re-using data
+
+- That's what we hope to be able to do following the course and include you all as co-authors of a publication
+
+---
+class: middle
+
+## .large[Data Management Plan]
+
+---
+## Data Management Plan
+
+Provides information on five main topics:
+
+1. Roles and Responsibilities
+2. Type and size of data collected and documentation/metadata generated
+3. Type of data storage used and back up procedures that are in place
+4. Preservation of the research outputs after the project
+5. Reuse of your research outputs by others
+
+.footnote[Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-dmp.html]
+
+---
+## Data Management Plan
+
+Provides information on five main topics:
+
+1. Roles and Responsibilities
+2. Type and size of data collected and **documentation/metadata** generated
+3. Type of data storage used and back up procedures that are in place
+4. Preservation of the research outputs after the project
+5. Reuse of your research outputs by others
+
+.footnote[Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-dmp.html]
+
+
+---
+## Data Management Plan
+
+[
+&lt;img src="img/eth-library-dmp.png" width="100%" style="display: block; margin: auto;" /&gt;
+](https://documentation.library.ethz.ch/pages/viewpage.action?pageId=9207835)
+
+.footnote[Screenshot, 2022-03-22: [ETH Library - Research Data Management and Digital Curation - What is a Data Management Plan?](https://documentation.library.ethz.ch/pages/viewpage.action?pageId=9207835)]
+
+---
+class: middle
+
+## .large[Documentation and Metadata]
+
+---
+## You got data. Is it enough?
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; I see tons of spreadsheets that i don&amp;#39;t understand anything (or the stduent), making it really hard to share.&lt;/p&gt;&amp;mdash; Erika Berenguer (@Erika_Berenguer) &lt;a href="https://twitter.com/Erika_Berenguer/status/556111838715580417"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; &lt;a href="https://twitter.com/ScientificData"&gt;@ScientificData&lt;/a&gt; &amp;quot;Document. Everything.&amp;quot; Data without documentation has no value.&lt;/p&gt;&amp;mdash; Sven Kochmann (@indianalytics) &lt;a href="https://twitter.com/indianalytics/status/556120920881115136"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+???
+Question on Twitter:
+
+**If you could tell a new PhD student one thing to help make their data more useful/shareable, what would it be?**
+
+
+---
+## You got data. Is it enough?
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="it" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; Annotate, annotate, annotate!&lt;/p&gt;&amp;mdash; CanJFishAquaticSci (@cjfas) &lt;a href="https://twitter.com/cjfas/status/556109252788379649"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="und" dir="ltr"&gt;Document all the metadata (including protocols).&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ward Appeltans (@WrdAppltns) &lt;a href="https://twitter.com/WrdAppltns/status/556108414955560961"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+---
+# Think, Pair, Share
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;You download a zip file of &lt;a href="https://twitter.com/hashtag/OpenData?src=hash"&gt;#OpenData&lt;/a&gt;. Apart from your data file(s), what else should it contain?&lt;/p&gt;&amp;mdash; Leigh Dodds (@ldodds) &lt;a href="https://twitter.com/ldodds/status/828657155863638016"&gt;February 6, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+---
+# Think, Pair, Share
+
+## **Thought experiment: Imagine a dream open data set**
+
+.question[
+1. How would you locate it?
+1. What details would you need to know to determine relevance? 
+2. What information would you need to know to use it?
+]
+
+&lt;img src="img/missing-unicorn.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Slide adapted from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+
+---
+# ETH library
+
+## Data Management Plan Instructions for ETH Zurich Researchers
+
+**Section 1: Data collection and documentation**
+
+- 1.3 What documentation and metadata will you provide with the data?
+    - What information about your data (i.e., metadata) is required to make reuse of your data in the future?
+    - Are you using certain community standards for the annotation of metadata?
+    - How will data documentation be carried out?
+    
+.footnote[[Data Management Plan Instructions for ETH Zurich Researchers](https://documentation.library.ethz.ch/display/DD/Data+Management+Plan+Instructions+for+ETH+Zurich+Researchers)]
+
+---
+#### Q1: What information about your data (i.e., metadata) is required to make reuse of your data in the future?
+
+- Codebook or data dictionaries that define and explain all variables in your data
+- A human and machine-readable file (e.g. README.md) that contains general information on:
+    - Title of the dataset
+    - Description of the dataset
+    - Author information (Name, Institution, Address, Email)
+    - Date of data collection (begin, end)
+    - Geographic location of data collection
+    - Information about funding sources that supported the collection of the data
+- A license to clarify reuse possibilties
+
+---
+#### Q2: Are you using certain community standards for the annotation of metadata?
+
+- General metadata standards (e.g. [DublinCore](https://www.dublincore.org/specifications/), [schema.org](https://schema.org/), [R3data.org](https://www.re3data.org/))
+- Domain specific standards (**we won't get into this**)
+
+---
+#### Q3: How will data documentation be carried out?
+
+- Repository hosted on GitHub has data folder
+- Data folder contains
+  - one codebook (stored as CSV) that describes all variables following guidelines in [OSF - How to Make a Data Dictionary](https://help.osf.io/hc/en-us/articles/360019739054-How-to-Make-a-Data-Dictionary)
+  - of all datasets following [schema.org](https://schema.org/) standard
+  - one README per dataset that contains general information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
+  - a LICENSE that clarifies the use of data [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+
+
+---
+# data spice R Package
+
+- https://annakrystalli.me/rrresearchACCE20/slides/04_metadata.html#22
+- https://docs.ropensci.org/dataspice/index.html
+
+
+
+---
+# Assignment 4
+
+1. Watch the video on "What is ORCID?" and get an ORCID profile: https://the-turing-way.netlify.app/communication/citable/citable-orcid.html#cm-citable-orcid
+2. 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
+"highlightStyle": "solarized-light",
+"highlightSpans": true,
+"highlightLanguage": ["r", "css", "yaml"],
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
