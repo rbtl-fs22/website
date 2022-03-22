@@ -310,9 +310,40 @@ knitr::include_graphics("img/missing-unicorn.jpg")
   - one README per dataset that contains general information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
   - a LICENSE that clarifies the use of data [CC-BY](https://creativecommons.org/licenses/by/4.0/)
 
+
+---
+class: inverse, middle
+
+.big[Data Collection Tools]
+
+---
+
+- Survey vs experimental data collection
+
+---
+# Data Collection Tools
+
+**Commonly used in our sector**
+
+- KOBO Toolbox
+- mWater
+- OpenDataKit
+
 ---
 
 
+---
+class: inverse, middle
+
+.big[Data Collection Tools]
+
+
+---
+# Example Questionnaire
+
+.your-turn[
+- [Please fill out this questionnaire](https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81M8n46)
+]
 
 ---
 # data spice R Package
