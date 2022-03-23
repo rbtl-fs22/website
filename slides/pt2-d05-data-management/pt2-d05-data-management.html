@@ -4,13 +4,15 @@
     <title>rbtl - Research Beyond the Lab</title>
     <meta charset="utf-8" />
     <meta name="author" content="Lars Schöbitz" />
-    <meta name="date" content="2022-03-22" />
+    <meta name="date" content="2022-03-23" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="../xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="../slides.css" type="text/css" />
   </head>
@@ -21,7 +23,7 @@ class: center, middle, inverse, title-slide
 # rbtl - Research Beyond the Lab
 ## Data Management
 ### Lars Schöbitz
-### 2022-03-22
+### 2022-03-23
 
 ---
 
@@ -37,11 +39,11 @@ class: center, middle, inverse, title-slide
 # Today
 
 1. Homework Assignment 4 - Solutions
-2. Research Data Management
-3. Data Organisation in Spreadsheets
-4. Metadata and Codebooks
-5. Using ETH SelectSurvey
-6. Homework Assignment 5
+2. Week 5 - Learning Objectives
+3. Research Data Management
+4. Data Organisation in Spreadsheets
+5. Homework Assignment 5
+
 
 ---
 class: inverse, middle
@@ -58,9 +60,13 @@ class: inverse, middle
 
 .your-turn[
 - **Think** for 2 minutes
-- **Pair** with your neighbour for 5 minutes
+- **Pair** with your neighbour for 4 minutes
 - **Share** your answer with the class
 ]
+
+<div class="countdown" id="timer_623b4262" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
 
 ---
 class: left
@@ -74,6 +80,19 @@ class: left
 background-image: url(img/illustration-slides-week4.010.png)
 background-size: contain
 
+---
+class: inverse, middle
+
+.big[Week 5 - Learning Objectives]
+
+---
+# Week 5 - Learning Objectives
+
+1. Learners can use a tool for survey design for 12 to 15 questions ~~using at least two elements of survey logic~~
+
+2. Learners can apply 12 principles for data organisation in spreadsheets in the layout of a collected dataset
+
+3. Learners understand the importance of documentation and metadata for (research) data management
 
 ---
 class: inverse, middle
@@ -261,15 +280,23 @@ Question on Twitter:
 2. What information would you need to know to use it?
 ]
 
-&lt;img src="img/missing-unicorn.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 4 minutes
+- **Share** your answer with the class
+]
+
+<div class="countdown" id="timer_623b42e8" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
 
 .footnote[Slide adapted from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
 
 
 ---
-# ETH library
+## ETH library
 
-## Data Management Plan Instructions for ETH Zurich Researchers
+### Data Management Plan Instructions for ETH Zurich Researchers
 
 **Section 1: Data collection and documentation**
 
@@ -302,12 +329,15 @@ Question on Twitter:
 ---
 #### Q3: How will data documentation be carried out?
 
-- Repository hosted on GitHub has data folder
-- Data folder contains
-  - one codebook (stored as CSV) that describes all variables following guidelines in [OSF - How to Make a Data Dictionary](https://help.osf.io/hc/en-us/articles/360019739054-How-to-Make-a-Data-Dictionary)
-  - of all datasets following [schema.org](https://schema.org/) standard
-  - one README per dataset that contains general information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
-  - a LICENSE that clarifies the use of data [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+- Repository hosted on GitHub with license that clarifies use: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) 
+- Respository has `/data` directory which contains:
+  - **Codebook** (stored as `attributes.csv`) that describes all variables following [schema.org](https://schema.org/) standards
+  - **README** hat contains information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
+  
+---
+# Break
+
+
 
 
 ---
@@ -315,12 +345,19 @@ class: inverse, middle
 
 .big[Data Collection Tools]
 
+
 ---
+# Data Collection Tools
 
 - Survey vs experimental data collection
 
 ---
-# Data Collection Tools
+class: middle
+
+## .large[Surveys]
+
+---
+## Surveys 
 
 **Commonly used in our sector**
 
@@ -329,20 +366,59 @@ class: inverse, middle
 - OpenDataKit
 
 ---
+## ETH tool - Select Survey 
 
+- Select Survey Portal https://selectsurvey.ethz.ch/
+- [Select Survey User Manual](https://www.unlimited.ethz.ch/download/attachments/21126315/SelectSurveyNETUserManual.pdf?version=2&amp;modificationDate=1592921608627&amp;api=v2)
+- [Select Survey IT Knowledge Base](https://www.unlimited.ethz.ch/display/itkb/Surveys)
+
+---
+## Live Demonstration - Select Survey
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/26tP4mS08o114G2kg" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/sehsucht-relax-newyearsresolution-adventcalendar-26tP4mS08o114G2kg"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 ---
 class: inverse, middle
 
-.big[Data Collection Tools]
-
+.big[Data Organisation in Spreadsheets]
 
 ---
-# Example Questionnaire
+# Data Organisation in Spreadsheets 
 
-.your-turn[
-- [Please fill out this questionnaire](https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81M8n46)
-]
+[
+&lt;img src="img/data-org-paper.png" width="100%" style="display: block; margin: auto;" /&gt;
+](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)
+
+Read the paper, but also:
+
+- Go through the annoated slides: https://kbroman.org/Talk_DataOrg/dataorg_notes.pdf 
+- Watch Karl Broman give the talk (02:36 to 45:00): https://youtu.be/t74E0a90gkA?t=156
+- Read the content on a website: https://kbroman.org/dataorg/
+
+
+.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)]
+
+---
+## But, especially apply it to your data
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/UEGwYCVTBFa9tJEf66" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/rainbow-computer-data-UEGwYCVTBFa9tJEf66"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+---
+## Why? 
+
+**Because I will make your life easier!**
+
+&lt;img src="img/data-org-views.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)]
+
+---
+## License? CC0 (!)
+
+[
+&lt;img src="img/data-org-license.png" width="100%" style="display: block; margin: auto;" /&gt;
+](https://github.com/kbroman/Talk_DataOrg)
+.footnote[[Screenshot taken on 2022-03-23](https://github.com/kbroman/Talk_DataOrg)]
 
 ---
 # data spice R Package
@@ -350,13 +426,68 @@ class: inverse, middle
 - https://annakrystalli.me/rrresearchACCE20/slides/04_metadata.html#22
 - https://docs.ropensci.org/dataspice/index.html
 
+---
+class: inverse, middle
+
+.big[Assignment 5]
+
+---
+# Assignment 5 
+
+**Submit via GitHub by 2022-03-29 23:59**
+
+1. Groups will program their revised questionnaire onto a digital platform so it is ready to use for the following class
+
+2. Groups will transfer their variables into a spreadsheet database
+
+3. Groups will write a codebook for their spreadsheet database
+
+All details on website: 
+
+---
+## File naming conventions
+
+**Why?**
+
+- to stay organised
 
 
 ---
-# Assignment 4
+## File naming conventions - Directories and files
 
-1. Watch the video on "What is ORCID?" and get an ORCID profile: https://the-turing-way.netlify.app/communication/citable/citable-orcid.html#cm-citable-orcid
-2. 
+**Rule 1:** Avoid capital letters
+
+`project/rbtl/website/data/`
+
+(if you want them, be consistent)
+
+---
+## File naming conventions - Directories and files
+
+**Rule 2:** Avoid empty spaces
+
+`project/rbtl/website/data/tab-01-rbtl-assignments.csv`
+
+
+---
+## File naming conventions - Directories and files
+
+**Rule 3:** Use dash '-' to connect text strings in file names
+
+`tab-01-rbtl-assignments.csv`
+
+---
+## File naming conventions - Directories and files
+
+**Rule 4:** Avoid special characters (e.g %, £)
+
+---
+## File naming conventions - Directories and files
+
+**Rule 5:** Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format: YYYY-MM-DD
+
+`2022-03-21-waste-characterization-erz.csv`
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
