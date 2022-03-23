@@ -29,6 +29,12 @@ We assume that you have:
 
 # Exercises
 
+## Exercise 0 - Feedback on Assignment 4
+
+1. Open your Assignment 4 on GitHub
+2. Find the issue where you received feedback on Assignment 4
+3. Incorporate this feedback into your submission for this Assignment 5
+
 ## Exercise 1 - Clone the repo
 
 1. Open the rbtl organisation on GitHub and locate your repository for this assignment (i.e. ae-05-data-management-GITHUB-USERNAME)
