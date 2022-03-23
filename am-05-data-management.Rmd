@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-TODO
+Research Data Management has become increasingly important and is a signifcant aspect of open science and reproducible research. Most funders require a data management plan today (e.g. Swiss National Science Foundation). There are many elements that are a part of it and we will focus our efforts on documentation and metadata. You will receive templates that you can use for your own future data management practices.
 
 ## Prerequisites
 
