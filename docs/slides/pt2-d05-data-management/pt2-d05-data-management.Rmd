@@ -83,6 +83,21 @@ background-image: url(img/illustration-slides-week4.010.png)
 background-size: contain
 
 ---
+# Homework Assignment 4 - Feedback 
+
+```{r, out.width="100%"}
+knitr::include_graphics("img/assignment-feedback-1.png")
+```
+
+---
+# Homework Assignment 4 - Feedback 
+
+```{r, out.width="100%"}
+knitr::include_graphics("img/assignment-feedback-2.png")
+```
+
+
+---
 class: inverse, middle
 
 .big[Week 5 - Learning Objectives]
