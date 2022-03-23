@@ -25,6 +25,8 @@ navbar:
           href: am-03-reference-management.html
         - text: "Assignment 04"
           href: am-04-rmarkdown.html
+        - text: "Assignment 05"
+          href: am-05-data-management.html
 output: 
   distill::distill_article:
     toc: true

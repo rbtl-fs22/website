@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rbtl - Research Beyond the Lab</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lars Schöbitz" />
+    <meta name="date" content="2022-03-23" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="../xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="../slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# rbtl - Research Beyond the Lab
+## Research Data Management
+### Lars Schöbitz
+### 2022-03-23
+
+---
+
+
+
+
+
+&lt;script async defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"&gt;&lt;/script&gt;
+
+
+
+
+# Today
+
+1. Homework Assignment 4 - Solutions
+2. Week 5 - Learning Objectives
+3. Research Data Management
+4. Data Organisation in Spreadsheets
+5. Homework Assignment 5
+
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 4]
+
+---
+# Think, Pair, Share
+
+.question[
+1. What is the difference between markdown and R Markdown?
+2. How does a file written in markdown differ from a file in a proprietary file fornat (e.g. .docx)? 
+]
+
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 4 minutes
+- **Share** your answer with the class
+]
+
+<div class="countdown" id="timer_623b855a" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: left
+background-image: url(img/assignment-solutions.png)
+background-size: contain
+
+# Homework Assignment 4 - Solutions
+
+---
+class: left
+background-image: url(img/illustration-slides-week4.010.png)
+background-size: contain
+
+---
+class: inverse, middle
+
+.big[Week 5 - Learning Objectives]
+
+---
+# Week 5 - Learning Objectives
+
+1. Learners can use a tool for survey design for 12 to 15 questions ~~using at least two elements of survey logic~~
+
+2. Learners can apply 12 principles for data organisation in spreadsheets in the layout of a collected dataset
+
+3. Learners understand the importance of documentation and metadata for (research) data management
+
+---
+class: inverse, middle
+
+.big[Research Data Management]
+
+---
+# Research Data Management
+
+&gt; Acronym: RDM. Refers to the organisation, storage and preservation of data created during a research project. It covers initial planning, day-to-day processes and long-term archiving and sharing. Shortened to RDM. - [Reference](https://the-turing-way.netlify.app/afterword/glossary.html#term-Research-Data-Management)
+
+---
+# Research Data Management
+
+- ensures efficiency in research workflows
+- enables greater reach and impact ([FAIR principles](https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-fair.html?highlight=fair))
+- prevents loss and data corruption
+- documentation and metadata ensures access and enables reuse for others
+
+???
+1. You will always find your data
+2. You get recognition for all research outputs
+3. You stimulate collaboration who find it easier to understand and reuse your data
+
+
+---
+class: middle
+
+## .large[The FAIR principles]
+
+
+---
+class: left
+background-image: url(https://the-turing-way.netlify.app/_images/fair-principles.jpg)
+background-size: contain
+
+.footnote[The Turing Way Community, &amp; Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310]
+
+???
+
+The FAIR guiding principles for scientific data management and stewardship were developed as guidelines to improve the:
+
+- **Findable:** The first step in (re)using data is to find them! Descriptive metadata (information about the data such as keywords) are essential.
+
+- **Accessible:** Once the user finds the data and software they need to know how to access it. Data could be openly available but it is also possible that authentication and authorisation procedures are necessary.
+
+- **Interoperable:** Data needs to be integrated with other data and interoperate with applications or workflows.
+
+- **Reusable:** Data should be well-described so that they can be used, combined, and extended in different settings.
+
+all of which support research reproducibility. The FAIR principles play an important role in making your data available to others for reuse.
+
+Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-fair.html?highlight=fair#
+
+---
+class: middle
+
+## .large[Research Data Lifecycle]
+
+
+---
+##  Research Data Lifecycle 
+
+&lt;iframe width="1000" height="515" src="https://www.youtube.com/embed/-wjFMMQD3UA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+.footnote[Reference: https://www.youtube.com/watch?v=-wjFMMQD3UA]
+
+???
+
+### Point out
+
+1. Planning research
+
+- data management plans right in the beginning when you design your research
+
+2. Collecting data
+
+- We will get into capturing data with metadata
+
+3. Processing and analysing data
+
+- That's what will start from week 8
+
+4. Publishing and sharing data
+
+- That's what most of today is about
+- We have already talked about licenses
+
+5. Preserving data
+
+- Store and backup: You are continously doing that by the use of a remote repository (GitHub)
+
+6. Re-using data
+
+- That's what we hope to be able to do following the course and include you all as co-authors of a publication
+
+---
+class: middle
+
+## .large[Data Management Plan]
+
+---
+## Data Management Plan
+
+Provides information on five main topics:
+
+1. Roles and Responsibilities
+2. Type and size of data collected and documentation/metadata generated
+3. Type of data storage used and back up procedures that are in place
+4. Preservation of the research outputs after the project
+5. Reuse of your research outputs by others
+
+.footnote[Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-dmp.html]
+
+---
+## Data Management Plan
+
+Provides information on five main topics:
+
+1. Roles and Responsibilities
+2. Type and size of data collected and **documentation/metadata** generated
+3. Type of data storage used and back up procedures that are in place
+4. Preservation of the research outputs after the project
+5. Reuse of your research outputs by others
+
+.footnote[Reference: https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-dmp.html]
+
+
+---
+## Data Management Plan
+
+[
+&lt;img src="img/eth-library-dmp.png" width="100%" style="display: block; margin: auto;" /&gt;
+](https://documentation.library.ethz.ch/pages/viewpage.action?pageId=9207835)
+
+.footnote[Screenshot, 2022-03-22: [ETH Library - Research Data Management and Digital Curation - What is a Data Management Plan?](https://documentation.library.ethz.ch/pages/viewpage.action?pageId=9207835)]
+
+---
+class: middle
+
+## .large[Documentation and Metadata]
+
+---
+## You got data. Is it enough?
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; I see tons of spreadsheets that i don&amp;#39;t understand anything (or the stduent), making it really hard to share.&lt;/p&gt;&amp;mdash; Erika Berenguer (@Erika_Berenguer) &lt;a href="https://twitter.com/Erika_Berenguer/status/556111838715580417"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; &lt;a href="https://twitter.com/ScientificData"&gt;@ScientificData&lt;/a&gt; &amp;quot;Document. Everything.&amp;quot; Data without documentation has no value.&lt;/p&gt;&amp;mdash; Sven Kochmann (@indianalytics) &lt;a href="https://twitter.com/indianalytics/status/556120920881115136"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+???
+Question on Twitter:
+
+**If you could tell a new PhD student one thing to help make their data more useful/shareable, what would it be?**
+
+
+---
+## You got data. Is it enough?
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="it" dir="ltr"&gt;&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt; Annotate, annotate, annotate!&lt;/p&gt;&amp;mdash; CanJFishAquaticSci (@cjfas) &lt;a href="https://twitter.com/cjfas/status/556109252788379649"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote class="twitter-tweet" data-conversation="none" data-lang="en"&gt;&lt;p lang="und" dir="ltr"&gt;Document all the metadata (including protocols).&lt;a href="https://twitter.com/tomjwebb"&gt;@tomjwebb&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ward Appeltans (@WrdAppltns) &lt;a href="https://twitter.com/WrdAppltns/status/556108414955560961"&gt;January 16, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+---
+# Think, Pair, Share
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;You download a zip file of &lt;a href="https://twitter.com/hashtag/OpenData?src=hash"&gt;#OpenData&lt;/a&gt;. Apart from your data file(s), what else should it contain?&lt;/p&gt;&amp;mdash; Leigh Dodds (@ldodds) &lt;a href="https://twitter.com/ldodds/status/828657155863638016"&gt;February 6, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+.footnote[Slide taken from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+---
+# Think, Pair, Share
+
+## **Thought experiment: Imagine a dream open data set**
+
+.question[
+1. How would you locate it?
+1. What details would you need to know to determine relevance? 
+2. What information would you need to know to use it?
+]
+
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 4 minutes
+- **Share** your answer with the class
+]
+
+<div class="countdown" id="timer_623b854f" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.footnote[Slide adapted from: https://annakrystalli.me/rrresearchACCE20/metadata-slides.html#metadata-slides]
+
+
+---
+## ETH library
+
+### Data Management Plan Instructions for ETH Zurich Researchers
+
+**Section 1: Data collection and documentation**
+
+- 1.3 What documentation and metadata will you provide with the data?
+    - What information about your data (i.e., metadata) is required to make reuse of your data in the future?
+    - Are you using certain community standards for the annotation of metadata?
+    - How will data documentation be carried out?
+    
+.footnote[[Data Management Plan Instructions for ETH Zurich Researchers](https://documentation.library.ethz.ch/display/DD/Data+Management+Plan+Instructions+for+ETH+Zurich+Researchers)]
+
+---
+#### Q1: What information about your data (i.e., metadata) is required to make reuse of your data in the future?
+
+- Codebook or data dictionaries that define and explain all variables in your data
+- A human and machine-readable file (e.g. README.md) that contains general information on:
+    - Title of the dataset
+    - Description of the dataset
+    - Author information (Name, Institution, Address, Email)
+    - Date of data collection (begin, end)
+    - Geographic location of data collection
+    - etc.
+- A license to clarify reuse possibilties
+
+---
+#### Q2: Are you using certain community standards for the annotation of metadata?
+
+- General metadata standards (e.g. [DublinCore](https://www.dublincore.org/specifications/), [schema.org](https://schema.org/), [R3data.org](https://www.re3data.org/))
+- Domain specific standards (**we won't get into this**)
+
+---
+#### Q3: How will data documentation be carried out?
+
+- Repository hosted on GitHub with license that clarifies use: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) 
+- Respository has `/data` directory which contains:
+  - **Codebook** (stored as `attributes.csv`) that describes all variables following [schema.org](https://schema.org/) standards
+  - **README** hat contains information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
+  
+---
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
+
+# Let's take a break 
+
+<div class="countdown" id="timer_623b8476" style="right:0;bottom:0;left:0;margin:5%;padding:15px;font-size:4em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
+
+---
+class: inverse, middle
+
+.big[Data Collection Tools]
+
+
+---
+# Data Collection Tools
+
+- Questionnaires for survey based data collection
+- Spreadsheets for experimental data collection
+
+---
+class: middle
+
+## .large[Surveys]
+
+---
+## Surveys 
+
+**Commonly used in our sector**
+
+- KOBO Toolbox
+- mWater
+- OpenDataKit
+
+---
+## ETH tool - Select Survey 
+
+- Select Survey Portal https://selectsurvey.ethz.ch/
+- [Select Survey User Manual](https://www.unlimited.ethz.ch/download/attachments/21126315/SelectSurveyNETUserManual.pdf?version=2&amp;modificationDate=1592921608627&amp;api=v2)
+- [Select Survey IT Knowledge Base](https://www.unlimited.ethz.ch/display/itkb/Surveys)
+
+---
+## Live Demonstration - Select Survey
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/26tP4mS08o114G2kg" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/sehsucht-relax-newyearsresolution-adventcalendar-26tP4mS08o114G2kg"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+---
+## Task - Fill out questionnaire
+
+.your-turn[
+- Open Slack and find the link to the questionnaire we have just created
+- Fill out the questionnaire
+]
+
+---
+## Live Demonstration - Writing a codebook
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/Xa4hAvnXUuKrKn1DpD" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/shaun-the-sheep-shaunthesheep-shaunthesheep6-Xa4hAvnXUuKrKn1DpD"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+---
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
+
+# Let's take a break 
+
+<div class="countdown" id="timer_623b854b" style="right:0;bottom:0;left:0;margin:5%;padding:15px;font-size:4em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
+
+---
+class: middle
+
+## .large[Data Organisation in Spreadsheets]
+
+---
+## Data Organisation in Spreadsheets
+
+[
+&lt;img src="img/data-org-paper.png" width="100%" style="display: block; margin: auto;" /&gt;
+](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)
+
+.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)]
+
+---
+## Data Organisation in Spreadsheets
+
+Read the paper (it's part of your homework), but you can also:
+
+- Go through the annoated slides: https://kbroman.org/Talk_DataOrg/dataorg_notes.pdf 
+- Watch Karl Broman give the talk (02:36 to 45:00): https://youtu.be/t74E0a90gkA?t=156
+- Read the content on a website: https://kbroman.org/dataorg/
+
+---
+### But, especially apply it to your data
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/UEGwYCVTBFa9tJEf66" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/rainbow-computer-data-UEGwYCVTBFa9tJEf66"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+---
+### Why? 
+
+**Because it will make your life easier!**
+
+[
+&lt;img src="img/data-org-views.png" width="75%" style="display: block; margin: auto;" /&gt;
+](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)
+
+.footnote[Jorunal: The American Statistician, [Screenshot taken on 2022-03-23](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)]
+
+---
+### License? CC0 (!)
+
+[
+&lt;img src="img/data-org-license.png" width="75%" style="display: block; margin: auto;" /&gt;
+](https://github.com/kbroman/Talk_DataOrg)
+.footnote[[Screenshot taken on 2022-03-23](https://github.com/kbroman/Talk_DataOrg)]
+
+---
+## Waste Characterisation - Data example
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; bin_id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; collection_date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; waste_category &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; weight &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; plastics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; metal &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; pet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; plastics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; metal &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; pet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+## Waste Characterisation - How to collect your data?
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Working with goats 🙄🤦‍♀️ &lt;a href="https://t.co/PGBop7FqNo"&gt;pic.twitter.com/PGBop7FqNo&lt;/a&gt;&lt;/p&gt;&amp;mdash; Holly Vickery (@SkylarkHolly) &lt;a href="https://twitter.com/SkylarkHolly/status/1460598999229083656?ref_src=twsrc%5Etfw"&gt;November 16, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+---
+class: inverse, middle
+
+.big[Assignment 5]
+
+---
+# Assignment 5 
+
+**Submit via GitHub by 2022-03-29 23:59**
+
+1. ~~Groups~~ Students will program their revised questionnaire onto a digital platform so it is ready to use for the following class
+
+2. ~~Groups~~ Students will transfer their variables into a spreadsheet database
+
+3. ~~Groups~~ Students will write a codebook for their spreadsheet database
+
+4. ~~Groups~~ Students will write a README for documentation of metadata
+
+All details on website: https://rbtl-fs22.github.io/website/am-05-data-management.html
+
+---
+class: middle
+
+## .large[Final excursion - File naming conventions]
+
+---
+## File naming conventions 
+
+**Why?**
+
+- to stay organised
+- to not end up with: `'text is FINAL_v2-Ls.docx'`
+
+---
+## File naming conventions - Directories and files
+
+**Rule 1:** Avoid capital letters
+
+`project/rbtl/website/data/`
+
+(if you want them, be consistent)
+
+---
+## File naming conventions - Directories and files
+
+**Rule 2:** Avoid empty spaces
+
+`project/rbtl/website/data/tab-01-rbtl-assignments.csv`
+
+
+---
+## File naming conventions - Directories and files
+
+**Rule 3:** Use dash '-' to connect text strings in file names
+
+`tab-01-rbtl-assignments.csv`
+
+---
+## File naming conventions - Directories and files
+
+**Rule 4:** Avoid special characters (e.g %, £)
+
+---
+## File naming conventions - Directories and files
+
+**Rule 5:** Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format: YYYY-MM-DD
+
+`2022-03-21-waste-characterization-erz.csv`
+
+---
+## File naming conventions - Directories and files
+
+**Rule 6:** Use names that are descriptive for the content
+
+`2022-03-21-waste-characterization-erz.csv`
+
+---
+class: center, middle
+
+# Thanks! 🌻 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d05-data-management/pt2-d05-data-management.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
+"highlightStyle": "solarized-light",
+"highlightSpans": true,
+"highlightLanguage": ["r", "css", "yaml"],
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
