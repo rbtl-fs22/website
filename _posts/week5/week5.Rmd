@@ -1,0 +1,84 @@
+---
+title: "Week 5 - Tools for Data Collection and Management"
+description: |
+  What do you use to collect and manage your data? We introduce you to an ETH tool available for staff and students. We also review good practices for data organization in spreadsheets, as they are commonly used tools for data entry and storage.
+date: 2022-03-24
+params:
+    week: 5
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/fair-principles.jpg  
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="The Turing Way Community, & Scriberia. (2021). Illustrations from the Turing Way book dashes. Zenodo. https://doi.org/10.5281/zenodo.5706310"}
+
+knitr::include_graphics("img/fair-principles.jpg")
+
+```
+
+# Learning Objectives
+
+This lecture consists of one part only. In previous lectures, this was part 2 and we will keep referring to it as such. 
+
+## Part 2
+
+These learning objectives are related to the assignment for this week.
+
+```{r}
+
+lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj2[1]`
+1. `r lobj2[2]`
+1. `r lobj2[3]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+The submission is part of Assignment 5. Each ~~group~~ person will:
+
+1. program their revised questionnaire onto a digital platform so it is ready to use for the following class.
+2. transfer their variables into a spreadsheet database.
+3. will write a codebook for their spreadsheet database.
+4. write a README for documentation of metadata.
+
+# Homework
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
