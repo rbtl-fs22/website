@@ -76,6 +76,7 @@ The submission is part of Assignment 5. Each ~~group~~ person will:
 
 read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
   filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
   mutate(id = seq(1:n())) %>% 
   select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
   knitr::kable() %>% 
