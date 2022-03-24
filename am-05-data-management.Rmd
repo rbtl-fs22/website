@@ -31,14 +31,20 @@ We assume that you have:
 
 ## Exercise 0 - Feedback on Assignment 4
 
-1. Open your Assignment 4 on GitHub
-2. Find the issue where you received feedback on Assignment 4
-3. Incorporate this feedback into your submission for this Assignment 5
+1. Open your Assignment 4 on GitHub.
+2. Find the issue where you received feedback on Assignment 4.
+3. Incorporate this feedback into your submission for this Assignment 5.
 
 ## Exercise 1 - Clone the repo
 
-1. Open the rbtl organisation on GitHub and locate your repository for this assignment (i.e. ae-05-data-management-GITHUB-USERNAME)
-2. Open the rbtl workspace on rstudio.cloud and clone the your repository into the workspace
+1. Open the rbtl organisation on GitHub and locate your repository for this assignment (i.e. ae-05-data-management-GITHUB-USERNAME).
+2. Open the rbtl workspace on rstudio.cloud and clone the your repository into the workspace.
+3. Open the project
+4. Let git know who your are (we will have to do this every time now):
+    - Edit the details in the following code to your name and email. This is the name and email that your commits will be associated. with.
+    - usethis::use_git_config(user.name = "Jane", user.email = "jane@example.org")
+    - copy the line of code to your clipboard (Ctrl + C).
+    - paste the line of code in the Console and hit ther Return (Enter) key.
 
 ## Exercise 2 - Read this paper
 
@@ -96,7 +102,7 @@ Independent of whether you are using a survey or experimental data as your data 
 | unitText     | the units the variable was measured in                  |
 | variableType | the variable data type                                  |
 
-## Exercise 4 - Add your metadata 
+## Exercise 5 - Add your metadata 
 
 1. Open the rbtl workspace on rstudio.cloud and open your project for this assignment.
 2. Navigate to the `/data` directory in the file manager (bottom right window) and click on the directory.
@@ -104,7 +110,7 @@ Independent of whether you are using a survey or experimental data as your data 
 4. Add all information that is applicable and save the file.
 5. commit, add, and push your changes to GitHub.
 
-## Exercise 5
+## Exercise 6 - Complete the assignment 
 
 1. knit, commit, add, and push your changes to GitHub.
 2. Open an issue on the repo to let us know you have completed the assignment.
