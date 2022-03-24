@@ -21,7 +21,7 @@
 class: center, middle, inverse, title-slide
 
 # rbtl - Research Beyond the Lab
-## Data Management
+## Research Data Management
 ### Lars Schöbitz
 ### 2022-03-23
 
@@ -64,7 +64,7 @@ class: inverse, middle
 - **Share** your answer with the class
 ]
 
-<div class="countdown" id="timer_623b4262" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<div class="countdown" id="timer_623b8982" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -79,6 +79,17 @@ background-size: contain
 class: left
 background-image: url(img/illustration-slides-week4.010.png)
 background-size: contain
+
+---
+# Homework Assignment 4 - Feedback 
+
+&lt;img src="img/assignment-feedback-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Homework Assignment 4 - Feedback 
+
+&lt;img src="img/assignment-feedback-2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 class: inverse, middle
@@ -135,10 +146,13 @@ background-size: contain
 
 The FAIR guiding principles for scientific data management and stewardship were developed as guidelines to improve the:
 
-- Findability, 
-- Accessibility, 
-- Interoperability and 
-- Reusability of digital assets; 
+- **Findable:** The first step in (re)using data is to find them! Descriptive metadata (information about the data such as keywords) are essential.
+
+- **Accessible:** Once the user finds the data and software they need to know how to access it. Data could be openly available but it is also possible that authentication and authorisation procedures are necessary.
+
+- **Interoperable:** Data needs to be integrated with other data and interoperate with applications or workflows.
+
+- **Reusable:** Data should be well-described so that they can be used, combined, and extended in different settings.
 
 all of which support research reproducibility. The FAIR principles play an important role in making your data available to others for reuse.
 
@@ -286,7 +300,7 @@ Question on Twitter:
 - **Share** your answer with the class
 ]
 
-<div class="countdown" id="timer_623b42e8" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<div class="countdown" id="timer_623b8ad0" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -317,7 +331,7 @@ Question on Twitter:
     - Author information (Name, Institution, Address, Email)
     - Date of data collection (begin, end)
     - Geographic location of data collection
-    - Information about funding sources that supported the collection of the data
+    - etc.
 - A license to clarify reuse possibilties
 
 ---
@@ -335,10 +349,18 @@ Question on Twitter:
   - **README** hat contains information for each dataset, following variation of [Cornell University README template](https://cornell.app.box.com/v/ReadmeTemplate)
   
 ---
-# Break
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
 
+# Let's take a break 
 
+<div class="countdown" id="timer_623b8bda" style="right:0;bottom:0;left:0;margin:5%;padding:15px;font-size:4em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
 
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
 
 ---
 class: inverse, middle
@@ -349,7 +371,8 @@ class: inverse, middle
 ---
 # Data Collection Tools
 
-- Survey vs experimental data collection
+- Questionnaires for survey based data collection
+- Spreadsheets for experimental data collection
 
 ---
 class: middle
@@ -378,53 +401,147 @@ class: middle
 &lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/26tP4mS08o114G2kg" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/sehsucht-relax-newyearsresolution-adventcalendar-26tP4mS08o114G2kg"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 ---
-class: inverse, middle
+## Task - Fill out questionnaire
 
-.big[Data Organisation in Spreadsheets]
+.your-turn[
+- Open Slack and find the link to the questionnaire we have just created
+- Fill out the questionnaire
+]
 
 ---
-# Data Organisation in Spreadsheets 
+## Live Demonstration - Writing a codebook
+
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/Xa4hAvnXUuKrKn1DpD" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/shaun-the-sheep-shaunthesheep-shaunthesheep6-Xa4hAvnXUuKrKn1DpD"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+
+---
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
+
+# Let's take a break 
+
+<div class="countdown" id="timer_623b8bf3" style="right:0;bottom:0;left:0;margin:5%;padding:15px;font-size:4em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
+
+---
+class: middle
+
+## .large[Data Organisation in Spreadsheets]
+
+---
+## Data Organisation in Spreadsheets
 
 [
 &lt;img src="img/data-org-paper.png" width="100%" style="display: block; margin: auto;" /&gt;
 ](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)
 
-Read the paper, but also:
+.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)]
+
+---
+## Data Organisation in Spreadsheets
+
+Read the paper (it's part of your homework), but you can also:
 
 - Go through the annoated slides: https://kbroman.org/Talk_DataOrg/dataorg_notes.pdf 
 - Watch Karl Broman give the talk (02:36 to 45:00): https://youtu.be/t74E0a90gkA?t=156
 - Read the content on a website: https://kbroman.org/dataorg/
 
+---
+### But, especially apply it to your data
 
-.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989?src=)]
+&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/UEGwYCVTBFa9tJEf66" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/rainbow-computer-data-UEGwYCVTBFa9tJEf66"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
 
 ---
-## But, especially apply it to your data
+### Why? 
 
-&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/UEGwYCVTBFa9tJEf66" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/rainbow-computer-data-UEGwYCVTBFa9tJEf66"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
-
----
-## Why? 
-
-**Because I will make your life easier!**
-
-&lt;img src="img/data-org-views.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-.footnote[[Screenshot taken on 2022-03-23](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)]
-
----
-## License? CC0 (!)
+**Because it will make your life easier!**
 
 [
-&lt;img src="img/data-org-license.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/data-org-views.png" width="75%" style="display: block; margin: auto;" /&gt;
+](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)
+
+.footnote[Jorunal: The American Statistician, [Screenshot taken on 2022-03-23](https://www.tandfonline.com/toc/utas20/current#b7689c1d-7975-46ed-aaf9-3a2939834054-b6de7b7c-de82-45a5-9538-313dd15c6659)]
+
+---
+### License? CC0 (!)
+
+[
+&lt;img src="img/data-org-license.png" width="75%" style="display: block; margin: auto;" /&gt;
 ](https://github.com/kbroman/Talk_DataOrg)
 .footnote[[Screenshot taken on 2022-03-23](https://github.com/kbroman/Talk_DataOrg)]
 
 ---
-# data spice R Package
+## Waste Characterisation - Data example
 
-- https://annakrystalli.me/rrresearchACCE20/slides/04_metadata.html#22
-- https://docs.ropensci.org/dataspice/index.html
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; bin_id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; collection_date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; waste_category &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; weight &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; plastics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; metal &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; pet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; plastics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; metal &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; pet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 682 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2022-03-22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+## Waste Characterisation - How to collect your data?
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Working with goats 🙄🤦‍♀️ &lt;a href="https://t.co/PGBop7FqNo"&gt;pic.twitter.com/PGBop7FqNo&lt;/a&gt;&lt;/p&gt;&amp;mdash; Holly Vickery (@SkylarkHolly) &lt;a href="https://twitter.com/SkylarkHolly/status/1460598999229083656?ref_src=twsrc%5Etfw"&gt;November 16, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
 ---
 class: inverse, middle
@@ -436,21 +553,28 @@ class: inverse, middle
 
 **Submit via GitHub by 2022-03-29 23:59**
 
-1. Groups will program their revised questionnaire onto a digital platform so it is ready to use for the following class
+1. ~~Groups~~ Students will program their revised questionnaire onto a digital platform so it is ready to use for the following class
 
-2. Groups will transfer their variables into a spreadsheet database
+2. ~~Groups~~ Students will transfer their variables into a spreadsheet database
 
-3. Groups will write a codebook for their spreadsheet database
+3. ~~Groups~~ Students will write a codebook for their spreadsheet database
 
-All details on website: 
+4. ~~Groups~~ Students will write a README for documentation of metadata
+
+All details on website: https://rbtl-fs22.github.io/website/am-05-data-management.html
 
 ---
-## File naming conventions
+class: middle
+
+## .large[Final excursion - File naming conventions]
+
+---
+## File naming conventions 
 
 **Why?**
 
 - to stay organised
-
+- to not end up with: `'text is FINAL_v2-Ls.docx'`
 
 ---
 ## File naming conventions - Directories and files
@@ -488,6 +612,28 @@ All details on website:
 
 `2022-03-21-waste-characterization-erz.csv`
 
+---
+## File naming conventions - Directories and files
+
+**Rule 6:** Use names that are descriptive for the content
+
+`2022-03-21-waste-characterization-erz.csv`
+
+---
+class: center, middle
+
+# Thanks! 🌻 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d05-data-management/pt2-d05-data-management.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-TODO
+Research Data Management has become increasingly important and is a signifcant aspect of open science and reproducible research. Most funders require a data management plan today (e.g. Swiss National Science Foundation). There are many elements that are a part of it and we will focus our efforts on documentation and metadata. You will receive templates that you can use for your own future data management practices.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ We assume that you have:
 ## Learning Objectives
 
 1. Learners can use a tool for survey design for 12 to 15 questions ~~using at least two elements of survey logic~~
-2.Learners can apply 12 principles for data organisation in spreadsheets in the layout of a collected dataset
+2. Learners can apply 12 principles for data organisation in spreadsheets in the layout of a collected dataset
 3. Learners understand the importance of documentation and metadata for (research) data management
 
 ## Terminology {#terminology}
@@ -31,9 +31,15 @@ We assume that you have:
 
 ## Exercise 0 - Feedback on Assignment 4
 
+<<<<<<< HEAD
 1. Open your Assignment 4 on GitHub.
 2. Find the issue where you received feedback on Assignment 4.
 3. Incorporate this feedback into your submission for this Assignment 5.
+=======
+1. Open your Assignment 4 on GitHub
+2. Find the issue where you received feedback on Assignment 4
+3. Incorporate this feedback into your submission for this Assignment 5
+>>>>>>> 0b9321b821519b890606d3c5881d189bd4365a8a
 
 ## Exercise 1 - Clone the repo
 
@@ -69,6 +75,7 @@ We assume that you have:
 ```{r, echo=FALSE}
 knitr::include_graphics("img/rscloud-upload-file.png")
 ```
+
 ```{r, echo=FALSE}
 knitr::include_graphics("img/rscloud-upload-file-2.png")
 ```
@@ -112,5 +119,5 @@ Independent of whether you are using a survey or experimental data as your data 
 ## Exercise 5
 
 1. knit, commit, add, and push your changes to GitHub.
-2. Open on issue on the repo to let us know you have completed the assignment.
+2. Open an issue on the repo to let us know you have completed the assignment.
 
