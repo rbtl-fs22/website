@@ -1,0 +1,91 @@
+---
+title: "rbtl - Research Beyond the Lab"
+subtitle: "Research Data Management"  
+author: "Lars Schöbitz"
+date: '
+  `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "../xaringan-themer.css", "../slides.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightSpans: true
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+# Today
+
+1. Homework Assignment 5 - Review
+2. Week 6 - Learning Objectives
+3. Break-out groups: Pre-test & logistics
+4. Planning for Week 7: Data collection
+5. What's next?
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 5 - Review]
+
+---
+# Think, Pair, Share
+
+.question[
+1. Why should you never leave a blank cell in a spreadsheet used for data collection?
+2. What is the benefit of having a data in a rectangular format?
+]
+
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 4 minutes
+- **Share** your answer with the class
+]
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 2, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+
+---
+class: inverse, middle
+
+.big[Week 6 - Learning Objectives]
+
+---
+# Week 5 - Learning Objectives
+
+
+1. Learners are able to use and trouble-shoot the survey tools of others
+2. Learners are able to self-organize and prepare time and logistic plans
+
+3. Learners understand the importance of documentation and metadata for (research) data management
+
+---
+class: inverse, middle
+
+.big[Break-out groups: Pre-test & logistics]
+
