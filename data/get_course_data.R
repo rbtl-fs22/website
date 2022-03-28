@@ -14,6 +14,10 @@ library(dplyr)
 # tab-00_rbtl-course-schedule-main
 
 googlesheets4::read_sheet("1BLIboILqaAHh_4fDvuOZV8kOeYtv0YSsQAnohR9CXjw") %>% 
+  mutate(title = case_when(
+    is.na(page_link) == FALSE ~  paste0("[", title, "](", page_link, ")"),
+    TRUE ~ title
+  )) %>% 
   write_csv(here::here("data/tab-00_rbtl-course-schedule-main.csv"))
 
 # tab-01_rbtl-learning-objectives

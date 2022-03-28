@@ -9,6 +9,9 @@ toc: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# R options
+options(knitr.kable.NA = '')
 ```
 
 # Course Components
@@ -25,24 +28,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Schedule
 
-| **date**       | **week** | **title**                                          | **lecturer**              |
-|----------------|----------|----------------------------------------------------|---------------------------|
-| 2022-02-24     | 1        | Welcome!                                           | E. Tilley and L. Schöbitz |
-| 2022-03-03     | 2        | Waste Research                                     | E. Tilley                 |
-| 2022-03-10     | 3        | Research Design                                    | E. Tilley                 |
-| 2022-03-17     | 4        | Survey Design                                      | E. Tilley                 |
-| 2022-03-24     | 5        | Tools for Data Collection and Data Management      | L. Schöbitz               |
-| 2022-03-31     | 6        | Pre-test and logistics                             | E. Tilley and L. Schöbitz |
-| 2022-04-07     | 7        | Data collection                                    | E. Tilley and L. Schöbitz |
-| 2022-04-14     | 8        | Data Import and Data Types                         | L. Schöbitz               |
-| **2022-04-21** | **9**    | **Easter Break**                                   |                           |
-| 2022-04-28     | 10       | Exploratory Data Analysis using Data Visualisation | L. Schöbitz               |
-| 2022-05-05     | 11       | Data transformation with dplyr                     | L. Schöbitz               |
-| 2022-05-12     | 12       | Data transformation with tidyr                     | L. Schöbitz               |
-| 2022-05-19     | 13       | Communicate your findings                          | L. Schöbitz               |
-| 2022-06-02     | 14       | Workshop/Feedback/Exam                             | E. Tilley and L. Schöbitz |
-| 2022-06-09     | 15       | Project Submission Deadline                        | All                       |
-| 2022-06-16     | 16       | Exam                                               | All                       |
+```{r, echo=FALSE}
+
+readr::read_csv(here::here("data/tab-00_rbtl-course-schedule-main.csv")) |> 
+  dplyr::select(date:lecturer) |> 
+  kableExtra::kbl() |> 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+  
+
+```
+
 
 ## Lectures
 
