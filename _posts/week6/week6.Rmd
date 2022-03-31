@@ -33,18 +33,16 @@ knitr::include_graphics("img/nick-fewings-EkyuhD7uwSM-unsplash.jpg")
 
 ## Part 2
 
-These learning objectives are related to the assignment for this week.
-
 ```{r}
 
-lobj2 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
   filter(week == params$week) %>% 
-  pull(learning_objectives_pt2)
+  pull(learning_objectives_pt1)
 
 ```
 
-1. `r lobj2[1]`
-1. `r lobj2[2]`
+1. `r lobj1[1]`
+1. `r lobj1[2]`
 
 # Slides
 
@@ -60,9 +58,11 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 # Group work
 
-Individuals, not groups, will partner up to give and answer their questionnaire during class so that trouble-shooting and revisions can be done before the study. 
+Revise your data collection tools and have them ready for next week. 
 
 # Homework
+
+There is no assignment to submit this week, below are suggested readings. 
 
 ```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
 
