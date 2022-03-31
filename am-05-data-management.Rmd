@@ -31,15 +31,9 @@ We assume that you have:
 
 ## Exercise 0 - Feedback on Assignment 4
 
-<<<<<<< HEAD
 1. Open your Assignment 4 on GitHub.
 2. Find the issue where you received feedback on Assignment 4.
 3. Incorporate this feedback into your submission for this Assignment 5.
-=======
-1. Open your Assignment 4 on GitHub
-2. Find the issue where you received feedback on Assignment 4
-3. Incorporate this feedback into your submission for this Assignment 5
->>>>>>> 0b9321b821519b890606d3c5881d189bd4365a8a
 
 ## Exercise 1 - Clone the repo
 
@@ -108,7 +102,7 @@ Independent of whether you are using a survey or experimental data as your data 
 | unitText     | the units the variable was measured in                  |
 | variableType | the variable data type                                  |
 
-## Exercise 4 - Add your metadata 
+## Exercise 5 - Add your metadata 
 
 1. Open the rbtl workspace on rstudio.cloud and open your project for this assignment.
 2. Navigate to the `/data` directory in the file manager (bottom right window) and click on the directory.
@@ -116,7 +110,7 @@ Independent of whether you are using a survey or experimental data as your data 
 4. Add all information that is applicable and save the file.
 5. commit, add, and push your changes to GitHub.
 
-## Exercise 5
+## Exercise 6 - Complete the assignment 
 
 1. knit, commit, add, and push your changes to GitHub.
 2. Open an issue on the repo to let us know you have completed the assignment.
