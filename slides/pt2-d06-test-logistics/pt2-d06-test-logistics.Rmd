@@ -53,8 +53,8 @@ class: inverse, middle
 # Think, Pair, Share
 
 .question[
-1. Why should you never leave a blank cell in a spreadsheet used for data collection?
-2. What is the benefit of having a data in a rectangular format? 
+1. Why should you not leave a blank cell in a spreadsheet used for data collection?
+2. Which of the 12 rules for data organization was the least comprehensible to you?
 ] 
 
 .your-turn[
