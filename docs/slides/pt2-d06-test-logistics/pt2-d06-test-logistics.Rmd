@@ -1,0 +1,259 @@
+---
+title: "rbtl - Research Beyond the Lab"
+subtitle: "Pre-test and Logistics"  
+author: "Lars Schöbitz"
+date: '
+  `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "../xaringan-themer.css", "../slides.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightSpans: true
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
+# Today
+
+1. Homework Assignment 5 - Review
+2. Week 6 - Learning Objectives
+3. Pre-test of data collection tools
+4. Logistics and Material
+5. Planning for Week 7: Data collection
+6. Revise data collection tools
+
+---
+class: inverse, middle
+
+.big[Homework Assignment 5 - Review]
+
+---
+# Think, Pair, Share
+
+.question[
+1. Why should you never leave a blank cell in a spreadsheet used for data collection?
+2. What is the benefit of having a data in a rectangular format? 
+] 
+
+.your-turn[
+- **Think** for 2 minutes
+- **Pair** with your neighbour for 2 minutes
+- **Share** your answer with the class
+]
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 2, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+
+---
+class: inverse, middle
+
+.big[Week 6 - Learning Objectives]
+
+---
+# Week 5 - Learning Objectives
+
+
+1. Learners are able to use and trouble-shoot the survey tools of others
+2. Learners are able to self-organize and prepare time and logistic plans
+3. Learners understand the importance of documentation and metadata for (research) data management
+
+---
+class: inverse, middle
+
+.big[Pre-test of data collection tools]
+
+---
+# Break-out groups
+
+.pull-left[
+
+**Group: Waste characterisation**
+
+- Go through spreadsheets for data collection
+- Go through codebooks for spreadsheet (attributes.csv) table  
+- How to collect data at analysis location (paper? notebook? spreadsheet?)
+]
+
+.pull-right[
+
+**Group: Questionnaire**
+
+- 1:1 - Test questionnaire with one respondent
+- 1:1 - Receive feedback on:
+  - Clarity of questions
+  - Chosen response values
+- Groups remix
+- 1:1 - Test questionnaire with one respondent
+- 1:1 - Receive feedback on:
+  - Clarity of questions
+  - Chosen response values
+]
+
+---
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
+
+# Let's take a break 
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "15px", margin = "5%",
+  font_size = "4em"
+)
+
+```
+
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
+
+
+---
+class: inverse, middle
+
+.big[Logistics and Material]
+
+---
+# Break-out groups - Material
+
+.your-turn[
+
+**In your groups**
+- Prepare a list of the material you need and share it with us.
+- Including links to Galaxus
+]
+
+.pull-left[
+
+**Material: Waste characterisation**
+
+.can-edit.key-likes-1[
+- 
+- 
+- 
+]
+
+
+]
+
+.pull-right[
+
+**Material: Questionnaire**
+
+.can-edit.key-likes-2[
+- 
+- 
+- 
+]
+
+]
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 30, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+---
+# Planning for Week 7: Data collection
+
+.your-turn[
+**In your groups**
+- Location
+- Arrival time
+- Departure time
+- Collecting Materials from GHE on Wednesday, 6th April between X and Y
+]
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+---
+class: left
+background-image: url(img/coffee-break.jpg)
+background-position: right
+background-size: contain
+
+# Let's take a break 
+
+```{r, echo = FALSE}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "15px", margin = "5%",
+  font_size = "4em"
+)
+
+```
+
+.footnote[Photo by: [Blake Wisz](https://unsplash.com/@blakewisz)]
+
+---
+# Revision of Data Collection tools
+
+- If there is time, revise your data collection tools now.
+- If not, have a revised version ready for data collection next week. 
+
+---
+class: center, middle
+
+# Thanks! `r emo::ji("sunflower")` 
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d06-test-logistics/pt2-d06-test-logistics.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 

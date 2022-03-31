@@ -1,0 +1,77 @@
+---
+title: "Week 6 - Pre-test and Logistics"
+description: |
+  We check, double-check and then check our research tools again and get ready for data collection next week.
+date: 2022-03-31
+params:
+    week: 6
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/nick-fewings-EkyuhD7uwSM-unsplash.jpg
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by: [Nick Fewings](https://unsplash.com/@jannerboy62)"}
+
+knitr::include_graphics("img/nick-fewings-EkyuhD7uwSM-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+Revise your data collection tools and have them ready for next week. 
+
+# Homework
+
+There is no assignment to submit this week, below are suggested readings. 
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
