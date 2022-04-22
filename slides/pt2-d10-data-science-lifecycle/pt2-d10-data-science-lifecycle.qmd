@@ -1,0 +1,25 @@
+---
+title: "Untitled"
+format: revealjs
+editor: source
+---
+
+# Data Science Lifecycle
+
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
+## {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+
+# dplyr
+
+## Rules of dplyr functions
+
+- First argument is always a data frame
+- Subsequent arguments say what to do with that data frame
+- Always return a data frame
+- Don't modify in place
+
