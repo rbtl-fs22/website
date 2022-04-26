@@ -1,6 +1,5 @@
 ---
-title: "rbtl - Research Beyond the Lab"
-subtitle: "Data Science Lifecycle"  
+title: "rbtl - Data Science Lifecycle"
 author: "Lars Schöbitz"
 institute: "Global Health Engineering - ETH Zurich"
 date: '
@@ -17,8 +16,6 @@ editor: source
 ```
 
 ```{r}
-library(tidyverse)
-library(lubridate)
 library(gapminder)
 ```
 
@@ -46,21 +43,31 @@ dat_in_sum_day <- dat_in %>%
 
 ```
 
-# Welcome back!
+# Welcome back! {background-color="#0F4C81"}
 
-## What's next?
 
-- Classroom tools
-- Data Science Lifecycle
-- R: Functions, Arguments, Objects, Operators
-- Live Coding Exercise
-- Pair Programming Exercise
-- GitHub Teams
-- Assignment Week 10: Data submission
+## You got your data!
 
-# Classroom tools
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/FSzLVme5Y3n3LMOiqP" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/data-spicy-FSzLVme5Y3n3LMOiqP">via GIPHY</a></p>
 
-## Live Coding Exercises
+## What's happening next?
+
+**Today**
+
+1. Classroom tools
+2. Data Science Lifecycle
+3. R basics: Functions, Arguments, Objects, Operators
+4. Live Coding Exercise
+5. Pair Programming Exercise
+6. Homework and Project Report
+
+## Learning Objectives
+
+[TODO]
+
+# Classroom tools {background-color="#0F4C81"}
+
+## Live Coding Exercises 
 
 - Instructor writes and narrates code out loud 
 - Intstructor explains elements and principles that are relevant
@@ -68,7 +75,7 @@ dat_in_sum_day <- dat_in %>%
 - Learners join by writing and executing the same code
 - Learners "code-along" with the instructor
 
-## Pair Programming Exercises
+## Pair Programming Exercises 
 
 - Two learners work together on one computer
 - One person (the driver) does the typing
@@ -77,31 +84,31 @@ dat_in_sum_day <- dat_in %>%
 
 ## Taking Notes Together
 
-- Questions in shared online document: [TODO]
+- Questions in shared online document: https://docs.google.com/document/d/1B_fGhU2-p7GdMjDdRq73JXAhAM7VU2JDu6t1foSQ0og/edit
 
 ## Sticky Notes 
 
 - Use as status flags
 - Green: Exercise completed
-- Orange: Problem, need support.
+- Orange: Problem, need support
 
 # Data Science Lifecycle {background-color="#0F4C81"}
 
-# 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+## 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
 
-# 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
+## 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
 
-# 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+## 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
 
-# 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
+## 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
 
-# 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+## 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
 
-# 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
+## 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
 
-# 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+## 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
 
-# R
+# R {background-color="#0F4C81"}
 
 ## Packages {auto-animate="true"}
 
@@ -213,7 +220,7 @@ Rules of `dplyr` functions:
 
 :::
 
-# Live Coding Exercise 
+# Live Coding Exercise {background-color="#0F4C81"}
 
 ## ae-10-data-science-lifecycle
 
@@ -223,7 +230,7 @@ Rules of `dplyr` functions:
 4. Open the file: `ae-10a-lifecycle.qmd`
 4. Use your Sticky Notes to let me know when you are ready.
 
-# Pair Programming
+# Pair Programming {background-color="#0F4C81"}
 
 ## ae-10-data-science-lifecycle
 
@@ -276,10 +283,9 @@ countdown(
 # Weekly Evaluation
 
 
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
-# Thanks! 
-
-## Thanks! `r emo::ji("sunflower")` 
+## 
 
 Slides created via Quarto: https://quarto.org/docs/presentations/revealjs/ 
 
@@ -287,7 +293,7 @@ Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
 
-# Templates
+# Templates {background-color="#0F4C81"}
 
 ## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
 
