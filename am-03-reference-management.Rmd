@@ -1,5 +1,5 @@
 ---
-title: "Assignment 3 - Reference Management with Zotero"
+title: "Week 3 - Reference Management with Zotero"
 ---
 
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
