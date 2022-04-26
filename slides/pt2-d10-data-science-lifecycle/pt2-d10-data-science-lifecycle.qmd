@@ -230,6 +230,73 @@ Rules of `dplyr` functions:
 4. Open the file: `ae-10a-lifecycle.qmd`
 4. Use your Sticky Notes to let me know when you are ready.
 
+# Solving coding problems
+
+## Tipps for search engines
+
+- Use describe verbs that describe what you want to do
+- Be specific
+- Add R to the search query
+- Add the name of the R package name to the search query
+- Scroll through the top 5 results (don't just pick the first)
+
+**Example:** "How to remove a legend from a plot in R ggplot2" 
+
+## Stack Overflow
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+**What is it?**
+
+- The biggest support network for (coding) problems 
+- Can be initimidating at first
+- Upvote system 
+
+:::
+
+::: {.column width="60%"}
+
+**Workflow**
+
+- First, briefly read the question that was posted
+- Then, read the answer marked as "correct"
+- Then, read one or two more answers with high votes
+- Then, check out the "Linked" posts 
+- Always give credit for the solution
+
+:::
+
+::::
+
+:::
+
+## Give credit
+
+![](img/stack-overflow-share-1.png)
+
+## Give credit
+
+![](img/stack-overflow-share-2.png)
+
+## Give credit {.smaller}
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5-6"
+ggplot(data = global_waste_data_kg_year,
+       mapping = aes(x = income_id, 
+                     y = capita_kg_year,
+                     color = income_id)) +
+  ## Remove legend ref: https://stackoverflow.com/a/35622358/6816220
+  theme(legend.position = "none")
+
+```
+
 # Pair Programming {background-color="#0F4C81"}
 
 ## ae-10-data-science-lifecycle
