@@ -1,25 +1,226 @@
 ---
-title: "Untitled"
-format: revealjs
+title: "rbtl - Research Beyond the Lab"
+subtitle: "Data Science Lifecycle"  
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
 editor: source
 ---
 
-# Data Science Lifecycle
+```{r}
+#| child: "../setup.Rmd"
+```
 
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
-## {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+```{r}
+library(tidyverse)
+library(lubridate)
+```
 
-# dplyr
+```{r data}
+
+dat_link <- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
+
+# The following codee uses a function calles 'read_csv()' to read the data from 
+# the link that is stored in the Object dat_link. The data is then stored in a 
+# new object named 'dat_in'. After running the code, the name shows up in the   
+# Environment pane in the top right of window 
+
+dat_in <- read_csv(dat_link)
+
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = lubridate::as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) %>% 
+  ungroup()
+
+```
+
+# Data Science Lifecycle {background-color="#0F4C81"}
+
+# dplyr {background-color="#0F4C81"}
 
 ## Rules of dplyr functions
 
-- First argument is always a data frame
-- Subsequent arguments say what to do with that data frame
-- Always return a data frame
-- Don't modify in place
+::: {.incremental}
 
+- First argument is always a data frame^[A footnote]
+- Subsequent arguments say what to do with that data frame
+- Always return a data frame  
+- Don't modify in place 
+ 
+:::
+
+::: {.notes}
+Here are my speaker notes
+:::
+
+# Code {background-color="#0F4C81"}
+
+## Example 2
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+
+```{r}
+#| code-line-numbers: "|1|2"
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) 
+```
+
+:::
+
+::: {.column width="40%"}
+
+- What is `%>%`?
+- What is the `<-` sign?
+- What are `dat_in` and `dat_in_sum_day` called?  
+
+:::
+
+::::
+
+
+# Example 3
+
+```{r}
+#| output-location: column
+library(gapminder)
+
+gapminder_yr_2007 <- gapminder %>% 
+  filter(year == 2007)
+
+ggplot(data = gapminder_yr_2007, 
+       mapping = aes(x = continent, 
+                     y = lifeExp)) +
+  geom_boxplot(outlier.shape = NA) + # google this
+  geom_jitter(position = position_jitter(width = 0.1, height = 0),
+              alpha = 1/4, size = 3) +
+  labs(x = NULL,
+       y = "life expectancy") +
+  theme_minimal(base_size = 14) 
+
+
+```
+
+
+# Data Science Lifecycle {background-color="#0F4C81"}
+
+# 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+
+# 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
+
+# 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+
+# 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
+
+# 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+
+# 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
+
+# 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+
+# Homework {background-color="#0F4C81"}
+
+## {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+# Thanks! 
+
+## Thanks! `r emo::ji("sunflower")` 
+
+Slides created via Quarto: https://quarto.org/docs/presentations/revealjs/ 
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d02-tools/pt2-d02-tools.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+# Templates
+
+## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+### Left column
+
+```{r}
+library(dplyr)
+```
+
+:::
+
+::: {.column width="60%"}
+### Right column
+
+```{r}
+print(mtcars)
+```
+
+:::
+
+::::
+
+## Code Animations
+
+## {auto-animate="true"}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+  barplot(WorldPhones[,input$region]*1000, 
+          main=input$region,
+          ylab="Number of Telephones",
+          xlab="Year")
+})
+```
+
+# Preview Links
+
+## Preview Links
+ 
+[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
