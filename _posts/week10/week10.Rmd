@@ -1,0 +1,77 @@
+---
+title: "Week 10 - Data Science Lifecycle"
+description: |
+  Let’s get cracking with R. You have your data and it is time learn how to import it to R and work with it. We will also teach you how to get support solving coding problems online.
+date: 2022-04-28
+params:
+    week: 10
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/data-science-lifecycle.001.png
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="From: [R for Data Science](https://r4ds.had.co.nz/)"}
+
+knitr::include_graphics("img/data-science-lifecycle.001.png")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt1)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+Revise your data collection tools and have them ready for next week. 
+
+# Homework
+
+There is no assignment to submit this week, below are suggested readings. 
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```

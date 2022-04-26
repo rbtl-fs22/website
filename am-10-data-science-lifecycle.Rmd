@@ -1,0 +1,35 @@
+---
+title: "Week 10 - Data Science Lifecycle"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+
+## Prerequisites
+
+We assume that you have:
+
+1. 
+
+## Learning Objectives
+
+1. 
+
+## Terminology {#terminology}
+
+# Exercises
+
+## Exercise 0 
+
+
+## Exercise 0 - Complete the assignment 
+
+1. render, commit, add, and push your changes to GitHub.
+2. Open an issue on the repo to let us know you have completed the assignment.
+
