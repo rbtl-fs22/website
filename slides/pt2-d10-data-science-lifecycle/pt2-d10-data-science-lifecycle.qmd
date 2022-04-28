@@ -48,7 +48,7 @@ dat_in_sum_day <- dat_in %>%
 
 ## You got your data!
 
-<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/FSzLVme5Y3n3LMOiqP" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/data-spicy-FSzLVme5Y3n3LMOiqP">via GIPHY</a></p>
+<div style="width:50%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/FSzLVme5Y3n3LMOiqP" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/data-spicy-FSzLVme5Y3n3LMOiqP">via GIPHY</a></p>
 
 ## What's happening next?
 
@@ -63,7 +63,9 @@ dat_in_sum_day <- dat_in %>%
 
 ## Learning Objectives
 
-[TODO]
+1. Learners can import their data from a CSV file to a team repository on GitHub
+2. Learners can list the six elements of the data science lifecycle
+3. Learners know three different ways of getting support in solving coding problems online
 
 # Classroom tools {background-color="#0F4C81"}
 
@@ -80,7 +82,7 @@ dat_in_sum_day <- dat_in %>%
 - Two learners work together on one computer
 - One person (the driver) does the typing
 - The other person (the navigator) offers comments and suggestions
-- Roles get switched
+- Roles get switched 
 
 ## Taking Notes Together
 
@@ -89,24 +91,70 @@ dat_in_sum_day <- dat_in %>%
 ## Sticky Notes 
 
 - Use as status flags
-- Orange: Exercise completed
-- Pink: Problem, need support
+- **Orange:** Exercise completed
+- **Pink:** Problem, need support
 
 # Data Science Lifecycle {background-color="#0F4C81"}
 
+## Deep End
+
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/3pWRgRw86JyBa" width="75%" height="75%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/matthew-west-all-in-matthew-west-3pWRgRw86JyBa">via GIPHY</a></p>
+
 ## 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+
+::: {.notes}
+
+Add notes
+
+:::
 
 ## 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
 
+::: {.notes}
+
+Add notes
+
+:::
+
 ## 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+
+::: {.notes}
+
+Add notes
+
+:::
 
 ## 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
 
+::: {.notes}
+
+Add notes
+
+:::
+
 ## 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+
+::: {.notes}
+
+Add notes
+
+:::
 
 ## 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
 
+::: {.notes}
+
+Add notes
+
+:::
+
 ## 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+
+::: {.notes}
+
+Add notes
+
+:::
 
 # R {background-color="#0F4C81"}
 
@@ -152,6 +200,16 @@ library(dplyr)
 :::
 
 ::::
+
+:::
+
+::: {.notes}
+
+Packages
+
+- Main way that reusable code is shared in R
+- Combination of code, data, and documentation
+- R has a rich ecosystem of packages for data manipulation & analysis
 
 :::
 
@@ -228,7 +286,26 @@ Rules of `dplyr` functions:
 2. Find the repo for week 10 that has your GitHub username.
 3. Clone the repo with your username to the RStudio Cloud.
 4. Open the file: `ae-10a-lifecycle.qmd`
-4. Use your Sticky Notes to let me know when you are ready.
+5. Use your Sticky Notes to let me know when you are ready.
+
+## Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
 
 # Solving coding problems
 
@@ -240,7 +317,7 @@ Rules of `dplyr` functions:
 - Add the name of the R package name to the search query
 - Scroll through the top 5 results (don't just pick the first)
 
-**Example:** "How to remove a legend from a plot in R ggplot2" 
+**Example: "How to remove a legend from a plot in R ggplot2"**
 
 ## Stack Overflow
 
@@ -297,19 +374,50 @@ ggplot(data = global_waste_data_kg_year,
 
 ```
 
-# Pair Programming {background-color="#0F4C81"}
+## Other sources for help
 
-## ae-10-data-science-lifecycle
+:::: {.columns}
 
-1. Team up in pairs.
-2. Decide who writes code, and who supports without writing code.
-3. Open the file: `ae-10b-lifecycle.qmd`
-3. Work through the exercises.
+::: {.column width="50%"}
+
+- RStudio Community Forum: https://community.rstudio.com/
+- Our rbtl Slack channel
+- Documentation websites: https://dplyr.tidyverse.org/
+- Twitter community: [#rstats](https://twitter.com/search?q=%23rstats&src=typd) 
+:::
+
+::: {.column width="50%"}
+
+![](img/welcome_to_rstats_twitter.png)
+
+:::
+
+::::
+
+::: aside
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+:::
+
+## Minimal reproducible example (reprex)
+
+- Needed when asking questions online
+- We will practice this in another class
+- Good support information: https://www.tidyverse.org/help/#reprex
+
+## {background-image="img/code_hero.jpg" background-size="contain"}
+
+::: aside
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+:::
+
+## Break
+
+![](img/coffee-break.jpg)
 
 ```{r}
 
 countdown(
-  minutes = 15, seconds = 0,
+  minutes = 10, seconds = 0,
   left = 0, right = 0,
   padding = "10px", margin = "5%",
   font_size = "2em"
@@ -317,118 +425,82 @@ countdown(
 
 ```
 
-# Homework {background-color="#0F4C81"}
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Pair Programming {background-color="#0F4C81"}
+
+## ae-10-data-science-lifecycle
+
+1. Team up in pairs
+2. Decide who writes code, and who supports without writing code
+3. Open the file: `ae-10b-lifecycle.qmd`
+4. Work through the exercises
+5. Use your sticky notes to indicate if you need support
+
+```{r}
+
+countdown(
+  minutes = 30, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Teams on GitHub 
+
+![](img/gh-teams-01.png)
+
+## Teams on GitHub 
+
+![](img/gh-teams-02.png)
+
+## Teams on GitHub 
+
+![](img/gh-teams-03.png)
 
 ## Research Project Template
 
-- One repository for each team (group)
-- Template for research project report
-- Complete list of items for grading (also here: [TODO])
+- Report template
+- Complete list of items for grading (also as [open Google Sheet](https://docs.google.com/spreadsheets/d/1l4rffWN2dSv-q_avSzYCUoFeExl8ben2JenNHHE-HN8/edit#gid=0))
+- Information on intentions for publishing
 
-## Report writing process
+## Discuss and decide
 
-- Decide who uploads the raw data
-- Everyone writes 'Results & Discussion' from this week
-- Other chapters are worked on collaboratively from next week
-- You organise yourself to get the report done
+- **Data:** Who will upload which data as part of the homework?
+- **Results & Discussion:** 
+  - Who writes in file:
+    - `03-01-results.qmd`?
+    - `03-02-results.qmd`?
+    - `03-03-results.qmd`?
 
-## Workflow
+```{r}
 
-- First: Pull, Pull, Pull
-- Then: Render, Add, Commit, Push
+countdown(
+  minutes = 3, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
 
-## Assignment
+```
 
-- Report is not the homework assignment
-- Separate homework assignments (2 points) to practise concepts from class
-- Hand in by Tuesday, 23:59 the following week 
+## Submission
 
-
-## {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
-
-
-# Weekly Evaluation
+- All details in assignment week 10
+- Due: Tuesday, 3rd May at 23:59 (2 points)
 
 
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
 ## 
 
-Slides created via Quarto: https://quarto.org/docs/presentations/revealjs/ 
-
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
 Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d02-tools/pt2-d02-tools.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
-
-# Templates {background-color="#0F4C81"}
-
-## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
-
-## Tabsets
-
-::: {.panel-tabset}
-
-### Tab A
-
-Content for `Tab A`
-
-### Tab B
-
-Content for `Tab B`
-
-:::
-
-## Columns
-
-:::: {.columns}
-
-::: {.column width="40%"}
-
-### Left column
-
-```{r}
-library(dplyr)
-```
-
-:::
-
-::: {.column width="60%"}
-### Right column
-
-```{r}
-print(mtcars)
-```
-
-:::
-
-::::
-
-## Code Animations
-
-## {auto-animate="true"}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-})
-```
-
-## {auto-animate=true}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-barplot(WorldPhones[,input$region]*1000, 
-main=input$region,
-ylab="Number of Telephones",
-xlab="Year")
-})
-```
-
-# Preview Links
-
-## Preview Links
-
-[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
