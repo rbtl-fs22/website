@@ -87,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>rbtl: Assignment 1 - Hello GitHub</title>
+  <title>rbtl: Week 1 - Hello GitHub</title>
 
 
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="rbtl: Assignment 1 - Hello GitHub"/>
+  <meta property="og:title" content="rbtl: Week 1 - Hello GitHub"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="rbtl"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="rbtl: Assignment 1 - Hello GitHub"/>
+  <meta property="twitter:title" content="rbtl: Week 1 - Hello GitHub"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 1 - Hello GitHub"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Week 1 - Hello GitHub"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2105,7 +2105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Assignment 1 - Hello GitHub","authors":[]}
+{"title":"Week 1 - Hello GitHub","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2125,11 +2125,12 @@ Assignments
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="am-01-hello-github.html">Assignment 01</a>
-<a href="am-02-hello-rstudio.html">Assignment 02</a>
-<a href="am-03-reference-management.html">Assignment 03</a>
-<a href="am-04-rmarkdown.html">Assignment 04</a>
-<a href="am-05-data-management.html">Assignment 05</a>
+<a href="am-01-hello-github.html">Week 01</a>
+<a href="am-02-hello-rstudio.html">Week 02</a>
+<a href="am-03-reference-management.html">Week 03</a>
+<a href="am-04-rmarkdown.html">Week 04</a>
+<a href="am-05-data-management.html">Week 05</a>
+<a href="am-10-data-science-lifecycle.html">Week 10</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2141,7 +2142,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Assignment 1 - Hello GitHub</h1>
+<h1>Week 1 - Hello GitHub</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2167,49 +2168,83 @@ Assignments
 </div>
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 <h1 id="introduction">Introduction</h1>
-<p>Welcome to the course and your first assignment. The goal of this assignment is to introduce you to GitHub, which you will be using throughout the course to manage your programming assignments and group project work.</p>
-<p>In this part of the course, you will be learning by doing. You are not expected to understand each step that you perform, but rather be exposed to new terminology and concepts that will feel unfamiliar. You will gain familiarity over the next 14-weeks as you develop repetitive workflows and become more experienced with the tools.</p>
+<p>Welcome to the course and your first assignment. The goal of this
+assignment is to introduce you to GitHub, which you will be using
+throughout the course to manage your programming assignments and group
+project work.</p>
+<p>In this part of the course, you will be learning by doing. You are
+not expected to understand each step that you perform, but rather be
+exposed to new terminology and concepts that will feel unfamiliar. You
+will gain familiarity over the next 14-weeks as you develop repetitive
+workflows and become more experienced with the tools.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>We assume that you have:</p>
 <ol type="1">
 <li>A laptop or a PC (a tablet device would not be sufficient)</li>
-<li>One of Mozilla Firefox, Safari, Google Chrome, Microsoft Edge (just not the Internet Explorer)</li>
+<li>One of Mozilla Firefox, Safari, Google Chrome, Microsoft Edge (just
+not the Internet Explorer)</li>
 <li>Read the Syllabus for this course</li>
 </ol>
-<p>We do not expect any prior knowledge of git, GitHub, R, or RStudio.</p>
+<p>We do not expect any prior knowledge of git, GitHub, R, or
+RStudio.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this unit, you will learn to:</p>
 <ul>
 <li>Create a profile on GitHub</li>
 <li>Create a repository on GitHub</li>
 <li>Turn a repository on GitHub into a public GitHub Pages website</li>
-<li>Edit a CSV file in the instructor’s public class repository to add their name, GitHub user ID, and a functioning URL for GitHub Pages website they have just created</li>
+<li>Edit a CSV file in the instructor’s public class repository to add
+their name, GitHub user ID, and a functioning URL for GitHub Pages
+website they have just created</li>
 <li>Initiate a pull request to the instructor’s repository</li>
 <li>Create a GitHub Personal Access Token (PAT)</li>
 </ul>
 <h2 id="terminology">Terminology</h2>
 <ul>
-<li><strong>Version control software</strong>: Version control software allows you to effectively “save” your work at important points in time and come back to any of the save points. It is also an easy way to share code with others so they can download, re-use, contribute.</li>
+<li><strong>Version control software</strong>: Version control software
+allows you to effectively “save” your work at important points in time
+and come back to any of the save points. It is also an easy way to share
+code with others so they can download, re-use, contribute.</li>
 <li><strong>Git</strong>: A version control system.</li>
-<li><strong>GitHub</strong>: A web platform for hosting version controlled files and facilitating collaboration among users.</li>
-<li><strong>Repository</strong>: A Git repository contains all of your project’s files and stores each file’s revision history. It’s common to refer to a repository as a repo.
+<li><strong>GitHub</strong>: A web platform for hosting version
+controlled files and facilitating collaboration among users.</li>
+<li><strong>Repository</strong>: A Git repository contains all of your
+project’s files and stores each file’s revision history. It’s common to
+refer to a repository as a repo.
 <ul>
-<li>In this course, each assignment you work on will be contained in a Git repo.</li>
-<li>For individual assignments, only you will have access to the repo. For team assignments, all team members will have access to a single repo where they work collaboratively.</li>
-<li>All repos associated with this course are housed in the course GitHub organization. The organization is set up such that students can only see repos they have access to, but the course staff can see all of them.</li>
+<li>In this course, each assignment you work on will be contained in a
+Git repo.</li>
+<li>For individual assignments, only you will have access to the repo.
+For team assignments, all team members will have access to a single repo
+where they work collaboratively.</li>
+<li>All repos associated with this course are housed in the course
+GitHub organization. The organization is set up such that students can
+only see repos they have access to, but the course staff can see all of
+them.</li>
 </ul></li>
 </ul>
 <h1 id="tasks">Tasks</h1>
 <ol type="1">
-<li><p>Follow along with the instructions in the video below for this assignment and complete all steps on your own. Part of the steps is to create a username for GitHub. You can find guidance for a good username here: <a href="https://happygitwithr.com/github-acct.html" class="uri">https://happygitwithr.com/github-acct.html</a></p></li>
-<li><p>Fill out this survey: <a href="https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923" class="uri">https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923</a></p></li>
+<li><p>Follow along with the instructions in the video below for this
+assignment and complete all steps on your own. Part of the steps is to
+create a username for GitHub. You can find guidance for a good username
+here: <a href="https://happygitwithr.com/github-acct.html"
+class="uri">https://happygitwithr.com/github-acct.html</a></p></li>
+<li><p>Fill out this survey: <a
+href="https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923"
+class="uri">https://evaluation-app1.let.ethz.ch/TakeSurvey.aspx?SurveyID=l81Jn923</a></p></li>
 </ol>
 <h1 id="video">Video</h1>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/GMQJlnLlr1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <h1 id="acknowledgements">Acknowledgements</h1>
-<p>The material on this page is influenced by and partly taken from: <a href="https://datasciencebox.org/index.html">datasciencebox.org</a> licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> license.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The material on this page is influenced by and partly taken from: <a
+href="https://datasciencebox.org/index.html">datasciencebox.org</a>
+licensed under a <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International</a> license.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -20,19 +20,24 @@ date,week,title,teaser,lecturer,learning_objectives_pt1,learning_objectives_pt2
 2022-04-07T00:00:00Z,7,Data collection,NA,E. Tilley and L. Schöbitz,"Learners are able to collect data from primary sources (respondents, physical measurements) using the tool they developed",NA
 2022-04-07T00:00:00Z,7,Data collection,NA,E. Tilley and L. Schöbitz,"Learners understand the time required for data collection (including transport, rejections, etc.)",NA
 2022-04-07T00:00:00Z,7,Data collection,NA,E. Tilley and L. Schöbitz,Learners are able to adapt their data collection strategies based on their first experience,NA
-2022-04-14T00:00:00Z,8,Data Import and Data Types,NA,L. Schöbitz,NA,"Learners can use four functions to import data from four data sources (Google Sheets, MS Excel, local CSV, API CSV)"
-2022-04-14T00:00:00Z,8,Data Import and Data Types,NA,L. Schöbitz,NA,Learners can list the four main types of vectors in R
-2022-04-14T00:00:00Z,8,Data Import and Data Types,NA,L. Schöbitz,NA,Learners can use three different ways of getting support in solving coding problems online
+2022-04-14T00:00:00Z,8,Data collection,NA,L. Schöbitz,NA,NA
+2022-04-14T00:00:00Z,8,Data collection,NA,L. Schöbitz,NA,NA
+2022-04-14T00:00:00Z,8,Data collection,NA,L. Schöbitz,NA,NA
 2022-04-21T00:00:00Z,9,Easter Break,NA,NA,NA,NA
-2022-04-28T00:00:00Z,10,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can describe the four main aesthetic mappings that can be used to visualise data using the ggplot2 R Package
-2022-04-28T00:00:00Z,10,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can control the colour scaling applied to a plot using colour as an aesthetic mapping
-2022-04-28T00:00:00Z,10,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can compare three different geoms and their use case
-2022-04-28T00:00:00Z,10,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can apply a theme to control font types and sizes within a plot
-2022-05-05T00:00:00Z,11,Data transformation with dplyr,NA,L. Schöbitz,NA,Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
-2022-05-05T00:00:00Z,11,Data transformation with dplyr,NA,L. Schöbitz,NA,Learners can apply functions to transform their data from a wide to a long format and vice versa
-2022-05-12T00:00:00Z,12,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to join multiple data sets
-2022-05-12T00:00:00Z,12,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
-2022-05-19T00:00:00Z,13,Communicate your findings,NA,L. Schöbitz,NA,Learners can use R Markdown and GitHub to publish their group project report
-2022-05-19T00:00:00Z,13,Communicate your findings,NA,L. Schöbitz,NA,Learners can use exported references from Zotero in Better BibTex Format to generate an automated reference list
-2022-05-19T00:00:00Z,13,Communicate your findings,NA,L. Schöbitz,NA,Learners can cross-reference figures and tables within an R Markdown file
-2022-05-26T00:00:00Z,14,Auffahrt Break,NA,NA,NA,NA
+2022-04-28T00:00:00Z,10,Data Science Lifecycle,NA,L. Schöbitz,NA,Learners can import their data from a CSV file to a team repository on GitHub
+2022-04-28T00:00:00Z,10,Data Science Lifecycle,NA,L. Schöbitz,NA,Learners can list the six elements of the data science lifecycle
+2022-04-28T00:00:00Z,10,Data Science Lifecycle,NA,L. Schöbitz,NA,Learners know three different ways of getting support in solving coding problems online
+2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can describe the four main aesthetic mappings that can be used to visualise data using the ggplot2 R Package
+2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can control the colour scaling applied to a plot using colour as an aesthetic mapping
+2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can compare three different geoms and their use case
+2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can apply a theme to control font types and sizes within a plot
+2022-05-12T00:00:00Z,12,Data transformation with dplyr,NA,L. Schöbitz,NA,Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions to transform their data from a wide to a long format and vice versa
+2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to join multiple data sets
+2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
+2022-05-26T00:00:00Z,14,Auffahrt Break,NA,L. Schöbitz,NA,NA
+2022-06-02T00:00:00Z,15,Communicate your findings,NA,L. Schöbitz,NA,Learners can use R Markdown and GitHub to publish their group project report
+2022-06-02T00:00:00Z,15,Communicate your findings,NA,NA,NA,Learners can use exported references from Zotero in Better BibTex Format to generate an automated reference list
+2022-06-02T00:00:00Z,15,Communicate your findings,NA,NA,NA,Learners can cross-reference figures and tables within an R Markdown file
+2022-06-09T00:00:00Z,16,Project Submission Deadline,NA,NA,NA,NA
+2022-06-16T00:00:00Z,17,Exam,NA,NA,NA,NA

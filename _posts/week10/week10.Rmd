@@ -37,12 +37,13 @@ knitr::include_graphics("img/data-science-lifecycle.001.png")
 
 lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
   filter(week == params$week) %>% 
-  pull(learning_objectives_pt1)
+  pull(learning_objectives_pt2)
 
 ```
 
 1. `r lobj1[1]`
 1. `r lobj1[2]`
+1. `r lobj1[3]`
 
 # Slides
 

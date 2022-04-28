@@ -53,6 +53,8 @@ library(kableExtra)
 library(xaringanExtra)
 xaringanExtra::use_panelset()
 
+library(tidyverse)
+
 ```
 
 <script async defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>

@@ -7,7 +7,15 @@
     <description>Research Beyond the Lab
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Week 10 - Data Science Lifecycle</title>
+      <link>https://rbtl-fs22.github.io/website/posts/week10</link>
+      <description>Let’s get cracking with R. You have your data and it is time learn how to import it to R and work with it. We will also teach you how to get support solving coding problems online.</description>
+      <guid>https://rbtl-fs22.github.io/website/posts/week10</guid>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://rbtl-fs22.github.io/website/posts/week10/img/data-science-lifecycle.001.png" medium="image" type="image/png" width="1920" height="1080"/>
+    </item>
     <item>
       <title>Week 6 - Pre-test and Logistics</title>
       <link>https://rbtl-fs22.github.io/website/posts/week6</link>

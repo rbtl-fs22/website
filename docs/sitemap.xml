@@ -2,23 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-01-hello-github.html</loc>
-    <lastmod>2022-02-24T11:12:04+01:00</lastmod>
+    <lastmod>2022-04-26T16:06:03+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html</loc>
-    <lastmod>2022-03-03T12:21:22+01:00</lastmod>
+    <lastmod>2022-04-26T16:06:12+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-03-reference-management.html</loc>
-    <lastmod>2022-03-10T12:54:23+01:00</lastmod>
+    <lastmod>2022-04-26T16:06:20+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-04-rmarkdown.html</loc>
-    <lastmod>2022-03-17T13:53:49+01:00</lastmod>
+    <lastmod>2022-04-26T16:06:26+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/am-05-data-management.html</loc>
-    <lastmod>2022-03-31T13:12:14+02:00</lastmod>
+    <lastmod>2022-04-26T16:06:41+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://rbtl-fs22.github.io/website/am-10-data-science-lifecycle.html</loc>
+    <lastmod>2022-04-28T11:53:39+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/</loc>
@@ -26,7 +30,7 @@
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/LICENSE.html</loc>
-    <lastmod>2022-03-31T13:36:06+02:00</lastmod>
+    <lastmod>2022-04-28T12:00:49+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/schedule.html</loc>
@@ -34,30 +38,34 @@
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/syllabus.html</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-20T13:25:34+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://rbtl-fs22.github.io/website/posts/week10/</loc>
+    <lastmod>2022-04-28T12:02:46+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week6/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:30+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week5/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:29+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week4/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:28+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week3/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:27+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week2/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:26+02:00</lastmod>
   </url>
   <url>
     <loc>https://rbtl-fs22.github.io/website/posts/week1/</loc>
-    <lastmod>2022-03-31T13:14:16+02:00</lastmod>
+    <lastmod>2022-04-28T11:56:24+02:00</lastmod>
   </url>
 </urlset>
