@@ -100,7 +100,7 @@ dat_in_sum_day <- dat_in %>%
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/3pWRgRw86JyBa" width="75%" height="75%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/matthew-west-all-in-matthew-west-3pWRgRw86JyBa">via GIPHY</a></p>
 
-## 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+## 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -108,7 +108,7 @@ Add notes
 
 :::
 
-## 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
+## 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -122,7 +122,7 @@ Add notes
 
 :::
 
-## 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+## 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -138,7 +138,7 @@ Add notes
 
 :::
 
-## 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
+## 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -153,7 +153,7 @@ Together, tidying and transforming are called wrangling, because getting your da
 
 :::
 
-## 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+## 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -168,7 +168,7 @@ Together, tidying and transforming are called wrangling, because getting your da
 
 :::
 
-## 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
+## 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png" background-size="contain"}
 
 ::: {.notes}
 
@@ -178,7 +178,7 @@ Together, tidying and transforming are called wrangling, because getting your da
 
 :::
 
-## 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+## 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png" background-size="contain"}
 
 ::: {.notes}
 
