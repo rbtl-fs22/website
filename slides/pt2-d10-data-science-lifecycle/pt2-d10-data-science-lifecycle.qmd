@@ -1,0 +1,434 @@
+---
+title: "rbtl - Data Science Lifecycle"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+editor: source
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+```{r}
+library(gapminder)
+```
+
+```{r data}
+
+dat_link <- "https://raw.githubusercontent.com/Global-Health-Engineering/manuscript-hospital-air-quality/main/data/intermediate/malawi-hospitals-air-quality.csv"
+
+# The following codee uses a function calles 'read_csv()' to read the data from 
+# the link that is stored in the Object dat_link. The data is then stored in a 
+# new object named 'dat_in'. After running the code, the name shows up in the   
+# Environment pane in the top right of window 
+
+dat_in <- read_csv(dat_link)
+
+dat_in_sum_day <- dat_in %>% 
+  filter(value <= 1000) %>% 
+  mutate(date = lubridate::as_date(date_time)) %>% 
+  group_by(date, location, indicator) %>% 
+  summarise(min = min(value),
+            median = median(value),
+            mean = mean(value),
+            sd = sd(value),
+            max = max(value)) %>% 
+  ungroup()
+
+```
+
+# Welcome back! {background-color="#0F4C81"}
+
+
+## You got your data!
+
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/FSzLVme5Y3n3LMOiqP" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/data-spicy-FSzLVme5Y3n3LMOiqP">via GIPHY</a></p>
+
+## What's happening next?
+
+**Today**
+
+1. Classroom tools
+2. Data Science Lifecycle
+3. R basics: Functions, Arguments, Objects, Operators
+4. Live Coding Exercise
+5. Pair Programming Exercise
+6. Homework and Project Report
+
+## Learning Objectives
+
+[TODO]
+
+# Classroom tools {background-color="#0F4C81"}
+
+## Live Coding Exercises 
+
+- Instructor writes and narrates code out loud 
+- Intstructor explains elements and principles that are relevant
+- Code is displayed on projector screen
+- Learners join by writing and executing the same code
+- Learners "code-along" with the instructor
+
+## Pair Programming Exercises 
+
+- Two learners work together on one computer
+- One person (the driver) does the typing
+- The other person (the navigator) offers comments and suggestions
+- Roles get switched
+
+## Taking Notes Together
+
+- Questions in shared online document: https://docs.google.com/document/d/1B_fGhU2-p7GdMjDdRq73JXAhAM7VU2JDu6t1foSQ0og/edit
+
+## Sticky Notes 
+
+- Use as status flags
+- Orange: Exercise completed
+- Pink: Problem, need support
+
+# Data Science Lifecycle {background-color="#0F4C81"}
+
+## 1 {background-image="img/data-science-lifecycle/data-science-lifecycle.001.png"}
+
+## 2 {background-image="img/data-science-lifecycle/data-science-lifecycle.002.png"}
+
+## 3 {background-image="img/data-science-lifecycle/data-science-lifecycle.003.png"}
+
+## 4 {background-image="img/data-science-lifecycle/data-science-lifecycle.004.png"}
+
+## 5 {background-image="img/data-science-lifecycle/data-science-lifecycle.005.png"}
+
+## 6 {background-image="img/data-science-lifecycle/data-science-lifecycle.006.png"}
+
+## 7 {background-image="img/data-science-lifecycle/data-science-lifecycle.007.png"}
+
+# R {background-color="#0F4C81"}
+
+## Packages {auto-animate="true"}
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+**base R**
+
+```{r}
+#| eval: false
+#| echo: true
+sqrt(49)
+sum(1, 2)
+```
+
+- Functions come with R
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="55%"}
+
+**R Packages**
+
+```{r}
+#| eval: false
+#| echo: true
+library(dplyr)
+
+```
+
+- Installed once in the Console: `install.packages("dplyr")`
+- Loaded per script
+
+:::
+
+::::
+
+:::
+
+## Functions & Arguments {auto-animate="true"}
+
+```{r}
+#| code-line-numbers: "3-4"
+#| eval: false
+#| echo: true
+library(dplyr)
+
+filter(.data = gapminder, 
+       year == 2007)
+```
+
+- Function: `filter()`
+- Argument: `.data = ` 
+- Arguments following: `year == 2007` **What do do with the data**
+
+## Objects {auto-animate="true"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3-4"
+#| echo: true
+library(dplyr)
+
+gapminder_yr_2007 <- filter(.data = gapminder, 
+       year == 2007)
+```
+
+- Function: `filter()`
+- Argument: `.data = `
+- Arguments following: `year == 2007` **What do do with the data**
+- Object: `gapminder_yr_2007`
+
+## Operators {auto-animate="true"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3-4"
+#| echo: true
+library(dplyr)
+
+gapminder_yr_2007 <- gapminder %>% 
+  filter(year == 2007) 
+```
+
+- Function: `filter()`
+- Argument: `.data = `
+- Arguments following: `year == 2007` **What do do with the data**
+- Object: `gapminder_yr_2007`
+- Assignment operator: `<-`
+- Pipe operator: `%<%`
+
+## Rules
+
+Rules of `dplyr` functions:
+
+::: {.incremental}
+
+- First argument is always a data frame
+- Subsequent arguments say what to do with that data frame
+- Always return a data frame  
+- Don't modify in place 
+
+:::
+
+# Live Coding Exercise {background-color="#0F4C81"}
+
+## ae-10-data-science-lifecycle
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 10 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-10a-lifecycle.qmd`
+4. Use your Sticky Notes to let me know when you are ready.
+
+# Solving coding problems
+
+## Tipps for search engines
+
+- Use describe verbs that describe what you want to do
+- Be specific
+- Add R to the search query
+- Add the name of the R package name to the search query
+- Scroll through the top 5 results (don't just pick the first)
+
+**Example:** "How to remove a legend from a plot in R ggplot2" 
+
+## Stack Overflow
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+**What is it?**
+
+- The biggest support network for (coding) problems 
+- Can be initimidating at first
+- Upvote system 
+
+:::
+
+::: {.column width="60%"}
+
+**Workflow**
+
+- First, briefly read the question that was posted
+- Then, read the answer marked as "correct"
+- Then, read one or two more answers with high votes
+- Then, check out the "Linked" posts 
+- Always give credit for the solution
+
+:::
+
+::::
+
+:::
+
+## Give credit
+
+![](img/stack-overflow-share-1.png)
+
+## Give credit
+
+![](img/stack-overflow-share-2.png)
+
+## Give credit {.smaller}
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5-6"
+ggplot(data = global_waste_data_kg_year,
+       mapping = aes(x = income_id, 
+                     y = capita_kg_year,
+                     color = income_id)) +
+  ## Remove legend ref: https://stackoverflow.com/a/35622358/6816220
+  theme(legend.position = "none")
+
+```
+
+# Pair Programming {background-color="#0F4C81"}
+
+## ae-10-data-science-lifecycle
+
+1. Team up in pairs.
+2. Decide who writes code, and who supports without writing code.
+3. Open the file: `ae-10b-lifecycle.qmd`
+3. Work through the exercises.
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+# Homework {background-color="#0F4C81"}
+
+## Research Project Template
+
+- One repository for each team (group)
+- Template for research project report
+- Complete list of items for grading (also here: [TODO])
+
+## Report writing process
+
+- Decide who uploads the raw data
+- Everyone writes 'Results & Discussion' from this week
+- Other chapters are worked on collaboratively from next week
+- You organise yourself to get the report done
+
+## Workflow
+
+- First: Pull, Pull, Pull
+- Then: Render, Add, Commit, Push
+
+## Assignment
+
+- Report is not the homework assignment
+- Separate homework assignments (2 points) to practise concepts from class
+- Hand in by Tuesday, 23:59 the following week 
+
+
+## {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+
+# Weekly Evaluation
+
+
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
+
+## 
+
+Slides created via Quarto: https://quarto.org/docs/presentations/revealjs/ 
+
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d02-tools/pt2-d02-tools.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+# Templates {background-color="#0F4C81"}
+
+## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+### Left column
+
+```{r}
+library(dplyr)
+```
+
+:::
+
+::: {.column width="60%"}
+### Right column
+
+```{r}
+print(mtcars)
+```
+
+:::
+
+::::
+
+## Code Animations
+
+## {auto-animate="true"}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+barplot(WorldPhones[,input$region]*1000, 
+main=input$region,
+ylab="Number of Telephones",
+xlab="Year")
+})
+```
+
+# Preview Links
+
+## Preview Links
+
+[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}

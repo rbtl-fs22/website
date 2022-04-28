@@ -180,7 +180,7 @@ read_csv(here::here("data/tab-05_rbtl-grading-structure.csv")) %>%
   mutate(type = factor(type,levels = c("homework", "project", "exam"))) %>% 
   group_by(type) %>% 
   summarise(
-    percent = sum(percent)
+    points = sum(points)
   ) %>% 
   kbl() %>% 
   kable_styling(font_size = 45) 

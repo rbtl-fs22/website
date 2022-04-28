@@ -17,16 +17,18 @@ navbar:
       href: syllabus.html
     - text: "Assignments"
       menu:
-        - text: "Assignment 01"
+        - text: "Week 01"
           href: am-01-hello-github.html
-        - text: "Assignment 02"
+        - text: "Week 02"
           href: am-02-hello-rstudio.html
-        - text: "Assignment 03"
+        - text: "Week 03"
           href: am-03-reference-management.html
-        - text: "Assignment 04"
+        - text: "Week 04"
           href: am-04-rmarkdown.html
-        - text: "Assignment 05"
+        - text: "Week 05"
           href: am-05-data-management.html
+        - text: "Week 10"
+          href: am-10-data-science-lifecycle.html
 output: 
   distill::distill_article:
     toc: true

@@ -1,18 +1,18 @@
-type,category,description,items,percent
-homework,homework,,10 homework submisions,20
-project,technical,,"YAML header has title, authors, table of contents that are correctly displayed in the derived output",1
-project,technical,,The report has two data visualisations,1
-project,technical,,"Data visualisations display at least two variables, and are readible in a standalone format with formatted labels (axis labels, title, legend title)",5
-project,technical,,"The report includes a table with summary statistics, and is formatted using a function taught during the course",1
-project,technical,,The two data visualisations and the table have a cross-reference in the report,1
-project,technical,,"Messages and warnings are hidden from the output, but code is shown in the output",1
-project,technical,,"A bibliography was exported from Zotero, is included in the report in APA format and referenced throughout the report",1
-project,technical,,The report contains at least three locations where inline code is used to show single number results,1
-project,technical,,The GitHub repo for the research project contains the raw data and derived data that is shown in tables and figures,2
-project,technical,,"The GitHub repo for the research project contains the following four files: README, License, Code of Conduct and Citation",1
-project,technical,,Project has at least three commits by each team member with an informative written commit message,5
-project,intellectual,,Introduction with minimum 5 references clearly frames the research question and provides justification for the work,2.5
-project,intellectual,,Methods are clearly documented and replicable,2.5
-project,intellectual,,Meaning of results are interpreted; how each Figure/Table contributes to answering the main Research Question is explained; Limitations of the data are honest and discussed,2.5
-project,intellectual,,Conclusions concisely summarize findings; Recommendations for future work are provided,2.5
-exam,technical,,All technical parts that are taught during the course,50
+type,category,description,items,points,grading
+homework,homework,"Homework only receives a pass/fail. To progress in class, every homework needs to be submitted. Without doing the homework, students cannot do their projects or progress in class. Students receive a total of 20 points for the total grade for this part of the course.",10 homework submisions,20,individual
+project,technical,This part of the project grades the technical parts of the final report.,"YAML header of main report has title, authors, table of contents that are correctly displayed in the compiled output.",1,team
+project,technical,This part of the project grades the technical parts of the final report.,Each results sections has at least two data visualisations.,1,individual
+project,technical,This part of the project grades the technical parts of the final report.,"Data visualisations display at least two variables and are readible in a standalone format with edited labels (axis labels, title, legend title). At least one scaling function is applied (e.g. color/fill, axis). A theme is applied. Each visualisation has a label and a caption.",5,individual
+project,technical,This part of the project grades the technical parts of the final report.,"The report includes a table with summary statistics (e.g. mean, median, sd). The table is formatted using a function taught during the course.",1,individual
+project,technical,This part of the project grades the technical parts of the final report.,The two data visualisations and the table are cross-referenced in the results sections of the report.,1,individual
+project,technical,This part of the project grades the technical parts of the final report.,"Messages and warnings are hidden from the compiled output, but code is shown in the compiled output.",1,team
+project,technical,This part of the project grades the technical parts of the final report.,A bibliography with references was exported from the team folder in the Zotero Group rbtl. The bibliography is uploaded to the main directory of the repository and added to the YAML header of the main report file. References are used throughout the report.,1,team
+project,technical,This part of the project grades the technical parts of the final report.,The results sections of the report contain at least two locations where inline code is used to show single number results.,1,individual
+project,technical,This part of the project grades the technical parts of the final report.,Metadata for data contained in the 'data/tidy_data/' directory is added using the provided README and CSV file templates.,2,team
+project,technical,This part of the project grades the technical parts of the final report.,Contributor details for all team members are added to the CITATION.cff file.,1,team
+project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Introduction with 3 to 5 references clearly frames the research question and provides justification for the work.,2,team
+project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Methods are clearly documented and replicable.,2,team
+project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Meaning of results are interpreted; how each Figure/Table contributes to answering the main Research Question is explained; Limitations of the data are honest and discussed.,4,individual
+project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Conclusions concisely summarize findings in a bullet point format.,3,team
+project,intellectual,This part of the project grades the intellectual framing of the results in the final report.,Recommendations for future work are provided.,4,team
+exam,technical,This is a two hour programming exam for which any course or online material can be used.,All technical parts that are taught during the course.,50,individual
