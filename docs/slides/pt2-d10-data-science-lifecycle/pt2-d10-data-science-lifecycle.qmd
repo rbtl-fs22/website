@@ -112,7 +112,13 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. First you must import your data into R. This typically means that you take data stored:
+
+- in a file
+- in a database, 
+- or web application, and load it into R. 
+
+2. If you can get your data into R, you can  do data science on it!
 
 :::
 
@@ -120,7 +126,15 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. Once you’ve imported your data, it is a good idea to tidy it. 
+
+2. This means to get it into a structure that lets you focus on the questions about your data and not the format it needs to be in
+
+3. This is the step where we spend by far the biggest amount of our time. 
+
+4. It has been estimated that we spend about 80% of our time with cleaning and tidying data, so that we can use it fo our analyses.
+
+5. In my courses you will learn how to structure your data in a tidy format as you collect it, and before you import it. A highly underestimated skill.
 
 :::
 
@@ -128,7 +142,14 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. Once your data is tidy, a common first step is to transform it.
+
+2. This includes 
+  - narrowing in on what interests you (like all people without toilets in one district, or all data from last year)
+  - creating new variables from existing (like toilet density, as in number of people per toilet) 
+  - calculating summary statistics (like counts or the mean)
+  
+Together, tidying and transforming are called wrangling, because getting your data in a form that’s natural to work with often feels like a fight!
 
 :::
 
@@ -136,7 +157,14 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. Once you have tidy data with the variables you need, there are two main engines of knowledge generation: 
+
+- visualisation 
+- and modelling. 
+
+2. These have complementary strengths and weaknesses so any real analysis will iterate between them many times.
+
+3. Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data.
 
 :::
 
@@ -144,7 +172,9 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. Models are complementary tools to visualisation. Once you have made your questions sufficiently precise, you can use a model to answer them.
+
+2. In my courses, they play a very small part, but I am confident that you will be able to enhance your knowledge on modelling once you understand the basic principles of using the R lanuage.
 
 :::
 
@@ -152,7 +182,11 @@ Add notes
 
 ::: {.notes}
 
-Add notes
+1. The last step of data science is communication, an absolutely critical part of any data analysis project. 
+
+2. It doesn’t matter how well your models and visualisation have led you to understand the data, unless you can also communicate your results to others.
+
+3. And this is a part where R has become really strong.
 
 :::
 
