@@ -527,7 +527,7 @@ countdown(
 ## Submission
 
 - All details in assignment week 10
-- Due: Tuesday, 3rd May at 23:59 (2 points)
+- Due: Tuesday, 4th May at 23:59 (2 points)
 
 
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}

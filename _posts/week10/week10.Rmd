@@ -59,11 +59,11 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 # Group work
 
-Revise your data collection tools and have them ready for next week. 
+All details for your group work are in the assignment for this week.
 
 # Homework
 
-There is no assignment to submit this week, below are suggested readings. 
+There is one assignment this week and no additional readings. 
 
 ```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
 
