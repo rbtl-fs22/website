@@ -4,7 +4,7 @@ format: revealjs
 editor: visual
 ---
 
- Templates {background-color="#0F4C81"}
+# Templates {background-color="#0F4C81"}
 
 ## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
 
@@ -76,3 +76,22 @@ xlab="Year")
 ## Preview Links
 
 [Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
+
+# Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
