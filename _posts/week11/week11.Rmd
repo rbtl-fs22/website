@@ -9,7 +9,7 @@ output:
   distill::distill_article:
     toc: true
     self_contained: false
-preview: img/data-science-lifecycle.001.png
+preview: img/neven-krcmarek-V4EOZj7g1gw-unsplash.jpg
 ---
 
 ```{r child = "../setup.Rmd"}
@@ -23,9 +23,9 @@ library(readr)
 
 ```
 
-```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="From: [R for Data Science](https://r4ds.had.co.nz/)"}
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Neven Krcmarek](https://unsplash.com/photos/V4EOZj7g1gw)"}
 
-knitr::include_graphics("img/data-science-lifecycle.001.png")
+knitr::include_graphics("img/neven-krcmarek-V4EOZj7g1gw-unsplash.jpg")
 
 ```
 
@@ -44,6 +44,7 @@ lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>%
 1. `r lobj1[1]`
 1. `r lobj1[2]`
 1. `r lobj1[3]`
+1. `r lobj1[4]`
 
 # Slides
 
@@ -60,6 +61,7 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 # Group work
 
 All details for your group work are in the assignment for this week.
+
 
 # Homework
 

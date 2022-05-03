@@ -230,7 +230,7 @@ ggplot(data = [dataset],
    other options
 ```
 
-## {auto-animate="true"}
+### {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -243,6 +243,7 @@ ggplot()
 #| echo: true
 ggplot(data = gapminder_yr_2007)
 ```
+
 ## {auto-animate="true"}
 
 ```{r}
@@ -282,6 +283,18 @@ ggplot(data = gapminder_yr_2007,
                      y = lifeExp)) +
   geom_boxplot() +
   theme_minimal()
+
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007,
+       mapping = aes(x = continent,
+                     y = lifeExp)) +
+  geom_boxplot() +
+  theme_minimal(base_size = 14)
 
 ```
 
@@ -327,8 +340,10 @@ ggplot(data = gapminder_yr_2007,
 
 ## {background-image="https://d33wubrfki0l68.cloudfront.net/1e7033393a2c70dc1255c5d0f1c563e945519251/61035/img/evol-ggplot/evol-ggplot-1.gif" background-size="contain"}
 
-::: {aside}
-Tutorial: 
+::: {.aside}
+
+**Tutorial:** https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/
+
 :::
 
 # Programming {background-color="#0F4C81"}
