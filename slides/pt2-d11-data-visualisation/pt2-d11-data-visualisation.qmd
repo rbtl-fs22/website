@@ -1,0 +1,297 @@
+---
+title: "rbtl - Data Visualisation"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+editor: source
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+## Today
+
+1. Solving coding problems
+2. Homework questions
+3. Exploratory Data Analysis with `ggplot2`
+4. Working with branches in git
+5. Live Coding Exercise
+6. Programming Exercise
+7. Homework
+
+# Solving coding problems
+
+## Tipps for search engines
+
+- Use describe verbs that describe what you want to do
+- Be specific
+- Add R to the search query
+- Add the name of the R package name to the search query
+- Scroll through the top 5 results (don't just pick the first)
+
+**Example: "How to remove a legend from a plot in R ggplot2"**
+
+## Stack Overflow
+
+::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+**What is it?**
+
+- The biggest support network for (coding) problems 
+- Can be initimidating at first
+- Upvote system 
+
+:::
+
+::: {.column width="60%"}
+
+**Workflow**
+
+- First, briefly read the question that was posted
+- Then, read the answer marked as "correct"
+- Then, read one or two more answers with high votes
+- Then, check out the "Linked" posts 
+- Always give credit for the solution
+
+:::
+
+::::
+
+:::
+
+## Give credit
+
+![](img/stack-overflow-share-1.png)
+
+## Give credit
+
+![](img/stack-overflow-share-2.png)
+
+## Give credit {.smaller}
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5-6"
+ggplot(data = global_waste_data_kg_year,
+       mapping = aes(x = income_id, 
+                     y = capita_kg_year,
+                     color = income_id)) +
+  ## Remove legend ref: https://stackoverflow.com/a/35622358/6816220
+  theme(legend.position = "none")
+
+```
+
+## Other sources for help
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- RStudio Community Forum: https://community.rstudio.com/
+- Our rbtl Slack channel
+- Documentation websites: https://dplyr.tidyverse.org/
+- Twitter community: [#rstats](https://twitter.com/search?q=%23rstats&src=typd) 
+:::
+
+::: {.column width="50%"}
+
+![](img/welcome_to_rstats_twitter.png)
+
+:::
+
+::::
+
+::: aside
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+:::
+
+## Minimal reproducible example (reprex)
+
+- Needed when asking questions online
+- We will practice this in another class
+- Good support information: https://www.tidyverse.org/help/#reprex
+
+## {background-image="img/code_hero.jpg" background-size="contain"}
+
+::: aside
+Artwork by [@allison_horst](https://www.allisonhorst.com/)
+:::
+
+## Learning Objectives
+
+1. Learners can import their data from a CSV file to a team repository on GitHub
+2. Learners can list the six elements of the data science lifecycle
+3. Learners know three different ways of getting support in solving coding problems online
+
+
+# Live Coding Exercise {background-color="#0F4C81"}
+
+## ae-10-data-science-lifecycle
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 10 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-10a-lifecycle.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+
+
+
+
+## Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Programming {background-color="#0F4C81"}
+
+## ae-11-data-visualisation
+
+1. Open the file: `ae-10b-lifecycle.qmd`
+2. Work through the exercises
+3. Use your sticky notes to indicate if you need support
+
+```{r}
+
+countdown(
+  minutes = 30, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Submission
+
+- All details in assignment week 10
+- Due: Tuesday, 4th May at 23:59 (2 points)
+
+
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
+
+## 
+
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d02-tools/pt2-d02-tools.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+# Templates {background-color="#0F4C81"}
+
+## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+### Left column
+
+```{r}
+library(dplyr)
+```
+
+:::
+
+::: {.column width="60%"}
+### Right column
+
+```{r}
+print(mtcars)
+```
+
+:::
+
+::::
+
+## Code Animations
+
+## {auto-animate="true"}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+barplot(WorldPhones[,input$region]*1000, 
+main=input$region,
+ylab="Number of Telephones",
+xlab="Year")
+})
+```
+
+# Preview Links
+
+## Preview Links
+
+[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
+
+# Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
