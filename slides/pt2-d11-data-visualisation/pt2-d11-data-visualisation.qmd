@@ -15,7 +15,19 @@ editor: source
 #| child: "../setup.Rmd"
 ```
 
-## Today
+```{r}
+library(ggplot2)
+library(gapminder)
+```
+
+```{r}
+
+gapminder_yr_2007 <- gapminder %>% 
+  filter(year == 2007)
+
+```
+
+# Today
 
 1. Solving coding problems
 2. Homework questions
@@ -25,9 +37,16 @@ editor: source
 6. Programming Exercise
 7. Homework
 
-# Solving coding problems
+# Learning Objectives
 
-## Tipps for search engines
+1. Learners can describe the four main aesthetic mappings that can be used to visualise data using the ggplot2 R Package
+2. Learners can control the colour scaling applied to a plot using colour as an aesthetic mapping
+3. Learners can compare three different geoms and their use case
+4. Learners can apply a theme to control font types and sizes within a plot
+
+# Solving coding problems {background-color="#0F4C81"}
+
+## Tipps for search engines 
 
 - Use describe verbs that describe what you want to do
 - Be specific
@@ -128,12 +147,6 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
 :::
 
-## Learning Objectives
-
-1. Learners can import their data from a CSV file to a team repository on GitHub
-2. Learners can list the six elements of the data science lifecycle
-3. Learners know three different ways of getting support in solving coding problems online
-
 
 # Live Coding Exercise {background-color="#0F4C81"}
 
@@ -168,6 +181,156 @@ countdown(
 Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 :::
 
+# Exploratory Data Analysis with `ggplot2`
+
+## R Package `ggplot2`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- **ggplot2** is tidyverse's data visualization package 
+- `gg` in `ggplot2` stands for Grammar of Graphics 
+- Inspired by the book **Grammar of Graphics** by Leland Wilkinson
+- **Documentation:** https://ggplot2.tidyverse.org/
+- **Book**: https://ggplot2-book.org
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+knitr::include_graphics("img/ggplot2-part-of-tidyverse.png")
+```
+
+:::
+
+::::
+
+::: {.aside}
+
+Slide adapted from datasciencebox.org
+
+:::
+
+## Code structure
+
+- `ggplot()` is the main function in ggplot2
+- Plots are constructed in layers
+- Structure of the code for plots can be summarized as
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(data = [dataset], 
+       mapping = aes(x = [x-variable], 
+                     y = [y-variable])) +
+   geom_xxx() +
+   other options
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot()
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007)
+```
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007,
+       mapping = aes()) 
+
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007,
+       mapping = aes(x = continent,
+                     y = lifeExp))  
+
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007,
+       mapping = aes(x = continent,
+                     y = lifeExp)) +
+  geom_boxplot() 
+
+```
+
+## {auto-animate="true"}
+
+```{r}
+#| echo: true
+ggplot(data = gapminder_yr_2007,
+       mapping = aes(x = continent,
+                     y = lifeExp)) +
+  geom_boxplot() +
+  theme_minimal()
+
+```
+
+# Live Coding {background-color="#0F4C81"}
+
+# Visualising numerical data {background-color="#0F4C81"}
+
+## Types of variables
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### numerical
+
+**discrete variables**
+
+- non-negative
+- whole numbers
+- e.g. number of students, roll of a dice
+
+**continuous variables**
+
+- infinite number of values
+- also dates and times
+- e.g. length, weight, size 
+
+:::
+
+::: {.column width="50%"}
+
+### non-numerical
+
+**categorical variables**
+
+- finite number of values 
+- distinct groups (e.g. EU countries, continents)
+- **ordinal** if levels have natural ordering (e.g. week days, school grades)
+
+:::
+
+::::
+
+## {background-image="https://d33wubrfki0l68.cloudfront.net/1e7033393a2c70dc1255c5d0f1c563e945519251/61035/img/evol-ggplot/evol-ggplot-1.gif" background-size="contain"}
+
+::: {aside}
+Tutorial: 
+:::
+
 # Programming {background-color="#0F4C81"}
 
 ## ae-11-data-visualisation
@@ -186,6 +349,8 @@ countdown(
 )
 
 ```
+
+
 
 # Homework Assignment {background-color="#0F4C81"}
 

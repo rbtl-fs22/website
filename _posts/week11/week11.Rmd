@@ -1,0 +1,78 @@
+---
+title: "Week 11 - Exploratory Data Analysis using Data Visualisation"
+description: |
+  This lecture will teach you how to explore your data in a systematic way using data visualisation, and how you can tweak your plot to your preferences.
+date: 2022-05-05
+params:
+    week: 11
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/data-science-lifecycle.001.png
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="From: [R for Data Science](https://r4ds.had.co.nz/)"}
+
+knitr::include_graphics("img/data-science-lifecycle.001.png")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+1. `r lobj1[3]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+All details for your group work are in the assignment for this week.
+
+# Homework
+
+There is one assignment this week and no additional readings. 
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
