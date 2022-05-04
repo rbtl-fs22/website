@@ -18,24 +18,37 @@ editor: source
 ```{r}
 library(ggplot2)
 library(gapminder)
-```
+library(readr)
+``` 
 
 ```{r}
 
 gapminder_yr_2007 <- gapminder %>% 
   filter(year == 2007)
 
+waste_gdp_data <- read_csv(file = here::here("slides/pt2-d11-data-visualisation/data/waste-generation-gdp-data.csv")) %>% 
+  mutate(income_id = factor(income_id, 
+                            levels = c("HIC", "UMC", "LMC", "LIC"))) 
+
+waste_gdp_data_filter <- waste_gdp_data %>% 
+  filter(capita_kg_year > 850 | 
+           country_name == "Switzerland" |
+           country_name == "Canada")
+
+my_colors <- c("#ED6D37", "#901C6C", "#18A5C5", "#A6CE8F")
+
 ```
 
 # Today
 
-1. Solving coding problems
-2. Homework questions
-3. Exploratory Data Analysis with `ggplot2`
-4. Working with branches in git
-5. Live Coding Exercise
-6. Programming Exercise
-7. Homework
+1. Research Project Report
+2. Solving coding problems
+3. Working collaboratively with git
+    - Live Coding Exercise
+4. Exploratory Data Analysis with `ggplot2`
+    - Live Coding Exercise
+    - Programming Exercise
+5. Homework Assignment 11
 
 # Learning Objectives
 
@@ -44,13 +57,19 @@ gapminder_yr_2007 <- gapminder %>%
 3. Learners can compare three different geoms and their use case
 4. Learners can apply a theme to control font types and sizes within a plot
 
+# Research project report {background-color="#0F4C81"}
+
+## GitHub issues / Slack
+
+[TODO: List of aggregated questions and answers]
+
 # Solving coding problems {background-color="#0F4C81"}
 
 ## Tipps for search engines 
 
-- Use describe verbs that describe what you want to do
-- Be specific
-- Add R to the search query
+- Use actionable verbs that describe what you want to do
+- Be specific 
+- Add R to the search query 
 - Add the name of the R package name to the search query
 - Scroll through the top 5 results (don't just pick the first)
 
@@ -62,7 +81,7 @@ gapminder_yr_2007 <- gapminder %>%
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="47.5%"}
 
 **What is it?**
 
@@ -72,7 +91,11 @@ gapminder_yr_2007 <- gapminder %>%
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 
 **Workflow**
 
@@ -141,47 +164,35 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)
 - We will practice this in another class
 - Good support information: https://www.tidyverse.org/help/#reprex
 
-## {background-image="img/code_hero.jpg" background-size="contain"}
+## . {background-image="img/code_hero.jpg" background-size="contain"} 
 
 ::: aside
 Artwork by [@allison_horst](https://www.allisonhorst.com/)
 :::
 
+# Working collaboratively with git {background-color="#0F4C81"}
 
-# Live Coding Exercise {background-color="#0F4C81"}
+## pull first, and push often
 
-## ae-10-data-science-lifecycle
+![](img/illustration-slides-week4.010.png)
 
-1. Head over to the GitHub Organisation for the course.
-2. Find the repo for week 10 that has your GitHub username.
-3. Clone the repo with your username to the RStudio Cloud.
-4. Open the file: `ae-10a-lifecycle.qmd`
-5. Use your Sticky Notes to let me know when you are ready.
+## Live Coding Exercise
 
+1. Open the repo for your team project report on RStudio Cloud
+2. Open the file: `01-introduction.qmd`
+3. Use your Sticky Notes to let me know when you are ready.
 
+## Git help
 
+You can find the merge conflict workflow documented in our git help document for the course:
 
+[rbtl-fs22/git-help](https://github.com/rbtl-fs22/git-help){preview-link="true"}
 
-## Break
+The best online resource for working with git is:
 
-![](img/coffee-break.jpg)
+[Happy Git and GitHub for the useR](https://happygitwithr.com/) by [Jenny Bryan](https://twitter.com/JennyBryan)
 
-```{r}
-
-countdown(
-  minutes = 10, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
-
-```
-
-::: aside
-Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
-:::
-
-# Exploratory Data Analysis with `ggplot2`
+# Exploratory Data Analysis with `ggplot2` {background-color="#0F4C81"}
 
 ## R Package `ggplot2`
 
@@ -230,21 +241,21 @@ ggplot(data = [dataset],
    other options
 ```
 
-### {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
 ggplot()
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
 ggplot(data = gapminder_yr_2007)
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -253,7 +264,7 @@ ggplot(data = gapminder_yr_2007,
 
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -263,7 +274,7 @@ ggplot(data = gapminder_yr_2007,
 
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -274,7 +285,7 @@ ggplot(data = gapminder_yr_2007,
 
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -286,7 +297,7 @@ ggplot(data = gapminder_yr_2007,
 
 ```
 
-## {auto-animate="true"}
+## Code structure {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -298,11 +309,102 @@ ggplot(data = gapminder_yr_2007,
 
 ```
 
-# Live Coding {background-color="#0F4C81"}
+# Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+## Live Coding Exercise - Goal
+
+![](img/msw-generation-vs-gni-plot.png)
+
+## Live Coding Exercise
+
+**ae-11-data-science-lifecycle**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 11 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-11a-data-visualisation.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+# Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+## Live Coding Exercise - Result
+
+```{r}
+
+ggplot(data = waste_gdp_data,
+       mapping = aes(x = gdp_capita, 
+                     y = capita_kg_year)) +
+  geom_point(size = 3, alpha = 3/4, 
+             mapping = aes(color = income_id,
+                           shape = income_id)) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "gray20", 
+              linetype = "longdash") +
+  geom_text(data = waste_gdp_data_filter,
+            mapping = aes(label = country_name), 
+            nudge_y = 50, size = 3) +
+  
+  # https://scales.r-lib.org/reference/label_log.html
+  scale_x_log10(labels = scales::label_log(), limits = c(100, 150000))  +
+  scale_y_continuous(breaks = seq(0, 1400, 200), limits = c(0, 1400)) +
+  scale_color_manual(values = my_colors) +
+  labs(title = "Municipal Solid Waste Generation",
+       subtitle = "Increasing income results in greater solid waste generation",
+       x = "GDP per capity (USD)",
+       y = "MSW generation pert capity (kg/yr)",
+       color = "Income categories",
+       shape = "Income categories",
+       caption = "Data: World Bank World Development Indicators and What a Waste Global Database."
+  ) +
+  theme_minimal(base_size = 8, base_family = "Arial") +
+  theme(legend.position = c(0.20, 0.70),
+        plot.title.position = "plot",
+        plot.caption = element_text(face = "italic", color = "grey70"),
+        legend.background = element_rect(fill = "white", colour = "grey50"),
+        panel.grid.minor = element_blank()) 
+```
+
 
 # Visualising numerical data {background-color="#0F4C81"}
 
-## Types of variables
+## Types of variables 
+
+::: {.incremental}
 
 :::: {.columns}
 
@@ -338,6 +440,8 @@ ggplot(data = gapminder_yr_2007,
 
 ::::
 
+:::
+
 ## {background-image="https://d33wubrfki0l68.cloudfront.net/1e7033393a2c70dc1255c5d0f1c563e945519251/61035/img/evol-ggplot/evol-ggplot-1.gif" background-size="contain"}
 
 ::: {.aside}
@@ -346,11 +450,28 @@ ggplot(data = gapminder_yr_2007,
 
 :::
 
+## data-to-viz.com {background-iframe="https://www.data-to-viz.com/" background-interactive="true"}
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Submission
+
+- All details in assignment week 11
+- Due: Wednesday, 12th May at 23:59 (2 points)
+
+## Evaluation
+
+- 5 mins
+- anonymous
+- after each lecture
+
+[https://forms.gle/HbCPbG9Yb7iDJ2jW6]()
+
 # Programming {background-color="#0F4C81"}
 
 ## ae-11-data-visualisation
 
-1. Open the file: `ae-10b-lifecycle.qmd`
+1. Open the file: `ae-11b-data-visualisation.qmd`
 2. Work through the exercises
 3. Use your sticky notes to indicate if you need support
 
@@ -365,113 +486,12 @@ countdown(
 
 ```
 
-
-
-# Homework Assignment {background-color="#0F4C81"}
-
-## Submission
-
-- All details in assignment week 10
-- Due: Tuesday, 4th May at 23:59 (2 points)
-
-
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
 ## 
 
 Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
-Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d02-tools/pt2-d02-tools.pdf)
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d11-data-visualisation/pt2-d11-data-visualisation.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
 
-# Templates {background-color="#0F4C81"}
-
-## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
-
-## Tabsets
-
-::: {.panel-tabset}
-
-### Tab A
-
-Content for `Tab A`
-
-### Tab B
-
-Content for `Tab B`
-
-:::
-
-## Columns
-
-:::: {.columns}
-
-::: {.column width="40%"}
-
-### Left column
-
-```{r}
-library(dplyr)
-```
-
-:::
-
-::: {.column width="60%"}
-### Right column
-
-```{r}
-print(mtcars)
-```
-
-:::
-
-::::
-
-## Code Animations
-
-## {auto-animate="true"}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-})
-```
-
-## {auto-animate=true}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-barplot(WorldPhones[,input$region]*1000, 
-main=input$region,
-ylab="Number of Telephones",
-xlab="Year")
-})
-```
-
-# Preview Links
-
-## Preview Links
-
-[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
-
-# Break
-
-![](img/coffee-break.jpg)
-
-```{r}
-
-countdown(
-  minutes = 15, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
-
-```
-
-::: aside
-Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
-:::

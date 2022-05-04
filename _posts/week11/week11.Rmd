@@ -62,10 +62,9 @@ read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>%
 
 All details for your group work are in the assignment for this week.
 
-
 # Homework
 
-There is one assignment this week and no additional readings. 
+There is one assignment this week. All other listed items are resources for you as additional references for this weeks topic.
 
 ```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
 

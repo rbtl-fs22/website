@@ -2131,6 +2131,7 @@ Assignments
 <a href="am-04-rmarkdown.html">Week 04</a>
 <a href="am-05-data-management.html">Week 05</a>
 <a href="am-10-data-science-lifecycle.html">Week 10</a>
+<a href="am-11-data-visualisation.html">Week 11</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2168,45 +2169,72 @@ Assignments
 </div>
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 <h1 id="introduction">Introduction</h1>
-<p>All homework exercises and also live coding exercises will be written in the R Markdown file format. This unit will help you get more comfortable using this file format for writing. You will submit your research questions and design as part of this assignment.</p>
+<p>All homework exercises and also live coding exercises will be written
+in the R Markdown file format. This unit will help you get more
+comfortable using this file format for writing. You will submit your
+research questions and design as part of this assignment.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>We assume that you have:</p>
 <ol type="1">
-<li>Completed Assignment 1 &amp; 2 &amp; 3 of this course. If you have not, follow the instructions here:</li>
+<li>Completed Assignment 1 &amp; 2 &amp; 3 of this course. If you have
+not, follow the instructions here:</li>
 </ol>
 <ul>
-<li>Assignment 1: <a href="https://rbtl-fs22.github.io/website/am-01-hello-github.html" class="uri">https://rbtl-fs22.github.io/website/am-01-hello-github.html</a></li>
-<li>Assignment 2: <a href="https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html" class="uri">https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html</a></li>
-<li>Assignment 3: <a href="https://rbtl-fs22.github.io/website/am-03-reference-management.html" class="uri">https://rbtl-fs22.github.io/website/am-03-reference-management.html</a></li>
+<li>Assignment 1: <a
+href="https://rbtl-fs22.github.io/website/am-01-hello-github.html"
+class="uri">https://rbtl-fs22.github.io/website/am-01-hello-github.html</a></li>
+<li>Assignment 2: <a
+href="https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html"
+class="uri">https://rbtl-fs22.github.io/website/am-02-hello-rstudio.html</a></li>
+<li>Assignment 3: <a
+href="https://rbtl-fs22.github.io/website/am-03-reference-management.html"
+class="uri">https://rbtl-fs22.github.io/website/am-03-reference-management.html</a></li>
 </ul>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this unit, you will learn to:</p>
 <ul>
-<li>explain the difference between the markdown (.md) and R Markdown (.Rmd) file format</li>
-<li>paraphrase how a file written in a markup language like markdown (.md) differs from a file written in a proprietary file format like .docx</li>
-<li>identify four components of an R markdown file (YAML, code chunk, R code, markdown)</li>
+<li>explain the difference between the markdown (.md) and R Markdown
+(.Rmd) file format</li>
+<li>paraphrase how a file written in a markup language like markdown
+(.md) differs from a file written in a proprietary file format like
+.docx</li>
+<li>identify four components of an R markdown file (YAML, code chunk, R
+code, markdown)</li>
 </ul>
 <h2 id="terminology">Terminology</h2>
 <ul>
-<li><a href="http://opendatahandbook.org/glossary/en/terms/open-format/" class="uri">http://opendatahandbook.org/glossary/en/terms/open-format/</a></li>
-<li><a href="http://opendatahandbook.org/glossary/en/terms/proprietary/" class="uri">http://opendatahandbook.org/glossary/en/terms/proprietary/</a></li>
-<li><a href="http://opendatahandbook.org/glossary/en/terms/machine-readable/" class="uri">http://opendatahandbook.org/glossary/en/terms/machine-readable/</a></li>
-<li><a href="https://glosario.carpentries.org/en/#markup_language" class="uri">https://glosario.carpentries.org/en/#markup_language</a></li>
-<li><a href="https://glosario.carpentries.org/en/#markdown" class="uri">https://glosario.carpentries.org/en/#markdown</a></li>
+<li><a href="http://opendatahandbook.org/glossary/en/terms/open-format/"
+class="uri">http://opendatahandbook.org/glossary/en/terms/open-format/</a></li>
+<li><a href="http://opendatahandbook.org/glossary/en/terms/proprietary/"
+class="uri">http://opendatahandbook.org/glossary/en/terms/proprietary/</a></li>
+<li><a
+href="http://opendatahandbook.org/glossary/en/terms/machine-readable/"
+class="uri">http://opendatahandbook.org/glossary/en/terms/machine-readable/</a></li>
+<li><a href="https://glosario.carpentries.org/en/#markup_language"
+class="uri">https://glosario.carpentries.org/en/#markup_language</a></li>
+<li><a href="https://glosario.carpentries.org/en/#markdown"
+class="uri">https://glosario.carpentries.org/en/#markdown</a></li>
 </ul>
 <h1 id="tasks">Tasks</h1>
 <ol type="1">
-<li>Work through this Markdown Tutorial: <a href="https://commonmark.org/help/tutorial/" class="uri">https://commonmark.org/help/tutorial/</a></li>
+<li>Work through this Markdown Tutorial: <a
+href="https://commonmark.org/help/tutorial/"
+class="uri">https://commonmark.org/help/tutorial/</a></li>
 <li>Read all definitions under Section Terminology.</li>
-<li>Watch the video to clone the repo for this assignment to the RStudio Cloud and work through the exercises.</li>
-<li>Open an issue on your repo on GitHub to inform us you have completed the homework.</li>
+<li>Watch the video to clone the repo for this assignment to the RStudio
+Cloud and work through the exercises.</li>
+<li>Open an issue on your repo on GitHub to inform us you have completed
+the homework.</li>
 </ol>
 <h1 id="video">Video</h1>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/hrArrrFyu_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <h1 id="acknowledgements">Acknowledgements</h1>
-<p>The settings that are used in these instructions are inspired by <a href="https://www.youtube.com/watch?v=Nm5BsfMfO9M">Cortex Futura: How to install Zotero, BetterBibTex and Zotfile</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The settings that are used in these instructions are inspired by <a
+href="https://www.youtube.com/watch?v=Nm5BsfMfO9M">Cortex Futura: How to
+install Zotero, BetterBibTex and Zotfile</a>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

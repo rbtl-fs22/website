@@ -2131,6 +2131,7 @@ Assignments
 <a href="am-04-rmarkdown.html">Week 04</a>
 <a href="am-05-data-management.html">Week 05</a>
 <a href="am-10-data-science-lifecycle.html">Week 10</a>
+<a href="am-11-data-visualisation.html">Week 11</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2167,12 +2168,23 @@ Assignments
 </div>
 <script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 <h1 id="introduction">Introduction</h1>
-<p>Well done, you now have a GitHub Account and a home for your future projects. In this next assignment, you will setup your RStudio Cloud infrastructure which we will you to work with R and the RStudio IDE. You will follow through another set of tasks that will expose you to the workflow we will use in this course. Once again, we do not expect you to understand exactly what you are doing at each step. The main purpose is to set you up and expose you to the tools before we get going with your own data in Week 8.</p>
+<p>Well done, you now have a GitHub Account and a home for your future
+projects. In this next assignment, you will setup your RStudio Cloud
+infrastructure which we will you to work with R and the RStudio IDE. You
+will follow through another set of tasks that will expose you to the
+workflow we will use in this course. Once again, we do not expect you to
+understand exactly what you are doing at each step. The main purpose is
+to set you up and expose you to the tools before we get going with your
+own data in Week 8.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>We assume that you have:</p>
 <ol type="1">
-<li>Completed Assignment 1 of this course. If you have not, follow the instructions here: <a href="https://rbtl-fs22.github.io/website/am-01-hello-github.html" class="uri">https://rbtl-fs22.github.io/website/am-01-hello-github.html</a></li>
-<li>Stored your GitHub Personal Access Token in a secure and accessible place.</li>
+<li>Completed Assignment 1 of this course. If you have not, follow the
+instructions here: <a
+href="https://rbtl-fs22.github.io/website/am-01-hello-github.html"
+class="uri">https://rbtl-fs22.github.io/website/am-01-hello-github.html</a></li>
+<li>Stored your GitHub Personal Access Token in a secure and accessible
+place.</li>
 </ol>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this unit, you will learn to:</p>
@@ -2184,23 +2196,56 @@ Assignments
 </ul>
 <h2 id="terminology">Terminology</h2>
 <ul>
-<li><strong>R Markdown:</strong> A dialect of Markdown that allows authors to mix prose and code (usually written in R) in a single document. <a href="https://glosario.carpentries.org/en/#r_markdown">[glosario reference]</a></li>
-<li><strong>git commit:</strong> As a verb, the act of saving a set of changes to a database or version control repository. As a noun, the changes saved. <a href="https://glosario.carpentries.org/en/#commit">[glosario reference]</a></li>
-<li><strong>git clone:</strong> Copies (and usually downloads) of a Git remote repository on a local computer. <a href="https://glosario.carpentries.org/en/#git_clone">[glosario reference]</a></li>
-<li><strong>git push:</strong> Uploads and synchronizes changes between a local repository and a remote repository. <a href="https://glosario.carpentries.org/en/#git_push">[glosario reference]</a></li>
-<li><strong>remote repository:</strong> A repository located on another computer (e.g. GitHub). Tools such as Git are designed to synchronize changes between local and remote repositories in order to share work. <a href="https://glosario.carpentries.org/en/#remote_repository">[glosario reference]</a></li>
-<li><strong>local repository:</strong> A copy of a repository that we use as our primary workspace where we create, edit, and delete files. This copy is commonly referred to as the local repository. The local repository most commonly exists on our computer or laptop, but can also exist within a workspace on a server (e.g. RStudio Cloud, JupyterHub). <a href="https://datasciencebook.ca/Getting-started-with-version-control.html#version-control-repositories">[text reference]</a></li>
+<li><strong>R Markdown:</strong> A dialect of Markdown that allows
+authors to mix prose and code (usually written in R) in a single
+document. <a
+href="https://glosario.carpentries.org/en/#r_markdown">[glosario
+reference]</a></li>
+<li><strong>git commit:</strong> As a verb, the act of saving a set of
+changes to a database or version control repository. As a noun, the
+changes saved. <a
+href="https://glosario.carpentries.org/en/#commit">[glosario
+reference]</a></li>
+<li><strong>git clone:</strong> Copies (and usually downloads) of a Git
+remote repository on a local computer. <a
+href="https://glosario.carpentries.org/en/#git_clone">[glosario
+reference]</a></li>
+<li><strong>git push:</strong> Uploads and synchronizes changes between
+a local repository and a remote repository. <a
+href="https://glosario.carpentries.org/en/#git_push">[glosario
+reference]</a></li>
+<li><strong>remote repository:</strong> A repository located on another
+computer (e.g. GitHub). Tools such as Git are designed to synchronize
+changes between local and remote repositories in order to share work. <a
+href="https://glosario.carpentries.org/en/#remote_repository">[glosario
+reference]</a></li>
+<li><strong>local repository:</strong> A copy of a repository that we
+use as our primary workspace where we create, edit, and delete files.
+This copy is commonly referred to as the local repository. The local
+repository most commonly exists on our computer or laptop, but can also
+exist within a workspace on a server (e.g. RStudio Cloud, JupyterHub).
+<a
+href="https://datasciencebook.ca/Getting-started-with-version-control.html#version-control-repositories">[text
+reference]</a></li>
 </ul>
 <h1 id="tasks">Tasks</h1>
 <ol type="1">
-<li>You have received an email invitation from GitHub to join the GitHub Organisation (rbtl-fs22) for this course. If you have not, please make sure that you completed Assignment 1 first and then contact Lars by email.</li>
-<li>Join the RStudio Cloud Workspace for the course (Login with your GitHub details) by clicking on the following link: <a href="https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE" class="uri">https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE</a></li>
-<li>Follow through with the instructions in the video below to complete the remaining tasks</li>
+<li>You have received an email invitation from GitHub to join the GitHub
+Organisation (rbtl-fs22) for this course. If you have not, please make
+sure that you completed Assignment 1 first and then contact Lars by
+email.</li>
+<li>Join the RStudio Cloud Workspace for the course (Login with your
+GitHub details) by clicking on the following link: <a
+href="https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE"
+class="uri">https://rstudio.cloud/spaces/220982/join?access_code=2AJpQzpiRMtZfQpDEYhx__e72_MaCdFX3TSFoZGE</a></li>
+<li>Follow through with the instructions in the video below to complete
+the remaining tasks</li>
 </ol>
 <h1 id="video">Video</h1>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/kLcL71bHrF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
