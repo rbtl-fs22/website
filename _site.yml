@@ -29,6 +29,8 @@ navbar:
           href: am-05-data-management.html
         - text: "Week 10"
           href: am-10-data-science-lifecycle.html
-output: 
+        - text: "Week 11"
+          href: am-11-data-visualisation.html
+output:
   distill::distill_article:
     toc: true
