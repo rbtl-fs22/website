@@ -10,8 +10,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Introduction
 
-
-
 ## Learning Objectives
 
 1. Learners can describe the four main aesthetic mappings that can be used to visualise data using the ggplot2 R Package
@@ -19,40 +17,38 @@ knitr::opts_chunk$set(echo = FALSE)
 3. Learners can compare three different geoms and their use case
 4. Learners can apply a theme to control font types and sizes within a plot
 
-## Terminology {#terminology}
-
 # Exercises
 
 ## Exercise 1 - Application Exercise
 
-1. Open the repo from class and `pull` changes from remote repository; A solutions file `ae-10a-lifecycle-solutions.qmd` will be added; Ensure that your script `ae-10a-lifecycle.qmd` is complete and renders without errors
-2. Add, Commit, Push all changes to GitHub with the commit message "Render exercise 10a without errors"
-3. Complete all tasks in Application Exercise 10 - Data Science Lifecycle (`ae-10b-lifecycle.qmd` file) 
-4. Ensure that `ae-10b-lifecycle.qmd` renders without errors
-4. Add, Commit, Push all changes to GitHub with the commit message "Complete tasks of exercise 10b"
+1. Open the repo from class and `pull` changes from remote repository; A solutions file `ae-11a-data-visualisation.qmd` will be added; Ensure that your script `ae-11a-data-visualisation.qmd` is complete and renders without errors
+2. Add, Commit, Push all changes to GitHub with the commit message "Render exercise 11a without errors"
+3. Complete all tasks in Application Exercise 11 - Data Visualisation (`ae-11b-data-visualisation.qmd` file) 
+4. Ensure that `ae-11b-data-visualisation.qmd` renders without errors
+4. Add, Commit, Push all changes to GitHub with the commit message "Complete tasks of exercise 11b"
 
-## Exercise 2 - Reproduce this plot
+## Exercise 2 - Research Project Report
 
+Get going on your research project report. Practicing your newly aquired skills on your report will prepare you well for the final exam. Know that your data will most likely not be in a tidy format, visualising it may challenging and frustrating. That is normal. 
 
-## Exercise 3 - Ugly plot challenge
+Identify the elements that you think need to be fixed for you to have a tidy data set. Write those as notes into your "Results & Discussion" file and open an issue on GitHub tagging @larnsce. The goal is that we provide you with R code that will tidy your data. In week 12 and week 13, you will learn the underlying theory of the functions that are used for tidying the data. 
 
+The due date for the report is the 9th June and you can start writing up your Introduction and Methods sections. But, how? Do you split efforts? Do you allocate different sections? These parts of the report are graded for the team. Make sure you all agree on how you will prepare them. 
 
-## Exercise 4 - Get started with your analysis
+1. Discuss in your group how you want to tackle the Introduction, Methods, Conclusions, and Recommendations section.
+2. Open your research-project-template team repo on the RStudio Cloud
+3. First thin: Pull! And fix any conflicts.
+4. Open your Results & Discussions file (01, 02, or 03), and import your data by assigning it to an object with the assignment operator.
+5. Use the `ggplot2` R Package to start visualising your data. 
+6. Identify at least two issues with your data that don't allow you to work with it as you want. Submit them as an issue on GitHub and tag @larnsce.
+6. In between, render, and make sure all code runs without errors.
+7. Pull, Add, Commit, Push. Do it often.
+8. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub.
+9. Open issues on GitHub or ask on Slack if you run into errors that you struggle to fix.
 
-1. Open your research-project-template team repo on the RStudio Cloud
-2. From the file manager (bottom right window), open your assigned  "Results & Discussions" file
-3. Add a 1st level heading titled "Data import"
-4. Add a code-chunk below the first level heading
-5. Load the `readr` R package using the `library()` function
-5. Render the file without any errors
-6. Add, commit, push your changes back to GitHub
+## Exercise 3 - Read R4DS and practice
 
-## Exercise 5 - Read R4DS and practice
-
-
-1. Open the rbtl-fs22 GitHub organisation and clone the notebook repo with your name (notebook-[GITHUB_USERNAME]) to the rbtl-fs22 workspace on RStudio Cloud.
-2. Read Chapter Introduction of R4DS: https://r4ds.had.co.nz/explore-intro.html 
-3. Read Chapter Data Visualisation (3.1 to 3.6) of R4DS: https://r4ds.had.co.nz/data-visualisation.html
+If you want to practice more, then use your notebook from week 10 and the Chapter on Data Visualisation in R4DS:https://r4ds.had.co.nz/data-visualisation.html
 
 **Note: If you use the notebook to take notes while working through R4DS, then use the Render, Add, Commit, Push workflow every now and then to push your changes back to GitHub and keep your remote repository in sync with your local repository.**
 
