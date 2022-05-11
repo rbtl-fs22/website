@@ -1,0 +1,198 @@
+---
+title: "rbtl - Data wrangling with dplyr"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+editor: source
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+# Today
+
+1. Notes for the exam
+2. Data wrangling with dplyr
+    - Live Coding Exercise
+3. Data wrangling with dplyr
+    - Programming Exercise
+4. Homework Assignment 12
+
+# Learning Objectives
+
+Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+
+# Notes for exam {background-color="#0F4C81"}
+
+## Notes for exam - practise!
+
+- tempting to copy/paste (especially from others)
+- practise as much as you can
+- read instructions carefully
+- identify instructions are phrased
+
+## Notes for exam - levels of difficulty
+
+- fill in the blanks
+- detailed instructions with named functions
+- basic instructions with analysis goals
+
+# Data wrangling with dplyr  {background-color="#0F4C81"}
+
+## dplyr package
+
+- TODO: Take from Mine
+
+## dplyr functions
+
+- list functions
+
+## dplyr rules
+
+- list rules
+
+## Live Coding Exercise - Data
+
+- starwars
+
+## Live Coding Exercise
+
+**ae-12-data-transformation-dplyr**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 11 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-12a-dplyr.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Submission
+
+- All details in assignment week 12
+- Due: Wednesday, 19th May at 23:59 (2 points)
+
+## Evaluation
+
+- 5 mins
+- anonymous
+- after each lecture
+
+[kutt.it/rbtl-eval](https://forms.gle/HbCPbG9Yb7iDJ2jW6)
+
+# Programming {background-color="#0F4C81"}
+
+## ae-12-data-transformation-dplyr
+
+1. Open the file: `ae-12b-dplyr.qmd`
+2. Work through the exercises
+3. Use your sticky notes to indicate if you need support
+
+```{r}
+
+countdown(
+  minutes = 30, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+# Templates {background-color="#0F4C81"}
+
+## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+### Left column
+
+```{r}
+library(dplyr)
+```
+
+:::
+
+::: {.column width="60%"}
+### Right column
+
+```{r}
+print(mtcars)
+```
+
+:::
+
+::::
+
+## Code Animations
+
+## {auto-animate="true"}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+})
+```
+
+## {auto-animate=true}
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+# Render a barplot
+barplot(WorldPhones[,input$region]*1000, 
+main=input$region,
+ylab="Number of Telephones",
+xlab="Year")
+})
+```
+
+# Preview Links
+
+## Preview Links
+
+[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
+
+# Break
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::

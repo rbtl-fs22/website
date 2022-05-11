@@ -31,6 +31,8 @@ navbar:
           href: am-10-data-science-lifecycle.html
         - text: "Week 11"
           href: am-11-data-visualisation.html
+        - text: "Week 12"
+          href: am-12-data-wrangling-dplyr.html
 output:
   distill::distill_article:
     toc: true
