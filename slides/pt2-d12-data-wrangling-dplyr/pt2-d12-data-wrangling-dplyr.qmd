@@ -115,6 +115,44 @@ glimpse(starwars)
 4. Open the file: `ae-12a-dplyr.qmd`
 5. Use your Sticky Notes to let me know when you are ready.
 
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Break Two
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
 # Homework Assignment {background-color="#0F4C81"}
 
 ## Submission
@@ -136,29 +174,13 @@ glimpse(starwars)
 
 1. Open the file: `ae-12b-dplyr.qmd`
 2. Work through the exercises
-3. Use your sticky notes to indicate if you need support
-
-
-```{r}
-
-countdown(
-  minutes = 30, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
-
-```
-
-::: aside
-Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
-:::
+3. Finalise as part of your homework
 
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
 ## 
 
 Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
-Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d10-data-science-lifecycle/pt2-d10-data-science-lifecycle.pdf)
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d12-data-wrangling-dplyr/pt2-d12-data-wrangling-dplyr.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
