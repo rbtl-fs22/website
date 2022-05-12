@@ -15,18 +15,23 @@ editor: source
 #| child: "../setup.Rmd"
 ```
 
+```{r}
+library(dplyr)
+```
+
 # Today
 
 1. Notes for the exam
-2. Data wrangling with dplyr
-    - Live Coding Exercise
+2. Homework Assignment 11
 3. Data wrangling with dplyr
+    - Live Coding Exercise
+4. Data wrangling with dplyr
     - Programming Exercise
-4. Homework Assignment 12
+5. Homework Assignment 12
 
-# Learning Objectives
+# Learning Objective
 
-Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+> Learners can apply **ten** functions from the `dplyr` R Package to generate a **subset of data** for use in a **table** or **plot**
 
 # Notes for exam {background-color="#0F4C81"}
 
@@ -43,23 +48,62 @@ Learners can apply ten functions from the dplyr R Package to generate a subset o
 - detailed instructions with named functions
 - basic instructions with analysis goals
 
+# Homework Assignment 11 {background-color="#0F4C81"}
+
 # Data wrangling with dplyr  {background-color="#0F4C81"}
 
-## dplyr package
+## A grammar of data wrangling... {.smaller}
 
-- TODO: Take from Mine
+... based on the concepts of functions as verbs that manipulate data frames
 
-## dplyr functions
+:::: {.columns}
 
-- list functions
+::: {.column width="40%"}
+
+```{r dplyr-part-of-tidyverse, echo=FALSE, out.width="70%", caption = "dplyr is part of the tidyverse"}
+knitr::include_graphics("img/dplyr-part-of-tidyverse.png")
+```
+
+:::
+
+::: {.column width="60%"}
+
+- `select`: pick columns by name
+- `arrange`: reorder rows
+- `slice`: chooses rows based on location
+- `filter`: pick rows matching criteria
+- `relocate`: changes the order of the columns
+- `mutate`: add new variables
+- `summarise`: reduce variables to values
+- `group_by`: for grouped operations
+- ... (many more)
+:::
+
+::::
+
+::: {.aside}
+Slide taken from [Data Science in a Box](https://datasciencebox.org/)
+:::
 
 ## dplyr rules
 
-- list rules
+Rules of `dplyr` functions:
 
-## Live Coding Exercise - Data
+::: {.incremental}
 
-- starwars
+- First argument is always a data frame
+- Subsequent arguments say what to do with that data frame
+- Always return a data frame  
+- Don't modify in place 
+
+:::
+
+## Live Coding Exercise - Star Wars Characters {.smaller}
+
+
+```{r}
+glimpse(starwars)
+```
 
 ## Live Coding Exercise
 
@@ -70,6 +114,44 @@ Learners can apply ten functions from the dplyr R Package to generate a subset o
 3. Clone the repo with your username to the RStudio Cloud.
 4. Open the file: `ae-12a-dplyr.qmd`
 5. Use your Sticky Notes to let me know when you are ready.
+
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Break Two
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
 
 # Homework Assignment {background-color="#0F4C81"}
 
@@ -92,107 +174,13 @@ Learners can apply ten functions from the dplyr R Package to generate a subset o
 
 1. Open the file: `ae-12b-dplyr.qmd`
 2. Work through the exercises
-3. Use your sticky notes to indicate if you need support
+3. Finalise as part of your homework
 
-```{r}
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
-countdown(
-  minutes = 30, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
+## 
 
-```
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d12-data-wrangling-dplyr/pt2-d12-data-wrangling-dplyr.pdf)
 
-# Templates {background-color="#0F4C81"}
-
-## Background iFrame {background-iframe="https://rbtl-fs22.github.io/website/am-05-data-management.html"}
-
-## Tabsets
-
-::: {.panel-tabset}
-
-### Tab A
-
-Content for `Tab A`
-
-### Tab B
-
-Content for `Tab B`
-
-:::
-
-## Columns
-
-:::: {.columns}
-
-::: {.column width="40%"}
-
-### Left column
-
-```{r}
-library(dplyr)
-```
-
-:::
-
-::: {.column width="60%"}
-### Right column
-
-```{r}
-print(mtcars)
-```
-
-:::
-
-::::
-
-## Code Animations
-
-## {auto-animate="true"}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-})
-```
-
-## {auto-animate=true}
-
-```r
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-# Render a barplot
-barplot(WorldPhones[,input$region]*1000, 
-main=input$region,
-ylab="Number of Telephones",
-xlab="Year")
-})
-```
-
-# Preview Links
-
-## Preview Links
-
-[Preview](https://rbtl-fs22.github.io/website/){preview-link="true"}
-
-# Break
-
-![](img/coffee-break.jpg)
-
-```{r}
-
-countdown(
-  minutes = 15, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
-
-```
-
-::: aside
-Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
-:::
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 

@@ -7,13 +7,13 @@
     <description>Research Beyond the Lab
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 11 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Week 12 - Data wrangling with dplyr</title>
       <link>https://rbtl-fs22.github.io/website/posts/week12</link>
       <description>Data is rarely in the right form that you need it.  You will have to create new variables or rename them, or you need to create summary statistics of your data. In this lecture you will learn how to transform your data into the format you need..</description>
       <guid>https://rbtl-fs22.github.io/website/posts/week12</guid>
-      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <media:content url="https://rbtl-fs22.github.io/website/posts/week12/img/hunter-haley-s8OO2-t-HmQ-unsplash.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
