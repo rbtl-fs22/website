@@ -31,10 +31,10 @@ date,week,title,teaser,lecturer,learning_objectives_pt1,learning_objectives_pt2
 2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can control the colour scaling applied to a plot using colour as an aesthetic mapping
 2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can compare three different geoms and their use case
 2022-05-05T00:00:00Z,11,Exploratory Data Analysis using Data Visualisation,NA,L. Schöbitz,NA,Learners can apply a theme to control font types and sizes within a plot
-2022-05-12T00:00:00Z,12,Data transformation with dplyr,NA,L. Schöbitz,NA,Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
-2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions to transform their data from a wide to a long format and vice versa
-2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to join multiple data sets
-2022-05-19T00:00:00Z,13,Data transformation with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
+2022-05-12T00:00:00Z,12,Data wrangling with dplyr,NA,L. Schöbitz,NA,Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+2022-05-19T00:00:00Z,13,Data wrangling with tidyr,NA,L. Schöbitz,NA,Learners can apply functions to transform their data from a wide to a long format and vice versa
+2022-05-19T00:00:00Z,13,Data wrangling with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to join multiple data sets
+2022-05-19T00:00:00Z,13,Data wrangling with tidyr,NA,L. Schöbitz,NA,Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
 2022-05-26T00:00:00Z,14,Auffahrt Break,NA,L. Schöbitz,NA,NA
 2022-06-02T00:00:00Z,15,Communicate your findings,NA,L. Schöbitz,NA,Learners can use R Markdown and GitHub to publish their group project report
 2022-06-02T00:00:00Z,15,Communicate your findings,NA,NA,NA,Learners can use exported references from Zotero in Better BibTex Format to generate an automated reference list

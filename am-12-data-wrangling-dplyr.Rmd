@@ -1,0 +1,51 @@
+---
+title: "Week 12 - Data wrangling with dplyr"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+
+## Learning Objectives
+
+1. Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+
+# Exercises
+
+## Exercise 1 - Application Exercise
+
+1. Open the repo from class and `pull` changes from remote repository; A solutions file `ae-12a-dplyr-solutions.qmd` will be added; Ensure that your script `ae-12a-dplyr.qmd` is complete and renders without errors
+2. Add, Commit, Push all changes to GitHub with the commit message "Render exercise 12a without errors"
+3. Complete all tasks in Application Exercise 12 - Data wrangling with dplyr (`ae-12b-dplyr.qmd` file) 
+4. Ensure that `ae-12b-dplyr.qmd` renders without errors
+5. Add, Commit, Push all changes to GitHub with the commit message "Complete tasks of exercise 12b"
+
+## Exercise 2 - Research Project Report
+
+Continue to work on your research project report. The submission deadline is the **9th of June**. **Important:** [Review the list of graded items](https://github.com/rbtl-fs22/research-project-template#grading). Have you discussed within your group who is responsible for which of the items that are submitted by the team? Do you have open questions? If yes, submit issues on your team repo on GitHub. 
+
+1. Pull!
+2. Keep refining your visualistions and write up your results.
+3. Prepare at least two summary tables using functions of the `dplyr` R Package.
+4  Open an issue on GitHub to let me know you have created summary tables for your report (2 points done).
+5. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub.
+
+## Exercise 3 - Work through palmer penguins tutorial
+
+Pratice using the `dplyr` functions by working through this tutorial:
+
+https://allisonhorst.shinyapps.io/dplyr-learnr/
+
+## Exercise 4 - R4DS section on data transformation
+
+If you want to practice more, then use your notebook from week 10 and work through the Chapter on Data transformation in R4DS: https://r4ds.had.co.nz/transform.html
+
+**Note: If you use the notebook to take notes while working through R4DS, then use the Render, Add, Commit, Push workflow every now and then to push your changes back to GitHub and keep your remote repository in sync with your local repository.**
+
+
+
+

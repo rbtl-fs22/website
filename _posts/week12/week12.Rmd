@@ -1,0 +1,76 @@
+---
+title: "Week 12 - Data wrangling with dplyr"
+description: |
+  Data is rarely in the right form that you need it.  You will have to create new variables or rename them, or you need to create summary statistics of your data. In this lecture you will learn how to transform your data into the format you need..
+date: 2022-05-12
+params:
+    week: 12
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/hunter-haley-s8OO2-t-HmQ-unsplash.jpg
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Hunter Haley](https://unsplash.com/photos/s8OO2-t-HmQ)"}
+
+knitr::include_graphics("img/hunter-haley-s8OO2-t-HmQ-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj1[1]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+All details for your group work are in the assignment for this week.
+
+# Homework
+
+There is one assignment this week. All other listed items are resources for you as additional references for this weeks topic.
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```
