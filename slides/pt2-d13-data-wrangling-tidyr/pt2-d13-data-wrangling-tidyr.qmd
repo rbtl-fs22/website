@@ -19,6 +19,7 @@ editor_options:
 
 ```{r}
 library(tidyverse)
+library(knitr)
 ```
 
 ```{r}
@@ -34,23 +35,25 @@ waste_data_lord2 <- read_csv(
 ```
 
 ```{r}
-#| eval: false
+#| eval: true
 
-waste_data_lord <- bind_rows(waste_data_lord1, waste_data_lord2) 
+waste_data <- bind_rows(waste_data_lord1, waste_data_lord2) 
 
-waste_data_lord_untidy <- waste_data_lord %>% 
+waste_data_untidy <- waste_data %>% 
   filter(!is.na(objid)) %>% 
   rename(non_recyclable_Kg = `non_recyclables_ Kg`,
          recyclable_Kg = recyclables_Kg) %>%
   relocate(c(recyclable_Kg, non_recyclable_Kg), .before = weight_total_kg) %>% 
   select(objid, location, pet_Kg:weight_total_kg) %>% 
+  mutate(objid = factor(objid)) %>%
   rename_with(~str_remove(.x, "_Kg|_kg")) %>% 
-  rename_with(~str_remove(.x, "_content")) 
+  rename_with(~str_remove(.x, "_content")) %>% 
+  rename(total = weight_total)
 
 
 waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
 
-waste_data_lord_tidy <- waste_data_lord_untidy %>% 
+waste_data_tidy <- waste_data_untidy %>% 
   select(objid:paper, non_recyclable) %>% 
   rename(other = non_recyclable) %>% 
   mutate(objid = factor(objid)) %>%
@@ -63,87 +66,100 @@ waste_data_lord_tidy <- waste_data_lord_untidy %>%
     TRUE ~ "recyclable")) %>% 
   relocate(type, .before = weight) %>% 
   group_by(objid) %>% 
-  mutate(percent = weight / sum(weight) * 100) 
-  
+  mutate(percent = weight / sum(weight) * 100)
 
-waste_data_lord_tidy %>% 
+```
+
+
+```{r}
+#| eval: false
+
+waste_data_tidy %>% 
   group_by(location, waste_category) %>% 
   summarise(weight = mean(weight)) %>% 
   group_by(location) %>% 
   mutate(percent = weight / sum(weight) * 100) 
 
-waste_data_lord_tidy %>% 
-
+waste_data_tidy %>% 
+  
   ggplot(mapping = aes(x = waste_category, y = weight, color = type)) +
   geom_boxplot() +
   geom_jitter(width = 0.2) +
   facet_wrap(~location)
 
+waste_data_tidy %>% 
+  ggplot(mapping = aes(x = objid, y = weight)) +
+  geom_col() 
 
-waste_data_lord_tidy %>% 
+waste_data_tidy %>% 
+  ggplot(mapping = aes(x = objid, y = weight, fill = waste_category)) +
+  geom_col() 
+
+waste_data_tidy %>% 
   ggplot(mapping = aes(x = waste_category, y = percent, color = type)) +
   geom_boxplot() +
   geom_jitter(width = 0.2) +
   facet_wrap(~location)
 
 
-waste_data_lord_tidy %>% 
+waste_data_tidy %>% 
   ggplot(aes(x = objid, y = percent, fill = waste_category)) +
   geom_col() 
 
-waste_data_lord_tidy %>% 
+waste_data_tidy %>% 
   ggplot(aes(x = objid, y = percent, fill = type)) +
   geom_col() 
 
-waste_data_lord_tidy %>% 
+waste_data_tidy %>% 
   ggplot(aes(x = objid, y = percent, fill = location)) +
   geom_col() +
   facet_wrap(~waste_category, ncol = 5)
+```
 
 
+```{r}
 ```
 
 # Today
 
-1. Vectors
+1. Data types 
 2. Data wrangling with tidyr - part 1
-    - Live Coding Exercise
+- Live Coding Exercise
 4. Data wrangling with tidyr - part 2
-    - Programming Exercise
+- Programming Exercise
 5. Homework Assignment 13
 
-# Learning Objective
+# Learning Objectives
 
+
+
+# Data types
+
+[TODO: Get slide from Mine]
+https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#9
 
 # Data wrangling with tidyr  {background-color="#0F4C81"}
 
-## A grammar of data wrangling... {.smaller}
-
-[TODO: Get slide from Mine]
-
-... based on the concepts of functions as verbs that manipulate data frames
+## A grammar of data tidying {.smaller}
 
 :::: {.columns}
 
 ::: {.column width="40%"}
 
-```{r dplyr-part-of-tidyverse, echo=FALSE, out.width="70%", caption = "dplyr is part of the tidyverse"}
-knitr::include_graphics("img/dplyr-part-of-tidyverse.png")
+```{r dplyr-part-of-tidyverse, echo=FALSE, out.width="60%", caption = "tidyr is part of the tidyverse"}
+knitr::include_graphics("img/tidyr-part-of-tidyverse.png")
 ```
 
 :::
 
 ::: {.column width="60%"}
 
-- `select`: pick columns by name
-- `arrange`: reorder rows
-- `slice`: chooses rows based on location
-- `filter`: pick rows matching criteria
-- `relocate`: changes the order of the columns
-- `mutate`: add new variables
-- `summarise`: reduce variables to values
-- `group_by`: for grouped operations
-- ... (many more)
+The goal of tidyr is to help you tidy your data via
+
+- pivoting for going between wide and long data
+- splitting and combining character columns
+- nesting and unnesting columns
+- clarifying how `NA`s should be treated
 :::
 
 ::::
@@ -152,16 +168,154 @@ knitr::include_graphics("img/dplyr-part-of-tidyverse.png")
 Slide taken from [Data Science in a Box](https://datasciencebox.org/)
 :::
 
+## Pivoting data
 
-# Waste characterisation data
+```{r echo=FALSE, out.width="45%", out.extra ='style="background-color: #FDF6E3"'}
+knitr::include_graphics("img/tidyr-longer-wider.gif")
+```
 
-## 
+## Waste characterisation data {.smaller}
 
-```{r}
+```{r, out.width="90%"}
+
+waste_data_untidy %>% 
+  knitr::kable(digits = 2)
 
 ```
 
 
+## How would you plot this?
+
+```{r}
+
+ggplot(data = waste_data_untidy,
+       mapping = aes(x = objid, y = total)) +
+  geom_col()
+
+```
+
+## And this?
+
+```{r}
+
+ggplot(data = waste_data_tidy,
+       mapping = aes(x = objid, y = weight, fill = waste_category)) +
+  geom_col() 
+
+```
+
+## You need: A long format
+
+```{r}
+
+waste_data_tidy %>% 
+  select(-percent) %>% 
+  head(n = 10) 
+
+```
+
+## Or this?
+
+```{r}
+
+waste_data_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = type)) +
+  geom_col() 
+
+```
+
+## You need: Calculation of percentages
+
+```{r}
+
+waste_data_tidy %>% 
+  head(n = 10) 
+
+```
+
+## How to {auto-animate="true" .smaller}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  knitr::kable()
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable)
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable)
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) 
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>%
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight)
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>% 
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight) %>% 
+  group_by(objid) %>% 
+  mutate(percent = weight / sum(weight) * 100)
+
+```
 
 
 ## Live Coding Exercise
