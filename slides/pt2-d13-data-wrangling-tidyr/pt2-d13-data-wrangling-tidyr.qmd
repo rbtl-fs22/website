@@ -32,8 +32,9 @@ waste_data_lord2 <- read_csv(
 
 survey_data <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/survey-data-partners-in-grime.csv"))
 
-survey_data %>% 
-  select(job, residence_situation, starts_with("price")) %>% 
+survey_data_tidy <- survey_data %>% 
+  mutate(id = seq(1:n())) %>%  
+  select(id, job, residence_situation, starts_with("price")) %>% 
   pivot_longer(cols = starts_with("price"),
                names_to = "waste_category",
                values_to = "price") %>% 
@@ -47,6 +48,11 @@ survey_data %>%
   )) %>% 
   mutate(price = as.numeric(price_new)) %>% 
   select(-price_new)
+
+survey_data_tidy %>% 
+  count(job, residence_situation, waste_category, price) %>% 
+  ggplot(aes(x = factor(price), y = n, fill = job)) +
+  geom_col()
 
 ```
 
