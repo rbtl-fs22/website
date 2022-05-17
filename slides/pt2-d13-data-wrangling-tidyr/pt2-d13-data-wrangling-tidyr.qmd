@@ -1,0 +1,245 @@
+---
+title: "rbtl - Data wrangling with tidyr"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+
+waste_data_lord1 <- read_csv(
+  here::here("slides/pt2-d13-data-wrangling-tidyr/data/waste-characterisation-lord-of-the-bins-sheet1.csv"))
+
+waste_data_lord2 <- read_csv(
+  here::here("slides/pt2-d13-data-wrangling-tidyr/data/waste-characterisation-lord-of-the-bins-sheet2.csv"))
+
+
+
+```
+
+```{r}
+#| eval: false
+
+waste_data_lord <- bind_rows(waste_data_lord1, waste_data_lord2) 
+
+waste_data_lord_untidy <- waste_data_lord %>% 
+  filter(!is.na(objid)) %>% 
+  rename(non_recyclable_Kg = `non_recyclables_ Kg`,
+         recyclable_Kg = recyclables_Kg) %>%
+  relocate(c(recyclable_Kg, non_recyclable_Kg), .before = weight_total_kg) %>% 
+  select(objid, location, pet_Kg:weight_total_kg) %>% 
+  rename_with(~str_remove(.x, "_Kg|_kg")) %>% 
+  rename_with(~str_remove(.x, "_content")) 
+
+
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_lord_tidy <- waste_data_lord_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  mutate(objid = factor(objid)) %>%
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>% 
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight) %>% 
+  group_by(objid) %>% 
+  mutate(percent = weight / sum(weight) * 100) 
+  
+
+waste_data_lord_tidy %>% 
+  group_by(location, waste_category) %>% 
+  summarise(weight = mean(weight)) %>% 
+  group_by(location) %>% 
+  mutate(percent = weight / sum(weight) * 100) 
+
+waste_data_lord_tidy %>% 
+
+  ggplot(mapping = aes(x = waste_category, y = weight, color = type)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  facet_wrap(~location)
+
+
+waste_data_lord_tidy %>% 
+  ggplot(mapping = aes(x = waste_category, y = percent, color = type)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  facet_wrap(~location)
+
+
+waste_data_lord_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = waste_category)) +
+  geom_col() 
+
+waste_data_lord_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = type)) +
+  geom_col() 
+
+waste_data_lord_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = location)) +
+  geom_col() +
+  facet_wrap(~waste_category, ncol = 5)
+
+
+```
+
+# Today
+
+1. Vectors
+2. Data wrangling with tidyr - part 1
+    - Live Coding Exercise
+4. Data wrangling with tidyr - part 2
+    - Programming Exercise
+5. Homework Assignment 13
+
+# Learning Objective
+
+
+# Data wrangling with tidyr  {background-color="#0F4C81"}
+
+## A grammar of data wrangling... {.smaller}
+
+[TODO: Get slide from Mine]
+
+... based on the concepts of functions as verbs that manipulate data frames
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r dplyr-part-of-tidyverse, echo=FALSE, out.width="70%", caption = "dplyr is part of the tidyverse"}
+knitr::include_graphics("img/dplyr-part-of-tidyverse.png")
+```
+
+:::
+
+::: {.column width="60%"}
+
+- `select`: pick columns by name
+- `arrange`: reorder rows
+- `slice`: chooses rows based on location
+- `filter`: pick rows matching criteria
+- `relocate`: changes the order of the columns
+- `mutate`: add new variables
+- `summarise`: reduce variables to values
+- `group_by`: for grouped operations
+- ... (many more)
+:::
+
+::::
+
+::: {.aside}
+Slide taken from [Data Science in a Box](https://datasciencebox.org/)
+:::
+
+
+# Waste characterisation data
+
+## 
+
+```{r}
+
+```
+
+
+
+
+## Live Coding Exercise
+
+**ae-13-data-wrangling-tidyr**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 11 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-13a-tidyr.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Break Two
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Submission
+
+- All details in assignment week 12
+- Due: Wednesday, 19th May at 23:59 (2 points)
+
+## Evaluation
+
+- 5 mins
+- anonymous
+- after each lecture
+
+[kutt.it/rbtl-eval](https://forms.gle/HbCPbG9Yb7iDJ2jW6)
+
+# Programming {background-color="#0F4C81"}
+
+## ae-12-data-transformation-dplyr
+
+1. Open the file: `ae-12b-dplyr.qmd`
+2. Work through the exercises
+3. Finalise as part of your homework
+
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
+
+## 
+
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d12-data-wrangling-dplyr/pt2-d12-data-wrangling-dplyr.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
