@@ -32,7 +32,7 @@ Continue to work on your research project report. The submission deadline is the
 2. Get yourself an ORCID iD and add your details to the CITATION.cff. (It will be another item done of your research report grading items checklist)
 3. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub.
 
-(**2 points done**)
+(**2 points for this assignment done**)
 
 ## Exercise 3 - Exam preparation
 

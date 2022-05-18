@@ -31,8 +31,10 @@ Continue to work on your research project report. The submission deadline is the
 1. Pull!
 2. Keep refining your visualistions and write up your results.
 3. Prepare at least two summary tables using functions of the `dplyr` R Package.
-4  Open an issue on GitHub to let me know you have created summary tables for your report (2 points done).
+4  Open an issue on GitHub to let me know you have created summary tables for your report.
 5. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub.
+
+(**2 points for this assignment done**)
 
 ## Exercise 3 - Work through palmer penguins tutorial
 
