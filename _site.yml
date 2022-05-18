@@ -33,6 +33,8 @@ navbar:
           href: am-11-data-visualisation.html
         - text: "Week 12"
           href: am-12-data-wrangling-dplyr.html
+        - text: "Week 13"
+          href: am-13-data-wrangling-tidyr.html
 output:
   distill::distill_article:
     toc: true
