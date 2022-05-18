@@ -30,10 +30,13 @@ waste_data_lord1 <- read_csv(
 waste_data_lord2 <- read_csv(
   here::here("slides/pt2-d13-data-wrangling-tidyr/data/waste-characterisation-lord-of-the-bins-sheet2.csv"))
 
-survey_data <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/survey-data-partners-in-grime.csv"))
+survey_data <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/survey-data-partners-in-grime.csv")) %>% 
+  mutate(id = seq(1:n()))
+
+survey_data_small <- survey_data %>% 
+  select(id, job, price_glass)
 
 survey_data_tidy <- survey_data %>% 
-  mutate(id = seq(1:n())) %>%  
   select(id, job, residence_situation, starts_with("price")) %>% 
   pivot_longer(cols = starts_with("price"),
                names_to = "waste_category",
@@ -144,21 +147,132 @@ waste_data_tidy %>%
 
 # Today
 
-1. Data types 
-2. Data wrangling with tidyr - part 1
+1. Part 1: Data types and vectors
 - Live Coding Exercise
-4. Data wrangling with tidyr - part 2
-- Programming Exercise
-5. Homework Assignment 13
+2. Part 2: tidyr - long and wide formats
+- Live Coding Exercise
+3. Part 3: dplyr - joining data
+- Live Coding Exercise
+4. Homework Assignment 13
+5. Programming Exercise
 
 # Learning Objectives
 
-
+1. Learners can apply functions from the ~~tidyr~~ (actually dplyr) R Package to join multiple data sets
+2. Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
 
 # Data types
 
 [TODO: Get slide from Mine]
 https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#9
+
+## Why care about data types?
+
+[TODO]
+
+## Example: survey data {.smaller}
+
+```{r}
+#| echo: true
+survey_data_small
+```
+
+## Oh why won't you work?! {.smaller}
+
+```{r}
+#| echo: true
+survey_data_small %>% 
+  summarise(mean_price_glass = mean(price_glass))
+
+```
+
+## Oh why won't you still work??!! {.smaller}
+
+```{r}
+#| echo: true
+survey_data_small %>% 
+  summarise(mean_price_glass = mean(price_glass, na.rm = TRUE))
+```
+
+## Take a breath and look at your data {.smaller}
+
+```{r}
+#| echo: true
+glimpse(survey_data_small)
+```
+
+## Very common data tidying step! {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|2|3,4|5,6|7"
+
+survey_data_small %>% 
+  mutate(price_glass_new = case_when(
+    price_glass == "5 to 10" ~ "7.5",
+    price_glass == "05-Oct" ~ "7.5",
+    str_detect(price_glass, pattern = "20") == TRUE ~ "20",
+    str_detect(price_glass, pattern = "See comment") == TRUE ~ NA_character_,
+    TRUE ~ price_glass
+  )) 
+```
+
+## Very common data tidying step! {.scrollable .smaller}
+
+```{r}
+#| echo: false
+#| eval: true
+survey_data_small %>% 
+  mutate(price_glass_new = case_when(
+    price_glass == "5 to 10" ~ "7.5",
+    price_glass == "05-Oct" ~ "7.5",
+    str_detect(price_glass, pattern = "20") == TRUE ~ "20",
+    str_detect(price_glass, pattern = "See comment") == TRUE ~ NA_character_,
+    TRUE ~ price_glass
+  )) %>% 
+  relocate(price_glass_new, .after = job) %>% 
+  print(n = 22)
+```
+
+## Sumamrise? Argh!!!!  {auto-animate="true" .smaller}
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "9"
+
+survey_data_small %>% 
+  mutate(price_glass_new = case_when(
+    price_glass == "5 to 10" ~ "7.5",
+    price_glass == "05-Oct" ~ "7.5",
+    str_detect(price_glass, pattern = "20") == TRUE ~ "20",
+    str_detect(price_glass, pattern = "See comment") == TRUE ~ NA_character_,
+    TRUE ~ price_glass
+  )) %>% 
+  summarise(mean_price_glass = mean(price_glass_new, na.rm = TRUE))
+  
+```
+
+## Always respect your data types!  {auto-animate="true" .smaller}
+
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "9|10"
+
+survey_data_small %>% 
+  mutate(price_glass_new = case_when(
+    price_glass == "5 to 10" ~ "7.5",
+    price_glass == "05-Oct" ~ "7.5",
+    str_detect(price_glass, pattern = "20") == TRUE ~ "20",
+    str_detect(price_glass, pattern = "See comment") == TRUE ~ NA_character_,
+    TRUE ~ price_glass
+  )) %>% 
+  mutate(price_glass_new = as.numeric(price_glass_new)) %>% 
+  summarise(mean_price_glass = mean(price_glass_new, na.rm = TRUE))
+  
+```
 
 # Data wrangling with tidyr  {background-color="#0F4C81"}
 
