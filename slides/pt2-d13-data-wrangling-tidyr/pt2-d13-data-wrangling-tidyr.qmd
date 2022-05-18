@@ -326,7 +326,7 @@ The goal of tidyr is to help you tidy your data via
 
 ::::
 
-::: {.aside}
+::: aside
 Slide taken from [Data Science in a Box](https://datasciencebox.org/)
 :::
 
@@ -602,7 +602,246 @@ Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 
 # Part 3: dplyr - joining data {background-color="#0F4C81"}
 
+##  We... {.smaller}
 
+...have multiple data frames
+
+...want to bring them together
+
+```{r}
+#| echo: false
+professions <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/scientists/professions.csv"))
+dates <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/scientists/dates.csv"))
+works <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/scientists/works.csv"))
+```
+
+```{r}
+#| echo: true
+#| eval: false
+professions <- read_csv(here::here("data/scientists/professions.csv"))
+dates <- read_csv(here::here("data/scientists/dates.csv"))
+works <- read_csv(here::here("scientists/works.csv"))
+```
+
+## Data: Women in science 
+
+Information on 10 women in science who changed the world
+
+```{r echo=FALSE}
+professions %>% select(name) %>% kable()
+```
+
+::: aside
+Source: [Discover Magazine](https://www.discovermagazine.com/the-sciences/meet-10-women-in-science-who-changed-the-world)
+:::
+
+## Inputs {.smaller}
+
+::: {.panel-tabset}
+
+### professions
+
+```{r}
+professions
+```
+
+### dates
+
+```{r}
+dates
+```
+
+### works
+
+```{r}
+works
+```
+
+:::
+
+## Desired output {.smaller}
+
+```{r}
+professions %>%
+  left_join(dates) %>%
+  left_join(works)
+```
+
+## Inputs, reminder {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+names(professions)
+names(dates)
+names(works)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+nrow(professions)
+nrow(dates)
+nrow(works)
+```
+:::
+
+::::
+
+# Joining data frames
+
+## Joining data frames
+
+```{r}
+#| echo: true
+#| eval: false
+something_join(x, y)
+```
+
+- `left_join()`: all rows from x
+- `right_join()`: all rows from y
+- `full_join()`: all rows from both x and y
+- ...
+
+## Setup
+
+For the next few slides...
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+x <- tibble(
+  id = c(1, 2, 3),
+  value_x = c("x1", "x2", "x3")
+  )
+```
+
+```{r}
+#| echo: true
+x
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+y <- tibble(
+  id = c(1, 2, 4),
+  value_y = c("y1", "y2", "y4")
+  )
+```
+```{r}
+#| echo: true
+y
+```
+:::
+
+::::
+
+---
+
+## `left_join()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
+include_graphics("img/left-join.gif")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+left_join(x, y)
+```
+:::
+
+::::
+
+---
+
+## `left_join()`
+
+```{r}
+#| echo: true
+professions %>%
+  left_join(dates) #<<
+```
+
+## `right_join()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
+include_graphics("img/right-join.gif")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+right_join(x, y)
+```
+:::
+
+::::
+
+## `right_join()`
+
+```{r}
+#| echo: true
+professions %>%
+  right_join(dates) #<<
+```
+
+## `full_join()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
+include_graphics("img/full-join.gif")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+full_join(x, y)
+```
+:::
+
+::::
+
+## `full_join()`
+
+```{r}
+#| echo: true
+dates %>%
+  full_join(works) #<<
+```
+
+## Putting it altogether
+
+```{r}
+#| echo: true
+professions %>%
+  left_join(dates) %>%
+  left_join(works)
+```
+
+## Live Coding Exercise
+
+**ae-13-data-wrangling-tidyr**
+
+1. Back to `ae-13a-tidyr.qmd`
 
 # Homework Assignment {background-color="#0F4C81"}
 
