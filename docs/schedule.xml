@@ -7,7 +7,15 @@
     <description>Research Beyond the Lab
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Week 13 - Data wrangling with tidyr</title>
+      <link>https://rbtl-fs22.github.io/website/posts/week13</link>
+      <description>A large amount of time during data analysis is typically spend on cleaning data. In this lecture you will learn more about the concept of tidy data and how to organize it. You will learn how to join two or more datasets and how to get data from a wide into a long format.</description>
+      <guid>https://rbtl-fs22.github.io/website/posts/week13</guid>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://rbtl-fs22.github.io/website/posts/week13/img/alistair-macrobert-RazuRIEPdgg-unsplash.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Week 12 - Data wrangling with dplyr</title>
       <link>https://rbtl-fs22.github.io/website/posts/week12</link>

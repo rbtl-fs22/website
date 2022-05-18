@@ -12,7 +12,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Learning Objectives
 
-1. Learners can apply ten functions from the dplyr R Package to generate a subset of data for use in a table or plot
+1. Learners can apply functions from the ~~tidyr~~ (actually dplyr) R Package to join multiple data sets
+2. Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
 
 # Exercises
 
@@ -29,8 +30,8 @@ knitr::opts_chunk$set(echo = FALSE)
 Continue to work on your research project report. The submission deadline is the **9th of June**. **Important:** [Review the list of graded items](https://github.com/rbtl-fs22/research-project-template#grading). Have you discussed within your group who is responsible for which of the items that are submitted by the team? Do you have open questions? If yes, submit issues on your team repo on GitHub. 
 
 1. Pull!
-2. Get yourself an ORCID iD and add your details to the CITATION.cff. (It will be another item done of your research report grading items checklist)
-3. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub.
+2. Get yourself an ORCID iD and add your details to the CITATION.cff. (It will also be another item done of your research report grading items checklist)
+3. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub. Otherwise I can't see your work.
 
 (**2 points for this assignment done**)
 

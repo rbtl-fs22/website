@@ -57,6 +57,13 @@
       "last_modified": "2022-05-12T14:05:00+02:00"
     },
     {
+      "path": "am-13-data-wrangling-tidyr.html",
+      "title": "Week 13 - Data wrangling with tidyr",
+      "author": [],
+      "contents": "\n\nContents\nIntroduction\nLearning Objectives\n\nExercises\nExercise 1 -\nApplication Exercise\nExercise 2 -\nResearch Project Report\nExercise 3 - Exam\npreparation\n\n\nIntroduction\nLearning Objectives\nLearners can apply functions from the tidyr (actually\ndplyr) R Package to join multiple data sets\nLearners can apply functions from the tidyr R Package to transform\ntheir data from a wide to a long format and vice versa\nExercises\nExercise 1 - Application\nExercise\nOpen the repo from class and pull changes from remote\nrepository; A solutions file ae-13a-tidyr-solutions.qmd\nwill be added; Ensure that your script ae-13a-tidyr.qmd is\ncomplete and renders without errors\nAdd, Commit, Push all changes to GitHub with the commit message\n“Render exercise 13a without errors”\nComplete all tasks in Application Exercise 13 - Data wrangling with\ntidyr (ae-13b-dplyr.qmd file)\nEnsure that ae-13b-dplyr.qmd renders without\nerrors\nAdd, Commit, Push all changes to GitHub with the commit message\n“Complete tasks of exercise 13b”\nExercise 2 - Research\nProject Report\nContinue to work on your research project report. The submission\ndeadline is the 9th of June.\nImportant: Review\nthe list of graded items. Have you discussed within your group who\nis responsible for which of the items that are submitted by the team? Do\nyou have open questions? If yes, submit issues on your team repo on\nGitHub.\nPull!\nGet yourself an ORCID iD and add your details to the CITATION.cff.\n(It will be another item done of your research report grading items\nchecklist)\nAt the end of a work session, always make sure that your Git pane is\nempty and all changes are committed and pushed back to GitHub.\n(2 points for this assignment done)\nExercise 3 - Exam\npreparation\nDuring the exam, you will be allowed to use any material online, and\noffline. The challenge will be to have right material at hand when you\nneed it, as there won’t be much time to search around. I recommend that\nyou prepare yourself a set of bookmarks that let you access the live\ncoding and programming exercises easily. For example, you could create a\nbookmarks folder in your browser that contains a bookmark to each\nproject on the RStudio Cloud).\n\n\n\n",
+      "last_modified": "2022-05-18T15:20:15+02:00"
+    },
+    {
       "path": "index.html",
       "title": "",
       "author": [],

@@ -1,0 +1,421 @@
+---
+title: "rbtl - Data wrangling with tidyr"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+```{r}
+
+waste_data_lord1 <- read_csv(
+  here::here("slides/pt2-d13-data-wrangling-tidyr/data/waste-characterisation-lord-of-the-bins-sheet1.csv"))
+
+waste_data_lord2 <- read_csv(
+  here::here("slides/pt2-d13-data-wrangling-tidyr/data/waste-characterisation-lord-of-the-bins-sheet2.csv"))
+
+survey_data <- read_csv(here::here("slides/pt2-d13-data-wrangling-tidyr/data/survey-data-partners-in-grime.csv"))
+
+survey_data_tidy <- survey_data %>% 
+  mutate(id = seq(1:n())) %>%  
+  select(id, job, residence_situation, starts_with("price")) %>% 
+  pivot_longer(cols = starts_with("price"),
+               names_to = "waste_category",
+               values_to = "price") %>% 
+  mutate(waste_category = str_remove(waste_category, pattern = "price_")) %>% 
+  mutate(price_new = case_when(
+    price == "5 to 10" ~ "7.5",
+    price == "05-Oct" ~ "7.5",
+    str_detect(price, pattern = "20") == TRUE ~ "20",
+    str_detect(price, pattern = "See comment") == TRUE ~ NA_character_,
+    TRUE ~ price
+  )) %>% 
+  mutate(price = as.numeric(price_new)) %>% 
+  select(-price_new)
+
+survey_data_tidy %>% 
+  count(job, residence_situation, waste_category, price) %>% 
+  ggplot(aes(x = factor(price), y = n, fill = job)) +
+  geom_col()
+
+```
+
+```{r}
+#| eval: true
+
+waste_data <- bind_rows(waste_data_lord1, waste_data_lord2) 
+
+waste_data_untidy <- waste_data %>% 
+  filter(!is.na(objid)) %>% 
+  rename(non_recyclable_Kg = `non_recyclables_ Kg`,
+         recyclable_Kg = recyclables_Kg) %>%
+  relocate(c(recyclable_Kg, non_recyclable_Kg), .before = weight_total_kg) %>% 
+  select(objid, location, pet_Kg:weight_total_kg) %>% 
+  mutate(objid = factor(objid)) %>%
+  rename_with(~str_remove(.x, "_Kg|_kg")) %>% 
+  rename_with(~str_remove(.x, "_content")) %>% 
+  rename(total = weight_total)
+
+
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_tidy <- waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  mutate(objid = factor(objid)) %>%
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>% 
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight) %>% 
+  group_by(objid) %>% 
+  mutate(percent = weight / sum(weight) * 100)
+
+```
+
+
+```{r}
+#| eval: false
+
+waste_data_tidy %>% 
+  group_by(location, waste_category) %>% 
+  summarise(weight = mean(weight)) %>% 
+  group_by(location) %>% 
+  mutate(percent = weight / sum(weight) * 100) 
+
+waste_data_tidy %>% 
+  
+  ggplot(mapping = aes(x = waste_category, y = weight, color = type)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  facet_wrap(~location)
+
+waste_data_tidy %>% 
+  ggplot(mapping = aes(x = objid, y = weight)) +
+  geom_col() 
+
+waste_data_tidy %>% 
+  ggplot(mapping = aes(x = objid, y = weight, fill = waste_category)) +
+  geom_col() 
+
+waste_data_tidy %>% 
+  ggplot(mapping = aes(x = waste_category, y = percent, color = type)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2) +
+  facet_wrap(~location)
+
+
+waste_data_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = waste_category)) +
+  geom_col() 
+
+waste_data_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = type)) +
+  geom_col() 
+
+waste_data_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = location)) +
+  geom_col() +
+  facet_wrap(~waste_category, ncol = 5)
+```
+
+
+```{r}
+```
+
+# Today
+
+1. Data types 
+2. Data wrangling with tidyr - part 1
+- Live Coding Exercise
+4. Data wrangling with tidyr - part 2
+- Programming Exercise
+5. Homework Assignment 13
+
+# Learning Objectives
+
+
+
+# Data types
+
+[TODO: Get slide from Mine]
+https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#9
+
+# Data wrangling with tidyr  {background-color="#0F4C81"}
+
+## A grammar of data tidying {.smaller}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r dplyr-part-of-tidyverse, echo=FALSE, out.width="60%", caption = "tidyr is part of the tidyverse"}
+knitr::include_graphics("img/tidyr-part-of-tidyverse.png")
+```
+
+:::
+
+::: {.column width="60%"}
+
+The goal of tidyr is to help you tidy your data via
+
+- pivoting for going between wide and long data
+- splitting and combining character columns
+- nesting and unnesting columns
+- clarifying how `NA`s should be treated
+:::
+
+::::
+
+::: {.aside}
+Slide taken from [Data Science in a Box](https://datasciencebox.org/)
+:::
+
+## Pivoting data
+
+```{r echo=FALSE, out.width="45%", out.extra ='style="background-color: #FDF6E3"'}
+knitr::include_graphics("img/tidyr-longer-wider.gif")
+```
+
+## Waste characterisation data {.smaller}
+
+```{r, out.width="90%"}
+
+waste_data_untidy %>% 
+  knitr::kable(digits = 2)
+
+```
+
+
+## How would you plot this?
+
+```{r}
+
+ggplot(data = waste_data_untidy,
+       mapping = aes(x = objid, y = total)) +
+  geom_col()
+
+```
+
+## And this?
+
+```{r}
+
+ggplot(data = waste_data_tidy,
+       mapping = aes(x = objid, y = weight, fill = waste_category)) +
+  geom_col() 
+
+```
+
+## You need: A long format
+
+```{r}
+
+waste_data_tidy %>% 
+  select(-percent) %>% 
+  head(n = 10) 
+
+```
+
+## Or this?
+
+```{r}
+
+waste_data_tidy %>% 
+  ggplot(aes(x = objid, y = percent, fill = type)) +
+  geom_col() 
+
+```
+
+## You need: Calculation of percentages
+
+```{r}
+
+waste_data_tidy %>% 
+  head(n = 10) 
+
+```
+
+## How to {auto-animate="true" .smaller}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  knitr::kable()
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable)
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable)
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) 
+
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>%
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight)
+```
+
+## How to {auto-animate="true"}
+
+```{r}
+#| echo: true
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>% 
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight) %>% 
+  group_by(objid) %>% 
+  mutate(percent = weight / sum(weight) * 100)
+
+```
+
+
+## Live Coding Exercise
+
+**ae-13-data-wrangling-tidyr**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 11 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-13a-tidyr.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Break Two
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Homework Assignment {background-color="#0F4C81"}
+
+## Submission
+
+- All details in assignment week 12
+- Due: Wednesday, 19th May at 23:59 (2 points)
+
+## Evaluation
+
+- 5 mins
+- anonymous
+- after each lecture
+
+[kutt.it/rbtl-eval](https://forms.gle/HbCPbG9Yb7iDJ2jW6)
+
+# Programming {background-color="#0F4C81"}
+
+## ae-12-data-transformation-dplyr
+
+1. Open the file: `ae-12b-dplyr.qmd`
+2. Work through the exercises
+3. Finalise as part of your homework
+
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
+
+## 
+
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d12-data-wrangling-dplyr/pt2-d12-data-wrangling-dplyr.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
