@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.180">
+  <meta name="generator" content="quarto-0.9.312">
+
   <meta name="author" content="Lars Schöbitz">
   <meta name="dcterms.date" content="2022-05-18">
   <title>rbtl - Data wrangling with tidyr</title>
@@ -82,7 +83,6 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/clipboard/clipboard.min.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/quarto-html/tabby.min.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/quarto-html/popper.min.js"></script>
@@ -403,24 +403,18 @@
 <section id="today" class="title-slide slide level1 center">
 <h1>Today</h1>
 <ol type="1">
-<li>Part 1: Data types and vectors</li>
-</ol>
+<li>Part 1: Data types and vectors
 <ul>
 <li>Live Coding Exercise</li>
-</ul>
-<ol start="2" type="1">
-<li>Part 2: tidyr - long and wide formats</li>
-</ol>
+</ul></li>
+<li>Part 2: tidyr - long and wide formats
 <ul>
 <li>Live Coding Exercise</li>
-</ul>
-<ol start="3" type="1">
-<li>Part 3: dplyr - joining data</li>
-</ol>
+</ul></li>
+<li>Part 3: dplyr - joining data
 <ul>
 <li>Live Coding Exercise</li>
-</ul>
-<ol start="4" type="1">
+</ul></li>
 <li>Homework Assignment 13</li>
 <li>Programming Exercise</li>
 </ol>
@@ -435,9 +429,9 @@
 </section>
 
 <section>
-<section id="data-types" class="title-slide slide level1 center">
-<h1>Data types</h1>
-<p>[TODO: Get slide from Mine] https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#9</p>
+<section id="part-1-data-types-and-vectors" class="title-slide slide level1 center">
+<h1>Part 1: Data types and vectors</h1>
+
 </section>
 <section id="why-care-about-data-types" class="slide level2">
 <h2>Why care about data types?</h2>
@@ -446,8 +440,8 @@
 <section id="example-survey-data" class="slide level2 smaller">
 <h2>Example: survey data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>survey_data_small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>survey_data_small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 22 × 3
      id job      price_glass
   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      
@@ -464,9 +458,9 @@
 <section id="oh-why-wont-you-work" class="slide level2 smaller">
 <h2>Oh why won’t you work?!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_glass =</span> <span class="fu">mean</span>(price_glass))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_price_glass
              &lt;dbl&gt;
@@ -477,9 +471,9 @@
 <section id="oh-why-wont-you-still-work" class="slide level2 smaller">
 <h2>Oh why won’t you still work??!!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_glass =</span> <span class="fu">mean</span>(price_glass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_price_glass
              &lt;dbl&gt;
@@ -490,8 +484,8 @@
 <section id="take-a-breath-and-look-at-your-data" class="slide level2 smaller">
 <h2>Take a breath and look at your data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">glimpse</span>(survey_data_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">glimpse</span>(survey_data_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Rows: 22
 Columns: 3
 $ id          &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, …
@@ -503,7 +497,7 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <section id="very-common-data-tidying-step" class="slide level2 smaller">
 <h2>Very common data tidying step!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb9" data-code-line-numbers="|2|3,4|5,6|7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|2|3,4|5,6|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">mutate</span>(<span class="at">price_glass_new =</span> <span class="fu">case_when</span>(</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    price_glass <span class="sc">==</span> <span class="st">"5 to 10"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
 <span id="cb9-4"><a href="#cb9-4"></a>    price_glass <span class="sc">==</span> <span class="st">"05-Oct"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
@@ -516,7 +510,7 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <section id="very-common-data-tidying-step-1" class="slide level2 scrollable smaller">
 <h2>Very common data tidying step!</h2>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 22 × 4
       id job      price_glass_new price_glass                    
    &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;           &lt;chr&gt;                          
@@ -548,7 +542,7 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <section id="sumamrise-argh" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Sumamrise? Argh!!!!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb11" data-code-line-numbers="9"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a href="#cb11-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a href="#cb11-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2" class="hljs-ln-code"><a href="#cb11-2"></a>  <span class="fu">mutate</span>(<span class="at">price_glass_new =</span> <span class="fu">case_when</span>(</span>
 <span id="cb11-3" class="hljs-ln-code"><a href="#cb11-3"></a>    price_glass <span class="sc">==</span> <span class="st">"5 to 10"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
 <span id="cb11-4" class="hljs-ln-code"><a href="#cb11-4"></a>    price_glass <span class="sc">==</span> <span class="st">"05-Oct"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
@@ -557,7 +551,7 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <span id="cb11-7" class="hljs-ln-code"><a href="#cb11-7"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> price_glass</span>
 <span id="cb11-8" class="hljs-ln-code"><a href="#cb11-8"></a>  )) <span class="sc">%&gt;%</span> </span>
 <span id="cb11-9" class="hljs-ln-code"><a href="#cb11-9"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_glass =</span> <span class="fu">mean</span>(price_glass_new, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_price_glass
              &lt;dbl&gt;
@@ -568,7 +562,7 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <section id="always-respect-your-data-types" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Always respect your data types!</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb13" data-code-line-numbers="9|10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a href="#cb13-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="9|10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a href="#cb13-1"></a>survey_data_small <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2" class="hljs-ln-code"><a href="#cb13-2"></a>  <span class="fu">mutate</span>(<span class="at">price_glass_new =</span> <span class="fu">case_when</span>(</span>
 <span id="cb13-3" class="hljs-ln-code"><a href="#cb13-3"></a>    price_glass <span class="sc">==</span> <span class="st">"5 to 10"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
 <span id="cb13-4" class="hljs-ln-code"><a href="#cb13-4"></a>    price_glass <span class="sc">==</span> <span class="st">"05-Oct"</span> <span class="sc">~</span> <span class="st">"7.5"</span>,</span>
@@ -578,17 +572,43 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <span id="cb13-8" class="hljs-ln-code"><a href="#cb13-8"></a>  )) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-9" class="hljs-ln-code"><a href="#cb13-9"></a>  <span class="fu">mutate</span>(<span class="at">price_glass_new =</span> <span class="fu">as.numeric</span>(price_glass_new)) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-10" class="hljs-ln-code"><a href="#cb13-10"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_glass =</span> <span class="fu">mean</span>(price_glass_new, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   mean_price_glass
              &lt;dbl&gt;
 1             4.76</code></pre>
 </div>
 </div>
+</section>
+<section id="live-coding-exercise" class="slide level2">
+<h2>Live Coding Exercise</h2>
+<p><strong>ae-13-data-wrangling-tidyr</strong></p>
+<ol type="1">
+<li>Head over to the GitHub Organisation for the course.</li>
+<li>Find the repo for week 13 that has your GitHub username.</li>
+<li>Clone the repo with your username to the RStudio Cloud.</li>
+<li>Open the file: <code>ae-13a-tidyr.qmd</code></li>
+<li>Use your Sticky Notes to let me know when you are ready.</li>
+</ol>
 </section></section>
+<section id="break-one" class="title-slide slide level1 center">
+<h1>Break One</h1>
+
+<img data-src="img/coffee-break.jpg" class="r-stretch"><div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_62854d11" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>Photo by <a href="https://unsplash.com/@blakewisz">Blake Wisz</a></p>
+</div></aside></section>
+
 <section>
-<section id="data-wrangling-with-tidyr" class="title-slide slide level1 center" data-background-color="#0F4C81">
-<h1>Data wrangling with tidyr</h1>
+<section id="part-2-tidyr---long-and-wide-formats" class="title-slide slide level1 center" data-background-color="#0F4C81">
+<h1>Part 2: tidyr - long and wide formats</h1>
 
 </section>
 <section id="a-grammar-of-data-tidying" class="slide level2 smaller">
@@ -738,56 +758,274 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <section id="how-would-you-plot-this" class="slide level2">
 <h2>How would you plot this?</h2>
 
-<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-34-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="and-this" class="slide level2">
 <h2>And this?</h2>
 
-<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-36-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="you-need-a-long-format" class="slide level2">
+<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="you-need-a-long-format" class="slide level2 smaller scrollable">
 <h2>You need: A long format</h2>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-stdout">
-<pre><code># A tibble: 10 × 5
-# Groups:   objid [2]
-  objid location waste_category type           weight
-  &lt;fct&gt; &lt;chr&gt;    &lt;fct&gt;          &lt;chr&gt;           &lt;dbl&gt;
-1 900   eth      pet            recyclable      0.064
-2 900   eth      metal_alu      recyclable      0.062
-3 900   eth      glass          recyclable      0.576
-4 900   eth      paper          recyclable      0.214
-5 900   eth      other          non_recyclable  1.14 
-6 899   eth      pet            recyclable      0.138
-# … with 4 more rows</code></pre>
-</div>
-</div>
-</section>
-<section id="or-this" class="slide level2">
-<h2>Or this?</h2>
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:left;"> waste_category </th>
+   <th style="text-align:right;"> weight </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 3.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.92 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 1.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+</tbody>
+</table>
 
-<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-40-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="you-need-calculation-of-percentages" class="slide level2">
-<h2>You need: Calculation of percentages</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-stdout">
-<pre><code># A tibble: 10 × 6
-# Groups:   objid [2]
-  objid location waste_category type           weight percent
-  &lt;fct&gt; &lt;chr&gt;    &lt;fct&gt;          &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;
-1 900   eth      pet            recyclable      0.064    2.02
-2 900   eth      metal_alu      recyclable      0.062    1.95
-3 900   eth      glass          recyclable      0.576   18.1 
-4 900   eth      paper          recyclable      0.214    6.74
-5 900   eth      other          non_recyclable  1.14    35.8 
-6 899   eth      pet            recyclable      0.138    3.33
-# … with 4 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="how-to" class="slide level2 smaller" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">How to</h2>
+<section id="reminder-the-wide-format" class="slide level2 smaller scrollable">
+<h2>Reminder: The wide format</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
  <thead>
@@ -807,90 +1045,90 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
   <tr>
    <td style="text-align:left;"> 900 </td>
    <td style="text-align:left;"> eth </td>
-   <td style="text-align:right;"> 0.064 </td>
-   <td style="text-align:right;"> 0.062 </td>
-   <td style="text-align:right;"> 0.576 </td>
-   <td style="text-align:right;"> 0.214 </td>
-   <td style="text-align:right;"> 0.916 </td>
-   <td style="text-align:right;"> 1.136 </td>
-   <td style="text-align:right;"> 2.052 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.14 </td>
+   <td style="text-align:right;"> 2.05 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 899 </td>
    <td style="text-align:left;"> eth </td>
-   <td style="text-align:right;"> 0.138 </td>
-   <td style="text-align:right;"> 0.013 </td>
-   <td style="text-align:right;"> 0.178 </td>
-   <td style="text-align:right;"> 0.277 </td>
-   <td style="text-align:right;"> 0.606 </td>
-   <td style="text-align:right;"> 3.037 </td>
-   <td style="text-align:right;"> 3.643 </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 3.04 </td>
+   <td style="text-align:right;"> 3.64 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 921 </td>
    <td style="text-align:left;"> old_town </td>
-   <td style="text-align:right;"> 0.000 </td>
-   <td style="text-align:right;"> 0.000 </td>
-   <td style="text-align:right;"> 0.000 </td>
-   <td style="text-align:right;"> 0.414 </td>
-   <td style="text-align:right;"> 0.414 </td>
-   <td style="text-align:right;"> 1.572 </td>
-   <td style="text-align:right;"> 1.986 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 1.57 </td>
+   <td style="text-align:right;"> 1.99 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 916 </td>
    <td style="text-align:left;"> old_town </td>
-   <td style="text-align:right;"> 0.173 </td>
-   <td style="text-align:right;"> 0.043 </td>
-   <td style="text-align:right;"> 0.797 </td>
-   <td style="text-align:right;"> 0.552 </td>
-   <td style="text-align:right;"> 1.565 </td>
-   <td style="text-align:right;"> 0.625 </td>
-   <td style="text-align:right;"> 2.190 </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 1.56 </td>
+   <td style="text-align:right;"> 0.62 </td>
+   <td style="text-align:right;"> 2.19 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 900 </td>
    <td style="text-align:left;"> eth </td>
-   <td style="text-align:right;"> 0.098 </td>
-   <td style="text-align:right;"> 0.043 </td>
-   <td style="text-align:right;"> 0.000 </td>
-   <td style="text-align:right;"> 0.400 </td>
-   <td style="text-align:right;"> 0.541 </td>
-   <td style="text-align:right;"> 0.582 </td>
-   <td style="text-align:right;"> 1.123 </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 1.12 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 899 </td>
    <td style="text-align:left;"> eth </td>
-   <td style="text-align:right;"> 0.077 </td>
-   <td style="text-align:right;"> 0.030 </td>
-   <td style="text-align:right;"> 0.000 </td>
-   <td style="text-align:right;"> 0.052 </td>
-   <td style="text-align:right;"> 0.159 </td>
-   <td style="text-align:right;"> 0.338 </td>
-   <td style="text-align:right;"> 0.497 </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.16 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.50 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 921 </td>
    <td style="text-align:left;"> old_town </td>
-   <td style="text-align:right;"> 0.078 </td>
-   <td style="text-align:right;"> 0.030 </td>
-   <td style="text-align:right;"> 0.297 </td>
-   <td style="text-align:right;"> 0.402 </td>
-   <td style="text-align:right;"> 0.807 </td>
-   <td style="text-align:right;"> 1.518 </td>
-   <td style="text-align:right;"> 2.325 </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.81 </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:right;"> 2.33 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 916 </td>
    <td style="text-align:left;"> old_town </td>
-   <td style="text-align:right;"> 0.109 </td>
-   <td style="text-align:right;"> 0.044 </td>
-   <td style="text-align:right;"> 0.916 </td>
-   <td style="text-align:right;"> 1.014 </td>
-   <td style="text-align:right;"> 2.083 </td>
-   <td style="text-align:right;"> 1.986 </td>
-   <td style="text-align:right;"> 4.069 </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 2.08 </td>
+   <td style="text-align:right;"> 1.99 </td>
+   <td style="text-align:right;"> 4.07 </td>
   </tr>
 </tbody>
 </table>
@@ -898,166 +1136,1629 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 </div>
 </div>
 </section>
-<section id="how-to-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">How to</h2>
+<section id="or-this" class="slide level2">
+<h2>Or this?</h2>
+
+<img data-src="pt2-d13-data-wrangling-tidyr_files/figure-revealjs/unnamed-chunk-44-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="calculate-percentages" class="slide level2 smaller scrollable">
+<h2>Calculate percentages</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code># A tibble: 8 × 7
-  objid location   pet metal_alu glass paper non_recyclable
-  &lt;fct&gt; &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
-1 900   eth      0.064     0.062 0.576 0.214          1.14 
-2 899   eth      0.138     0.013 0.178 0.277          3.04 
-3 921   old_town 0         0     0     0.414          1.57 
-4 916   old_town 0.173     0.043 0.797 0.552          0.625
-5 900   eth      0.098     0.043 0     0.4            0.582
-6 899   eth      0.077     0.03  0     0.052          0.338
-# … with 2 more rows</code></pre>
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:left;"> waste_category </th>
+   <th style="text-align:left;"> type </th>
+   <th style="text-align:right;"> weight </th>
+   <th style="text-align:right;"> percent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 2.02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 1.95 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 18.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 6.74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.14 </td>
+   <td style="text-align:right;"> 35.78 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 3.33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 4.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 6.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 3.04 </td>
+   <td style="text-align:right;"> 73.36 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 9.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.57 </td>
+   <td style="text-align:right;"> 36.46 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 2.76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 12.73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.62 </td>
+   <td style="text-align:right;"> 9.99 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 3.09 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 1.35 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 12.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 18.33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 1.86 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 1.26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 8.16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 1.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 6.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 9.32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:right;"> 35.21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 1.74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 14.63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 16.20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.99 </td>
+   <td style="text-align:right;"> 31.73 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </section>
-<section id="how-to-2" class="slide level2" data-auto-animate="true">
+<section id="how-to" class="slide level2 smaller scrollable" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">How to</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code># A tibble: 8 × 7
-  objid location   pet metal_alu glass paper other
-  &lt;fct&gt; &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 900   eth      0.064     0.062 0.576 0.214 1.14 
-2 899   eth      0.138     0.013 0.178 0.277 3.04 
-3 921   old_town 0         0     0     0.414 1.57 
-4 916   old_town 0.173     0.043 0.797 0.552 0.625
-5 900   eth      0.098     0.043 0     0.4   0.582
-6 899   eth      0.077     0.03  0     0.052 0.338
-# … with 2 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a>waste_data_untidy </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:right;"> pet </th>
+   <th style="text-align:right;"> metal_alu </th>
+   <th style="text-align:right;"> glass </th>
+   <th style="text-align:right;"> paper </th>
+   <th style="text-align:right;"> recyclable </th>
+   <th style="text-align:right;"> non_recyclable </th>
+   <th style="text-align:right;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.14 </td>
+   <td style="text-align:right;"> 2.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 3.04 </td>
+   <td style="text-align:right;"> 3.64 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 1.57 </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 1.56 </td>
+   <td style="text-align:right;"> 0.62 </td>
+   <td style="text-align:right;"> 2.19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 1.12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.16 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.81 </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:right;"> 2.33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 2.08 </td>
+   <td style="text-align:right;"> 1.99 </td>
+   <td style="text-align:right;"> 4.07 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </section>
-<section id="how-to-3" class="slide level2" data-auto-animate="true">
+<section id="how-to-1" class="slide level2 smaller scrollable" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">How to</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
-<span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a></span>
-<span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
-<span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
-<span id="cb22-8" class="hljs-ln-code"><a href="#cb22-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-9" class="hljs-ln-code"><a href="#cb22-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, <span class="at">levels =</span> waste_category_levels)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code># A tibble: 40 × 4
-  objid location waste_category weight
-  &lt;fct&gt; &lt;chr&gt;    &lt;fct&gt;           &lt;dbl&gt;
-1 900   eth      pet             0.064
-2 900   eth      metal_alu       0.062
-3 900   eth      glass           0.576
-4 900   eth      paper           0.214
-5 900   eth      other           1.14 
-6 899   eth      pet             0.138
-# … with 34 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a href="#cb16-1"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2" class="hljs-ln-code"><a href="#cb16-2"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:right;"> pet </th>
+   <th style="text-align:right;"> metal_alu </th>
+   <th style="text-align:right;"> glass </th>
+   <th style="text-align:right;"> paper </th>
+   <th style="text-align:right;"> non_recyclable </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 1.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 3.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 1.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 1.52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </section>
-<section id="how-to-4" class="slide level2" data-auto-animate="true">
+<section id="how-to-2" class="slide level2 smaller scrollable" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">How to</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
-<span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a></span>
-<span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
-<span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
-<span id="cb24-8" class="hljs-ln-code"><a href="#cb24-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-9" class="hljs-ln-code"><a href="#cb24-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, <span class="at">levels =</span> waste_category_levels)) <span class="sc">%&gt;%</span></span>
-<span id="cb24-10" class="hljs-ln-code"><a href="#cb24-10"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb24-11" class="hljs-ln-code"><a href="#cb24-11"></a>    waste_category <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"non_recyclable"</span>,</span>
-<span id="cb24-12" class="hljs-ln-code"><a href="#cb24-12"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"recyclable"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-13" class="hljs-ln-code"><a href="#cb24-13"></a>  <span class="fu">relocate</span>(type, <span class="at">.before =</span> weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code># A tibble: 40 × 5
-  objid location waste_category type           weight
-  &lt;fct&gt; &lt;chr&gt;    &lt;fct&gt;          &lt;chr&gt;           &lt;dbl&gt;
-1 900   eth      pet            recyclable      0.064
-2 900   eth      metal_alu      recyclable      0.062
-3 900   eth      glass          recyclable      0.576
-4 900   eth      paper          recyclable      0.214
-5 900   eth      other          non_recyclable  1.14 
-6 899   eth      pet            recyclable      0.138
-# … with 34 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3" class="hljs-ln-code"><a href="#cb17-3"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:right;"> pet </th>
+   <th style="text-align:right;"> metal_alu </th>
+   <th style="text-align:right;"> glass </th>
+   <th style="text-align:right;"> paper </th>
+   <th style="text-align:right;"> other </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 1.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 3.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 1.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 1.52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </section>
-<section id="how-to-5" class="slide level2" data-auto-animate="true">
+<section id="how-to-3" class="slide level2 smaller scrollable" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">How to</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
-<span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a></span>
-<span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
-<span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-5" class="hljs-ln-code"><a href="#cb26-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-6" class="hljs-ln-code"><a href="#cb26-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
-<span id="cb26-7" class="hljs-ln-code"><a href="#cb26-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
-<span id="cb26-8" class="hljs-ln-code"><a href="#cb26-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-9" class="hljs-ln-code"><a href="#cb26-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, <span class="at">levels =</span> waste_category_levels)) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-10" class="hljs-ln-code"><a href="#cb26-10"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb26-11" class="hljs-ln-code"><a href="#cb26-11"></a>    waste_category <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"non_recyclable"</span>,</span>
-<span id="cb26-12" class="hljs-ln-code"><a href="#cb26-12"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"recyclable"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-13" class="hljs-ln-code"><a href="#cb26-13"></a>  <span class="fu">relocate</span>(type, <span class="at">.before =</span> weight) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-14" class="hljs-ln-code"><a href="#cb26-14"></a>  <span class="fu">group_by</span>(objid) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-15" class="hljs-ln-code"><a href="#cb26-15"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> weight <span class="sc">/</span> <span class="fu">sum</span>(weight) <span class="sc">*</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
-<pre><code># A tibble: 40 × 6
-# Groups:   objid [4]
-  objid location waste_category type           weight percent
-  &lt;fct&gt; &lt;chr&gt;    &lt;fct&gt;          &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;
-1 900   eth      pet            recyclable      0.064    2.02
-2 900   eth      metal_alu      recyclable      0.062    1.95
-3 900   eth      glass          recyclable      0.576   18.1 
-4 900   eth      paper          recyclable      0.214    6.74
-5 900   eth      other          non_recyclable  1.14    35.8 
-6 899   eth      pet            recyclable      0.138    3.33
-# … with 34 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="1|6-8|9-10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
+<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a></span>
+<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
+<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
+<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-9" class="hljs-ln-code"><a href="#cb18-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, </span>
+<span id="cb18-10" class="hljs-ln-code"><a href="#cb18-10"></a>                                 <span class="at">levels =</span> waste_category_levels)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:left;"> waste_category </th>
+   <th style="text-align:right;"> weight </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 3.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:right;"> 0.11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:right;"> 0.92 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:right;"> 1.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </section>
-<section id="live-coding-exercise" class="slide level2">
+<section id="how-to-4" class="slide level2 smaller scrollable" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">How to</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="11-13|14"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
+<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a></span>
+<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
+<span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
+<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-9" class="hljs-ln-code"><a href="#cb19-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, </span>
+<span id="cb19-10" class="hljs-ln-code"><a href="#cb19-10"></a>                                 <span class="at">levels =</span> waste_category_levels)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-11" class="hljs-ln-code"><a href="#cb19-11"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb19-12" class="hljs-ln-code"><a href="#cb19-12"></a>    waste_category <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"non_recyclable"</span>,</span>
+<span id="cb19-13" class="hljs-ln-code"><a href="#cb19-13"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"recyclable"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-14" class="hljs-ln-code"><a href="#cb19-14"></a>  <span class="fu">relocate</span>(type, <span class="at">.before =</span> weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:left;"> waste_category </th>
+   <th style="text-align:left;"> type </th>
+   <th style="text-align:right;"> weight </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 3.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.92 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 1.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.99 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+<section id="how-to-5" class="slide level2 smaller scrollable" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">How to</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="15-16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>waste_category_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"glass"</span>, <span class="st">"metal_alu"</span>, <span class="st">"paper"</span>, <span class="st">"pet"</span>, <span class="st">"other"</span>)</span>
+<span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a></span>
+<span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>waste_data_untidy <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>  <span class="fu">select</span>(objid<span class="sc">:</span>paper, non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a>  <span class="fu">rename</span>(<span class="at">other =</span> non_recyclable) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> pet<span class="sc">:</span>other,</span>
+<span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>               <span class="at">names_to =</span> <span class="st">"waste_category"</span>,</span>
+<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a>               <span class="at">values_to =</span> <span class="st">"weight"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-9" class="hljs-ln-code"><a href="#cb20-9"></a>  <span class="fu">mutate</span>(<span class="at">waste_category =</span> <span class="fu">factor</span>(waste_category, </span>
+<span id="cb20-10" class="hljs-ln-code"><a href="#cb20-10"></a>                                 <span class="at">levels =</span> waste_category_levels)) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-11" class="hljs-ln-code"><a href="#cb20-11"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb20-12" class="hljs-ln-code"><a href="#cb20-12"></a>    waste_category <span class="sc">==</span> <span class="st">"other"</span> <span class="sc">~</span> <span class="st">"non_recyclable"</span>,</span>
+<span id="cb20-13" class="hljs-ln-code"><a href="#cb20-13"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"recyclable"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-14" class="hljs-ln-code"><a href="#cb20-14"></a>  <span class="fu">relocate</span>(type, <span class="at">.before =</span> weight) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-15" class="hljs-ln-code"><a href="#cb20-15"></a>  <span class="fu">group_by</span>(objid) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-16" class="hljs-ln-code"><a href="#cb20-16"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> weight <span class="sc">/</span> <span class="fu">sum</span>(weight) <span class="sc">*</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> objid </th>
+   <th style="text-align:left;"> location </th>
+   <th style="text-align:left;"> waste_category </th>
+   <th style="text-align:left;"> type </th>
+   <th style="text-align:right;"> weight </th>
+   <th style="text-align:right;"> percent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 2.02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 1.95 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 18.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 6.74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.14 </td>
+   <td style="text-align:right;"> 35.78 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 3.33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 4.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 6.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 3.04 </td>
+   <td style="text-align:right;"> 73.36 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 9.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.57 </td>
+   <td style="text-align:right;"> 36.46 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 2.76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 12.73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.62 </td>
+   <td style="text-align:right;"> 9.99 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 3.09 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 1.35 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 12.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 900 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 18.33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 1.86 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 1.26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 899 </td>
+   <td style="text-align:left;"> eth </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 8.16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.08 </td>
+   <td style="text-align:right;"> 1.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 6.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 9.32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 921 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:right;"> 35.21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> pet </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 1.74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> metal_alu </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> glass </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:right;"> 14.63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> paper </td>
+   <td style="text-align:left;"> recyclable </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:right;"> 16.20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 916 </td>
+   <td style="text-align:left;"> old_town </td>
+   <td style="text-align:left;"> other </td>
+   <td style="text-align:left;"> non_recyclable </td>
+   <td style="text-align:right;"> 1.99 </td>
+   <td style="text-align:right;"> 31.73 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+<section id="live-coding-exercise-1" class="slide level2">
 <h2>Live Coding Exercise</h2>
 <p><strong>ae-13-data-wrangling-tidyr</strong></p>
 <ol type="1">
-<li>Head over to the GitHub Organisation for the course.</li>
-<li>Find the repo for week 11 that has your GitHub username.</li>
-<li>Clone the repo with your username to the RStudio Cloud.</li>
-<li>Open the file: <code>ae-13a-tidyr.qmd</code></li>
-<li>Use your Sticky Notes to let me know when you are ready.</li>
+<li>Back to <code>ae-13a-tidyr.qmd</code></li>
 </ol>
 </section></section>
-<section id="break-one" class="title-slide slide level1 center">
-<h1>Break One</h1>
-
-<img data-src="img/coffee-break.jpg" class="r-stretch"><div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="countdown" id="timer_628502ad" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>Photo by <a href="https://unsplash.com/@blakewisz">Blake Wisz</a></p>
-</div></aside></section>
-
 <section id="break-two" class="title-slide slide level1 center">
 <h1>Break Two</h1>
 
 <img data-src="img/coffee-break.jpg" class="r-stretch"><div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6284fff2" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
+<div class="countdown" id="timer_62854d83" style="right:0;bottom:0;left:0;margin:5%;padding:10px;font-size:2em;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1066,6 +2767,11 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 <aside><div>
 <p>Photo by <a href="https://unsplash.com/@blakewisz">Blake Wisz</a></p>
 </div></aside></section>
+
+<section id="part-3-dplyr---joining-data" class="title-slide slide level1 center" data-background-color="#0F4C81">
+<h1>Part 3: dplyr - joining data</h1>
+
+</section>
 
 <section>
 <section id="homework-assignment" class="title-slide slide level1 center" data-background-color="#0F4C81">
@@ -1119,7 +2825,6 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/dist/reveal.js"></script>
-
   <!-- reveal.js plugins -->
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
@@ -1127,12 +2832,13 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/search/search.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/zoom/zoom.js"></script>
   <script src="pt2-d13-data-wrangling-tidyr_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
 
   <script>
 
@@ -1146,11 +2852,10 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,
-
+ 
         // Display controls in the bottom right corner
         controls: false,
 
@@ -1388,7 +3093,10 @@ $ price_glass &lt;chr&gt; "0", "0", "0", "10", "See comment", "05-Oct…</code><
         button.blur();
         // flash "checked"
         button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
         setTimeout(function() {
+          button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
         // clear code selection

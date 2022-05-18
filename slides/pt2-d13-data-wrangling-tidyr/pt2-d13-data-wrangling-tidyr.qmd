@@ -148,11 +148,11 @@ waste_data_tidy %>%
 # Today
 
 1. Part 1: Data types and vectors
-- Live Coding Exercise
+    - Live Coding Exercise
 2. Part 2: tidyr - long and wide formats
-- Live Coding Exercise
+    - Live Coding Exercise
 3. Part 3: dplyr - joining data
-- Live Coding Exercise
+    - Live Coding Exercise
 4. Homework Assignment 13
 5. Programming Exercise
 
@@ -161,10 +161,7 @@ waste_data_tidy %>%
 1. Learners can apply functions from the ~~tidyr~~ (actually dplyr) R Package to join multiple data sets
 2. Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
 
-# Data types
-
-[TODO: Get slide from Mine]
-https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#9
+# Part 1: Data types and vectors
 
 ## Why care about data types?
 
@@ -274,7 +271,36 @@ survey_data_small %>%
   
 ```
 
-# Data wrangling with tidyr  {background-color="#0F4C81"}
+## Live Coding Exercise
+
+**ae-13-data-wrangling-tidyr**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 13 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-13a-tidyr.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
+# Part 2: tidyr - long and wide formats {background-color="#0F4C81"}
 
 ## A grammar of data tidying {.smaller}
 
@@ -325,8 +351,8 @@ waste_data_untidy %>%
 ```{r}
 
 ggplot(data = waste_data_untidy,
-       mapping = aes(x = objid, y = total)) +
-  geom_col()
+       mapping = aes(x = objid, y = total, fill = location)) +
+  geom_col() 
 
 ```
 
@@ -340,14 +366,21 @@ ggplot(data = waste_data_tidy,
 
 ```
 
-## You need: A long format
+## You need: A long format {.smaller .scrollable}
 
 ```{r}
 
 waste_data_tidy %>% 
-  select(-percent) %>% 
-  head(n = 10) 
+  select(-percent, -type) %>% 
+  knitr::kable(digits = 2)
 
+```
+
+## Reminder: The wide format {.smaller .scrollable}
+
+```{r}
+waste_data_untidy %>% 
+  knitr::kable(digits = 2)
 ```
 
 ## Or this?
@@ -360,46 +393,74 @@ waste_data_tidy %>%
 
 ```
 
-## You need: Calculation of percentages
+## Calculate percentages {.smaller .scrollable}
 
 ```{r}
 
 waste_data_tidy %>% 
-  head(n = 10) 
+  knitr::kable(digits = 2)
 
 ```
 
-## How to {auto-animate="true" .smaller}
+## How to {auto-animate="true" .smaller .scrollable}
 
 ```{r}
 #| echo: true
+#| eval: false
+waste_data_untidy 
+```
+
+```{r}
+#| echo: false
 waste_data_untidy %>% 
-  knitr::kable()
+  knitr::kable(digits = 2)
 ```
 
-## How to {auto-animate="true"}
+## How to {auto-animate="true" .smaller .scrollable}
 
 ```{r}
 #| echo: true
+#| eval: false
+#| code-line-numbers: "2"
 waste_data_untidy %>% 
-  select(objid:paper, non_recyclable)
-
+  select(objid:paper, non_recyclable) 
 ```
 
-## How to {auto-animate="true"}
-
 ```{r}
-#| echo: true
+#| echo: false
 waste_data_untidy %>% 
   select(objid:paper, non_recyclable) %>% 
-  rename(other = non_recyclable)
+  knitr::kable(digits = 2)
 
 ```
 
-## How to {auto-animate="true"}
+## How to {auto-animate="true" .smaller .scrollable}
 
 ```{r}
 #| echo: true
+#| eval: false
+#| code-line-numbers: "3"
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) 
+
+```
+
+```{r}
+#| echo: false
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  knitr::kable(digits = 2)
+
+```
+
+## How to {auto-animate="true" .smaller .scrollable}
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1|6-8|9-10"
 waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
 
 waste_data_untidy %>% 
@@ -408,14 +469,50 @@ waste_data_untidy %>%
   pivot_longer(cols = pet:other,
                names_to = "waste_category",
                values_to = "weight") %>% 
-  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) 
+  mutate(waste_category = factor(waste_category, 
+                                 levels = waste_category_levels)) 
 
 ```
 
-## How to {auto-animate="true"}
+```{r}
+#| echo: false
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, levels = waste_category_levels)) %>% 
+  knitr::kable(digits = 2)
+
+```
+
+## How to {auto-animate="true" .smaller .scrollable}
 
 ```{r}
 #| echo: true
+#| eval: false
+#| code-line-numbers: "11-13|14"
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, 
+                                 levels = waste_category_levels)) %>%
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight)
+```
+
+```{r}
+#| echo: false
 waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
 
 waste_data_untidy %>% 
@@ -428,13 +525,36 @@ waste_data_untidy %>%
   mutate(type = case_when(
     waste_category == "other" ~ "non_recyclable",
     TRUE ~ "recyclable")) %>% 
-  relocate(type, .before = weight)
+  relocate(type, .before = weight) %>% 
+  knitr::kable(digits = 2)
 ```
 
-## How to {auto-animate="true"}
+## How to {auto-animate="true" .smaller .scrollable}
 
 ```{r}
 #| echo: true
+#| eval: false
+#| code-line-numbers: "15-16"
+waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
+
+waste_data_untidy %>% 
+  select(objid:paper, non_recyclable) %>% 
+  rename(other = non_recyclable) %>% 
+  pivot_longer(cols = pet:other,
+               names_to = "waste_category",
+               values_to = "weight") %>% 
+  mutate(waste_category = factor(waste_category, 
+                                 levels = waste_category_levels)) %>% 
+  mutate(type = case_when(
+    waste_category == "other" ~ "non_recyclable",
+    TRUE ~ "recyclable")) %>% 
+  relocate(type, .before = weight) %>% 
+  group_by(objid) %>% 
+  mutate(percent = weight / sum(weight) * 100)
+```
+
+```{r}
+#| echo: false
 waste_category_levels <- c("glass", "metal_alu", "paper", "pet", "other")
 
 waste_data_untidy %>% 
@@ -449,7 +569,8 @@ waste_data_untidy %>%
     TRUE ~ "recyclable")) %>% 
   relocate(type, .before = weight) %>% 
   group_by(objid) %>% 
-  mutate(percent = weight / sum(weight) * 100)
+  mutate(percent = weight / sum(weight) * 100) %>% 
+  knitr::kable(digits = 2)
 
 ```
 
@@ -458,30 +579,7 @@ waste_data_untidy %>%
 
 **ae-13-data-wrangling-tidyr**
 
-1. Head over to the GitHub Organisation for the course.
-2. Find the repo for week 11 that has your GitHub username.
-3. Clone the repo with your username to the RStudio Cloud.
-4. Open the file: `ae-13a-tidyr.qmd`
-5. Use your Sticky Notes to let me know when you are ready.
-
-# Break One
-
-![](img/coffee-break.jpg)
-
-```{r}
-
-countdown(
-  minutes = 15, seconds = 0,
-  left = 0, right = 0,
-  padding = "10px", margin = "5%",
-  font_size = "2em"
-)
-
-```
-
-::: aside
-Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
-:::
+1. Back to `ae-13a-tidyr.qmd`
 
 # Break Two
 
@@ -501,6 +599,10 @@ countdown(
 ::: aside
 Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 :::
+
+# Part 3: dplyr - joining data {background-color="#0F4C81"}
+
+
 
 # Homework Assignment {background-color="#0F4C81"}
 
