@@ -40,5 +40,5 @@ week,title,type,submission_format,category,effort_estimate_min,due_date,link,tit
 11,Tidymodels,R Packages,"no submission, a resource",optional,NA,NA,https://www.tidymodels.org/,[Tidymodels](https://www.tidymodels.org/)
 11,R4DS Section Model,Book Chapter,"no submission, a resource",optional,NA,NA,https://r4ds.had.co.nz/model-intro.html,[R4DS Section Model](https://r4ds.had.co.nz/model-intro.html)
 12,Week 12 - Data wrangling with dplyr,assignment,GitHub,required,180,2022-05-18,https://rbtl-fs22.github.io/website/am-12-data-wrangling-dplyr.html,[Week 12 - Data wrangling with dplyr](https://rbtl-fs22.github.io/website/am-12-data-wrangling-dplyr.html)
-13,Week 13 - Data wrangling with tidyr,assignment,GitHub,required,180,2022-05-25,https://rbtl-fs22.github.io/website/am-13-data-wrangling-tidyr.html,[Week 13 - Data wrangling with tidyr](https://rbtl-fs22.github.io/website/am-13-data-wrangling-tidyr.html)
+13,Week 13 - Data wrangling with tidyr,assignment,GitHub,required,90,2022-05-25,https://rbtl-fs22.github.io/website/am-13-data-wrangling-tidyr.html,[Week 13 - Data wrangling with tidyr](https://rbtl-fs22.github.io/website/am-13-data-wrangling-tidyr.html)
 15,Week 15 - Write your report,NA,NA,NA,NA,NA,NA,[Week 15 - Write your report](NA)

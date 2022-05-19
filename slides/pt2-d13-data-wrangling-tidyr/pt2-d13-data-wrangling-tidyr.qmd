@@ -20,6 +20,9 @@ editor_options:
 ```{r}
 library(tidyverse)
 library(knitr)
+
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+
 ```
 
 ```{r}
@@ -165,7 +168,7 @@ waste_data_tidy %>%
 
 ## Why care about data types?
 
-[TODO]
+<div style="width:75%;height:0;padding-bottom:83%;position:relative;"><iframe src="https://giphy.com/embed/SvRuvlSEa67wNNHuHy" width="75%" height="75%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/Friends-episode-20-friends-tv-the-one-with-baby-shower-SvRuvlSEa67wNNHuHy">via GIPHY</a></p>
 
 ## Example: survey data {.smaller}
 
@@ -301,6 +304,25 @@ Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 :::
 
 # Part 2: tidyr - long and wide formats {background-color="#0F4C81"}
+
+## . {background-image="img/tidydata_1.jpg" background-size="contain"}
+
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by [Julia Lowndes](https://twitter.com/juliesquid) and [Allison Horst](https://twitter.com/allison_horst)
+:::
+
+## . {background-image="img/tidydata_2.jpg" background-size="contain"}
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by [Julia Lowndes](https://twitter.com/juliesquid) and [Allison Horst](https://twitter.com/allison_horst)
+:::
+
+## . {background-image="img/tidydata_3.jpg" background-size="contain"}
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by [Julia Lowndes](https://twitter.com/juliesquid) and [Allison Horst](https://twitter.com/allison_horst)
+:::
 
 ## A grammar of data tidying {.smaller}
 
@@ -623,7 +645,8 @@ dates <- read_csv(here::here("data/scientists/dates.csv"))
 works <- read_csv(here::here("scientists/works.csv"))
 ```
 
-## Data: Women in science 
+## Data: Women in science {.smaller}
+
 
 Information on 10 women in science who changed the world
 
@@ -642,19 +665,21 @@ Source: [Discover Magazine](https://www.discovermagazine.com/the-sciences/meet-1
 ### professions
 
 ```{r}
-professions
+professions %>% 
+  kable()
 ```
 
 ### dates
 
 ```{r}
-dates
+dates %>% 
+  kable()
 ```
 
 ### works
 
 ```{r}
-works
+works %>% kable()
 ```
 
 :::
@@ -664,14 +689,15 @@ works
 ```{r}
 professions %>%
   left_join(dates) %>%
-  left_join(works)
+  left_join(works) %>% 
+  kable()
 ```
 
 ## Inputs, reminder {.smaller}
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 names(professions)
@@ -680,7 +706,11 @@ names(works)
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 nrow(professions)
@@ -691,7 +721,7 @@ nrow(works)
 
 ::::
 
-# Joining data frames
+# Joining data frames 
 
 ## Joining data frames
 
@@ -706,13 +736,13 @@ something_join(x, y)
 - `full_join()`: all rows from both x and y
 - ...
 
-## Setup
+## Setup {.smaller}
 
 For the next few slides...
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 x <- tibble(
@@ -727,7 +757,11 @@ x
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 y <- tibble(
@@ -743,19 +777,21 @@ y
 
 ::::
 
----
-
-## `left_join()`
+## `left_join()` {.smaller}
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="47.5%"}
 ```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
 include_graphics("img/left-join.gif")
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 left_join(x, y)
@@ -764,27 +800,29 @@ left_join(x, y)
 
 ::::
 
----
-
-## `left_join()`
+## `left_join()` {.smaller}
 
 ```{r}
 #| echo: true
 professions %>%
-  left_join(dates) #<<
+  left_join(dates) 
 ```
 
-## `right_join()`
+## `right_join()` {.smaller}
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="47.5%"}
 ```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
 include_graphics("img/right-join.gif")
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 right_join(x, y)
@@ -793,25 +831,29 @@ right_join(x, y)
 
 ::::
 
-## `right_join()`
+## `right_join()` {.smaller}
 
 ```{r}
 #| echo: true
 professions %>%
-  right_join(dates) #<<
+  right_join(dates)
 ```
 
-## `full_join()`
+## `full_join()` {.smaller}
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="47.5%"}
 ```{r echo=FALSE, out.width="80%", out.extra ='style="background-color: #FDF6E3"'}
 include_graphics("img/full-join.gif")
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ```{r}
 #| echo: true
 full_join(x, y)
@@ -820,15 +862,15 @@ full_join(x, y)
 
 ::::
 
-## `full_join()`
+## `full_join()` {.smaller}
 
 ```{r}
 #| echo: true
 dates %>%
-  full_join(works) #<<
+  full_join(works) 
 ```
 
-## Putting it altogether
+## Putting it altogether {.smaller}
 
 ```{r}
 #| echo: true
@@ -847,8 +889,8 @@ professions %>%
 
 ## Submission
 
-- All details in assignment week 12
-- Due: Wednesday, 19th May at 23:59 (2 points)
+- All details in assignment week 13
+- Due: Wednesday, 26th May at 23:59 (2 points)
 
 ## Evaluation
 
@@ -860,9 +902,9 @@ professions %>%
 
 # Programming {background-color="#0F4C81"}
 
-## ae-12-data-transformation-dplyr
+## ae-13-data-wrangling-tidyr
 
-1. Open the file: `ae-12b-dplyr.qmd`
+1. Open the file: `ae-13b-dplyr.qmd`
 2. Work through the exercises
 3. Finalise as part of your homework
 
@@ -870,7 +912,9 @@ professions %>%
 
 ## 
 
+A large proportion of slides in this presentation are either taken from or adapted from [Data Science in a Box](https://datasciencebox.org/)]
+
 Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
-Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d12-data-wrangling-dplyr/pt2-d12-data-wrangling-dplyr.pdf)
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d13-data-wrangling-tidyr/pt2-d13-data-wrangling-tidyr.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
