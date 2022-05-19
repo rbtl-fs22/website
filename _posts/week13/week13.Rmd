@@ -1,0 +1,77 @@
+---
+title: "Week 13 - Data wrangling with tidyr"
+description: |
+  A large amount of time during data analysis is typically spend on cleaning data. In this lecture you will learn more about the concept of tidy data and how to organize it. You will learn how to join two or more datasets and how to get data from a wide into a long format.
+date: 2022-05-19
+params:
+    week: 13
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/alistair-macrobert-RazuRIEPdgg-unsplash.jpg   
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Alistair MacRobert](https://unsplash.com/photos/RazuRIEPdgg)"}
+
+knitr::include_graphics("img/alistair-macrobert-RazuRIEPdgg-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Group work
+
+All details for your group work are in the assignment for this week.
+
+# Homework
+
+There is one assignment this week. All other listed items are resources for you as additional references for this weeks topic.
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```

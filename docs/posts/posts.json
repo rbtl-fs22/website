@@ -1,5 +1,17 @@
 [
   {
+    "path": "posts/week13/",
+    "title": "Week 13 - Data wrangling with tidyr",
+    "description": "A large amount of time during data analysis is typically spend on cleaning data. In this lecture you will learn more about the concept of tidy data and how to organize it. You will learn how to join two or more datasets and how to get data from a wide into a long format.",
+    "author": [],
+    "date": "2022-05-19",
+    "categories": [],
+    "contents": "\n\nContents\nLearning Objectives\nPart 2\n\nSlides\nGroup work\nHomework\n\n\n\n\n\n\n\n\nFigure 1: Photo by Alistair MacRobert\n\n\n\nLearning Objectives\nPart 2\n\n\n\nLearners can apply functions to transform their data from a wide to\na long format and vice versa\nLearners can apply functions from the tidyr R Package to join\nmultiple data sets\nSlides\n\n\ntitle\n\n\nlecturer\n\n\npart\n\n\nslides\n\n\nData wrangling with tidyr\n\n\nL. Schöbitz\n\n\nPart 2\n\n\nAccess\nslides in browser\n\n\nData wrangling with tidyr\n\n\nL. Schöbitz\n\n\nPart 2\n\n\nAccess\nslides as PDF\n\n\nGroup work\nAll details for your group work are in the assignment for this\nweek.\nHomework\nThere is one assignment this week. All other listed items are\nresources for you as additional references for this weeks topic.\n\n\nid\n\n\ntitle_link\n\n\ntype\n\n\ncategory\n\n\neffort_estimate_min\n\n\nsubmission_format\n\n\ndue_date\n\n\n1\n\n\nWeek\n13 - Data wrangling with tidyr\n\n\nassignment\n\n\nrequired\n\n\n180\n\n\nGitHub\n\n\n2022-05-25\n\n\n\n\n\n",
+    "preview": "posts/week13/img/alistair-macrobert-RazuRIEPdgg-unsplash.jpg",
+    "last_modified": "2022-05-19T11:46:33+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/week12/",
     "title": "Week 12 - Data wrangling with dplyr",
     "description": "Data is rarely in the right form that you need it.  You will have to create new variables or rename them, or you need to create summary statistics of your data. In this lecture you will learn how to transform your data into the format you need..",

@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
 format: revealjs
-editor: visual
+editor: source
 ---
 
 # Templates {background-color="#0F4C81"}
@@ -10,8 +10,7 @@ editor: visual
 
 ## Tabsets
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Tab A
 
 Content for `Tab A`
@@ -19,21 +18,17 @@ Content for `Tab A`
 ### Tab B
 
 Content for `Tab B`
-
 :::
 
 ## Columns
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="40%"}
-
 ### Left column
 
 ```{r}
 library(dplyr)
 ```
-
 :::
 
 ::: {.column width="60%"}
@@ -42,25 +37,23 @@ library(dplyr)
 ```{r}
 print(mtcars)
 ```
-
 :::
-
-::::
+:::
 
 ## Code Animations
 
-## {auto-animate="true"}
+##  {auto-animate="true"}
 
-```r
+``` r
 # Fill in the spot we created for a plot
 output$phonePlot <- renderPlot({
 # Render a barplot
 })
 ```
 
-## {auto-animate=true}
+##  {auto-animate="true"}
 
-```r
+``` r
 # Fill in the spot we created for a plot
 output$phonePlot <- renderPlot({
 # Render a barplot
