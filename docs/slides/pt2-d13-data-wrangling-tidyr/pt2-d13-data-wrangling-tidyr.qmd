@@ -65,7 +65,7 @@ survey_data_tidy %>%
 ```{r}
 #| eval: true
 
-waste_data <- bind_rows(waste_data_lord1, waste_data_lord2) 
+waste_data <- bind_rows(waste_data_lord1, waste_data_lord2)
 
 waste_data_untidy <- waste_data %>% 
   filter(!is.na(objid)) %>% 
@@ -95,6 +95,9 @@ waste_data_tidy <- waste_data_untidy %>%
   relocate(type, .before = weight) %>% 
   group_by(objid) %>% 
   mutate(percent = weight / sum(weight) * 100)
+
+waste_data_tidy %>% 
+  write_rds("slides/pt2-d13-data-wrangling-tidyr/data/intermediate_data/waste-characterisation-lord-of-the-bins-tidy.rds")
 
 ```
 

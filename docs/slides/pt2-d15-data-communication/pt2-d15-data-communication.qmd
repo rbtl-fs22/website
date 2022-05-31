@@ -1,0 +1,272 @@
+---
+title: "rbtl - Data communication"
+author: "Lars Schöbitz"
+institute: "Global Health Engineering - ETH Zurich"
+date: '
+  `r Sys.Date()`'
+format: 
+  revealjs: 
+    theme: [default, "../slides.scss"]
+    chalkboard: true
+    transition: fade
+    auto-stretch: false
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| child: "../setup.Rmd"
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+# Today
+
+1. Part 1: Exam advice and practice
+    - Programming exercise
+2. Part 2: Data communication
+    - Live Coding Exercise
+3. Part 3: What comes next?
+4. Part 4: Evaluation
+5. Part 5: Individual work and questions
+
+# Learning Objectives
+
+1. Learners can use ~~R Markdown~~ Quarto and GitHub to publish ~~their group project~~ a report.
+
+2. Learners can use exported references from Zotero in Better BibTex Format to generate an automated reference list. [Assignment 3 - YouTube Video - 13:58](https://youtu.be/yWlSeqhZCNM?t=838)
+
+3. Learners can cross-reference figures and tables within an R Markdown file.
+
+# Part 1: Exam advice and practice {background-color="#0F4C81"}
+
+## Bookmarks
+
+![](img/rstudio-cloud-bookmarks.png){fig-alt="Screenshot a bookmarks toolbar with a folder for RStudio Cloud projects." fig-align="center"}
+
+
+## Timing
+
+- Room: IFW C42 (**not our lecture room**)
+- Doors open: 14:30 (also on Zoom)
+- Exam start: 15:15
+- Exam end: 17:15 
+
+## Workflow 
+
+::: {.incremental}
+
+- Open Projects page on RStudio Cloud rbtl-fs22 Workspace 
+- Look for 'exam-fs22' assignment
+- Click 'Start'
+
+:::
+
+![](img/rstudio-cloud-assignment.png){fig-alt="Screenshot of an RStudio Cloud assignment." fig-align="center"}
+
+## Workflow 
+
+::: {.incremental}
+
+- Briefly read through each section at the beginning to see what's coming
+- 20 tasks coding tasks in four sections  
+- Points for each task are shown
+- Work through the sections
+
+:::
+
+```
+.
+├── README.md
+├── data
+│   └── what_a_waste
+├── exam-fs22.Rproj
+├── section-01.qmd
+├── section-02.qmd
+├── section-03.qmd
+└── section-04.qmd
+```
+
+## Workflow 
+
+::: {.incremental}
+
+- No cloning repositories in this exam
+- No commits during the exam time (one commit after the exam time ends)
+- No pushing to GitHub in this exam
+
+:::
+
+## Rules 
+
+::: {.incremental}
+
+- Headphones (music) allowed
+- Stick Notes or raised hand for support (no loud calling)
+- No talking with each other
+- Individual work (0 points of code is shared)
+
+:::
+
+## Practice Exam
+
+**ae-15-data-communication**
+
+1. Head over to the GitHub Organisation for the course.
+2. Find the repo for week 15 that has your GitHub username.
+3. Clone the repo with your username to the RStudio Cloud.
+4. Open the file: `ae-15a-communicate.qmd`
+5. Use your Sticky Notes to let me know when you are ready.
+
+## Work through the tasks
+
+![](img/markus-spiske-cvBBO4PzWPg-unsplash.jpg){fig-align="center"}
+
+```{r}
+
+countdown(
+  minutes = 25, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+:::aside
+Image by: [Markus Spiske](https://unsplash.com/photos/cvBBO4PzWPg)
+:::
+
+## Step-wise points {.smaller}
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(data = waste_data_long_mean, 
+       mapping = aes(x = mean_percent, 
+                     y = waste_category, 
+                     fill = income_cat)) + # 1
+  geom_col(position = position_dodge()) + # 1
+  labs(title = "Waste Composition", # 0.5
+       subtitle = "Mean percentages ...", # 0.5
+       x = "mean (percent)", # 0.5
+       y = "waste category", # 0.5
+       fill = "Income category", # 0.5
+       caption = "Data from: ...") + # 0.5
+  scale_x_continuous(breaks = seq(0, 50, 5)) + # 1
+  scale_fill_brewer(type = "qual", palette = 3) + # 1
+  theme_minimal() + # 0.5
+  theme(panel.grid.minor = element_blank(), # 0.5
+        panel.grid.major.y = element_blank()) # 0.5
+  
+```
+
+## What to study?
+
+- Practice writing code 
+- All tasks are coding tasks and a small set of YAML header tasks
+- Nothing Git or GitHub related
+
+# Part 2: Data communication {background-color="#0F4C81"}
+
+## What is Quarto? {.incremental}
+
+- Next generation version of R Markdown from RStudio 
+- Multi-language (Python, R, Julia, Observable)
+- Authoring in plain text markdown or Jupyter notebooks
+
+## Editing documents
+
+You're not limited to RStudio for editing Quarto documents...
+
+-   [JupyterLab](https://quarto.org/docs/tools/jupyter-lab.html)
+
+-   [VS Code](https://quarto.org/docs/tools/vscode.html)
+
+-   [Text Editors](https://quarto.org/docs/tools/text-editors.html)
+
+
+## Authoring {.incremental}
+
+- Technical  articles, reports, presentations, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.
+
+- Author with scientific markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more.
+
+## Documentation
+
+[![](img/website-quarto.png){fig-alt="Screenshot of the Quarto homepage at https://quarto.org/." fig-align="center"}](https://quarto.org/)
+
+## Live Coding Exercise
+
+**ae-15-data-communication**
+
+1. Back to `ae-15a-communicate.qmd`
+
+## Captions and cross-references {.smaller}
+
+- no space between `{r}` and `#| tbl-cap: "A table"`
+- spelling tbl not tab
+- no spaces (use dashes in `label`)
+
+See @tbl-simple-table...
+
+```{r}
+#| tbl-cap: "A table"
+#| label: tbl-simple-table
+#| echo: fenced
+
+tibble(
+  id = c(1, 2, 3),
+  name = c("X", "Y", "Z")
+) %>% 
+  knitr::kable()
+```
+
+# Part 3: What comes next? {background-color="#0F4C81"}
+
+## Research Project Report
+
+- Due date: **9th of June 23:59**
+- No commits after that point will be accepted
+
+## rbtl community meetup events
+
+- every two months
+- ~1 hour code-along, followed by Apéro
+- in-person and remote on Zoom
+- first topic suggestions: 
+   - Get out of the Cloud!
+   - Dashboards
+   
+# Part 4: Evaluation {background-color="#0F4C81"}
+
+## rbtl evaluation
+
+- 5 mins
+- anonymous
+- after each lecture
+
+[kutt.it/rbtl-eval](https://forms.gle/HbCPbG9Yb7iDJ2jW6)
+
+## ETH evaluation
+
+- You received an Email from ETH LET
+- Please take 30 minutes now to complete the survey
+- If you have completed the survey already, then you can use your time freely now
+
+# Part 5: Individual work and questions {background-color="#0F4C81"}
+
+# Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
+
+## 
+
+Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
+Access slides as [PDF on GitHub](https://rbtl-fs22.github.io/website/slides/pt2-d15-data-communication/pt2-d15-data-communication.pdf)
+
+All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
+

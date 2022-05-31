@@ -9,7 +9,7 @@
     <generator>Distill</generator>
     <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Week 15 - Data wrangling with tidyr</title>
+      <title>Week 15 - Data communication</title>
       <link>https://rbtl-fs22.github.io/website/posts/week15</link>
       <description>It does not matter how good your research design is or how useful your data visualisations and models are, if you cannot communicate and present your findings to others. In this lecture, you will learn some more about how you can best utilize the Quarto file format write your group project report and present research results.</description>
       <guid>https://rbtl-fs22.github.io/website/posts/week15</guid>
@@ -53,7 +53,7 @@
       <link>https://rbtl-fs22.github.io/website/posts/week6</link>
       <description>We check, double-check and then check our research tools again and get ready for data collection next week.</description>
       <guid>https://rbtl-fs22.github.io/website/posts/week6</guid>
-      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
       <media:content url="https://rbtl-fs22.github.io/website/posts/week6/img/nick-fewings-EkyuhD7uwSM-unsplash.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
