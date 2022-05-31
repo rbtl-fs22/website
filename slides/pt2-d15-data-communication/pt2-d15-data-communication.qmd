@@ -229,6 +229,11 @@ tibble(
 
 # Part 3: What comes next? {background-color="#0F4C81"}
 
+## Research Project Report
+
+- Due date: **9th of June 23:59**
+- No commits after that point will be accepted
+
 ## rbtl community meetup events
 
 - every two months
