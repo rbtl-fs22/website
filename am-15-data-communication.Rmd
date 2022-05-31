@@ -1,0 +1,45 @@
+---
+title: "Week 13 - Data wrangling with tidyr"
+---
+
+<script defer data-domain="rbtl-fs22.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+
+## Learning Objectives
+
+1. Learners can apply functions from the ~~tidyr~~ (actually dplyr) R Package to join multiple data sets
+2. Learners can apply functions from the tidyr R Package to transform their data from a wide to a long format and vice versa
+
+# Exercises
+
+## Exercise 1 - Application Exercise
+
+1. Open the repo from class and `pull` changes from remote repository; A solutions file `ae-13a-tidyr-solutions.qmd` will be added; Ensure that your script `ae-13a-tidyr.qmd` is complete and renders without errors
+2. Add, Commit, Push all changes to GitHub with the commit message "Render exercise 13a without errors"
+3. Complete all tasks in Application Exercise 13 - Data wrangling with tidyr (`ae-13b-dplyr.qmd` file) 
+4. Ensure that `ae-13b-dplyr.qmd` renders without errors
+5. Add, Commit, Push all changes to GitHub with the commit message "Complete tasks of exercise 13b"
+
+## Exercise 2 - Research Project Report
+
+Continue to work on your research project report. The submission deadline is the **9th of June**. **Important:** [Review the list of graded items](https://github.com/rbtl-fs22/research-project-template#grading). Have you discussed within your group who is responsible for which of the items that are submitted by the team? Do you have open questions? If yes, submit issues on your team repo on GitHub. 
+
+1. Pull!
+2. Get yourself an ORCID iD and add your details to the CITATION.cff. (It will also be another item done of your research report grading items checklist)
+3. At the end of a work session, always make sure that your Git pane is empty and all changes are committed and pushed back to GitHub. Otherwise I can't see your work.
+
+(**2 points for this assignment done**)
+
+## Exercise 3 - Exam preparation
+
+During the exam, you will be allowed to use any material online, and offline. The challenge will be to have right material at hand when you need it, as there won't be much time to search around. I recommend that you prepare yourself a set of bookmarks that let you access the live coding and programming exercises easily. For example, you could create a bookmarks folder in your browser that contains a bookmark to each project on the RStudio Cloud).
+
+
+
+
+

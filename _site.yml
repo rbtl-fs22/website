@@ -35,6 +35,8 @@ navbar:
           href: am-12-data-wrangling-dplyr.html
         - text: "Week 13"
           href: am-13-data-wrangling-tidyr.html
+        - text: "Week 15"
+          href: am-15-data-communication.html
 output:
   distill::distill_article:
     toc: true

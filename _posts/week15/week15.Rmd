@@ -1,0 +1,74 @@
+---
+title: "Week 15 - Data wrangling with tidyr"
+description: |
+  It does not matter how good your research design is or how useful your data visualisations and models are, if you cannot communicate and present your findings to others. In this lecture, you will learn some more about how you can best utilize the Quarto file format write your group project report and present research results.
+date: 2022-06-02
+params:
+    week: 15
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+preview: img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg   
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+
+```{r}
+
+library(dplyr)
+library(readr)
+
+```
+
+```{r, layout="l-body", preview=TRUE, echo=FALSE, include=TRUE, fig.cap="Photo by [Volodymyr Hryshchenko](https://unsplash.com/photos/V5vqWC9gyEU)"}
+
+knitr::include_graphics("img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg")
+
+```
+
+# Learning Objectives
+
+## Part 2
+
+```{r}
+
+lobj1 <- read_csv(here::here("data/tab-01_rbtl-learning-objectives.csv")) %>% 
+  filter(week == params$week) %>% 
+  pull(learning_objectives_pt2)
+
+```
+
+1. `r lobj1[1]`
+1. `r lobj1[2]`
+1. `r lobj1[3]`
+
+# Slides
+
+```{r}
+
+read_csv(here::here("data/tab-02_rtbl-slides-resources.csv")) %>% 
+  filter(week == params$week) %>% 
+  select(title, lecturer, part, slides) %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE, position = "left")
+
+```
+
+# Homework
+
+There is no more assignment to hand in. Everyone receives two points for assignment 10. The remaining work effort goes into the research report. 
+
+```{r, layout="l-page", echo=FALSE, message=FALSE, warning=FALSE}
+
+read_csv(here::here("data/tab-03_rbtl-course-assignments.csv")) %>% 
+  filter(week == params$week) %>% 
+  arrange(desc(effort_estimate_min)) %>% 
+  mutate(id = seq(1:n())) %>% 
+  select(id, title_link, type,  category, effort_estimate_min, submission_format, due_date) %>% 
+  knitr::kable() %>% 
+  kableExtra::column_spec(7, width = "10em", background = "#E8ADAA")
+
+```

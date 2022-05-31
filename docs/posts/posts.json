@@ -1,5 +1,17 @@
 [
   {
+    "path": "posts/week15/",
+    "title": "Week 15 - Data wrangling with tidyr",
+    "description": "It does not matter how good your research design is or how useful your data visualisations and models are, if you cannot communicate and present your findings to others. In this lecture, you will learn some more about how you can best utilize the Quarto file format write your group project report and present research results.",
+    "author": [],
+    "date": "2022-06-02",
+    "categories": [],
+    "contents": "\n\nContents\nLearning Objectives\nPart 2\n\nSlides\nGroup work\nHomework\n\n\n\n\n\n\n\n\nFigure 1: Photo by Volodymyr Hryshchenko\n\n\n\nLearning Objectives\nPart 2\n\n\n\nLearners can use R Markdown and GitHub to publish their group\nproject report\nLearners can use exported references from Zotero in Better BibTex\nFormat to generate an automated reference list\nLearners can cross-reference figures and tables within an R Markdown\nfile\nSlides\n\n\ntitle\n\n\nlecturer\n\n\npart\n\n\nslides\n\n\nGroup work\nAll details for your group work are in the assignment for this\nweek.\nHomework\nThere is one assignment this week. All other listed items are\nresources for you as additional references for this weeks topic.\n\n\nid\n\n\ntitle_link\n\n\ntype\n\n\ncategory\n\n\neffort_estimate_min\n\n\nsubmission_format\n\n\ndue_date\n\n\n1\n\n\nWeek 15 - Write your report\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": "posts/week15/img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg",
+    "last_modified": "2022-05-31T15:57:51+02:00",
+    "input_file": "week15.knit.md"
+  },
+  {
     "path": "posts/week13/",
     "title": "Week 13 - Data wrangling with tidyr",
     "description": "A large amount of time during data analysis is typically spend on cleaning data. In this lecture you will learn more about the concept of tidy data and how to organize it. You will learn how to join two or more datasets and how to get data from a wide into a long format.",

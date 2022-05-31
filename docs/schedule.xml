@@ -7,7 +7,15 @@
     <description>Research Beyond the Lab
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 19 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Week 15 - Data wrangling with tidyr</title>
+      <link>https://rbtl-fs22.github.io/website/posts/week15</link>
+      <description>It does not matter how good your research design is or how useful your data visualisations and models are, if you cannot communicate and present your findings to others. In this lecture, you will learn some more about how you can best utilize the Quarto file format write your group project report and present research results.</description>
+      <guid>https://rbtl-fs22.github.io/website/posts/week15</guid>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://rbtl-fs22.github.io/website/posts/week15/img/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Week 13 - Data wrangling with tidyr</title>
       <link>https://rbtl-fs22.github.io/website/posts/week13</link>
