@@ -201,6 +201,25 @@ You're not limited to RStudio for editing Quarto documents...
 
 [![](img/website-quarto.png){fig-alt="Screenshot of the Quarto homepage at https://quarto.org/." fig-align="center"}](https://quarto.org/)
 
+# Break One
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 15, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+
 ## Live Coding Exercise
 
 **ae-15-data-communication**
@@ -243,6 +262,25 @@ tibble(
    - Get out of the Cloud!
    - Dashboards
    
+# Break Two
+
+![](img/coffee-break.jpg)
+
+```{r}
+
+countdown(
+  minutes = 10, seconds = 0,
+  left = 0, right = 0,
+  padding = "10px", margin = "5%",
+  font_size = "2em"
+)
+
+```
+
+::: aside
+Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
+:::
+   
 # Part 4: Evaluation {background-color="#0F4C81"}
 
 ## rbtl evaluation
@@ -258,6 +296,7 @@ tibble(
 - You received an Email from ETH LET
 - Please take 30 minutes now to complete the survey
 - If you have completed the survey already, then you can use your time freely now
+
 
 # Part 5: Individual work and questions {background-color="#0F4C81"}
 
