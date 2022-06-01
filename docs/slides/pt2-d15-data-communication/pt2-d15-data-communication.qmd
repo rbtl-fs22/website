@@ -169,8 +169,18 @@ ggplot(data = waste_data_long_mean,
 ## What to study?
 
 - Practice writing code 
-- All tasks are coding tasks and a small set of YAML header tasks
+- All tasks are coding tasks
+- A small set of YAML header tasks
 - Nothing Git or GitHub related
+
+## Exam data
+
+**What a Waste** 
+
+- City level data
+- Repos for each of you in our GitHub Organisation
+- The repo starts with `rbtl-fs22-exam-data` 
+- Clone it to RStudio Cloud and have fun! :)
 
 # Part 2: Data communication {background-color="#0F4C81"}
 
