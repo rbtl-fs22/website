@@ -281,7 +281,15 @@ countdown(
 Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 :::
    
-# Part 4: Evaluation {background-color="#0F4C81"}
+# Part 4: Evaluation & Reflection {background-color="#0F4C81"}
+
+## Write up some notes
+
+- What are the three most useful things you learned?
+- Which topic was especially hard to follow?
+- What did you miss?
+
+[![](img/rbtl-evaluation-comment-box.png){fig-align="center"}](https://forms.gle/HbCPbG9Yb7iDJ2jW6)
 
 ## rbtl evaluation
 
@@ -296,7 +304,6 @@ Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 - You received an Email from ETH LET
 - Please take 30 minutes now to complete the survey
 - If you have completed the survey already, then you can use your time freely now
-
 
 # Part 5: Individual work and questions {background-color="#0F4C81"}
 
