@@ -9,7 +9,6 @@ format:
     theme: [default, "../slides.scss"]
     chalkboard: true
     transition: fade
-    auto-stretch: false
 editor: source
 editor_options: 
   chunk_output_type: console
@@ -68,7 +67,7 @@ library(knitr)
 
 ![](img/rstudio-cloud-assignment.png){fig-alt="Screenshot of an RStudio Cloud assignment." fig-align="center"}
 
-## Workflow 
+## Workflow {.scrollable}
 
 ::: {.incremental}
 
@@ -236,7 +235,7 @@ Photo by [Blake Wisz](https://unsplash.com/@blakewisz)
 
 1. Back to `ae-15a-communicate.qmd`
 
-## Captions and cross-references {.smaller}
+## Captions and cross-references {.smaller .scrollable}
 
 - no space between `{r}` and `#| tbl-cap: "A table"`
 - spelling tbl not tab
